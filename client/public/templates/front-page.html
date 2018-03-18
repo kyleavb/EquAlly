@@ -3,8 +3,165 @@
 <head>
 	<title>Home Page</title>
 	<link rel='stylesheet' href='./test-css.css'/>
+	<!-- Materialize CSS CDN -->
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css'/>
+	<!-- Materialize Icons CDN -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-	hey front end
+	
+	<!-- THIS IS THE NAV BAR, WE CAN TRANSLATE <LI>S INTO <LINK />S LATER  -->
+	<nav>
+	    <div class="nav-wrapper cyan lighten-2">
+	      <a href="#!" class="brand-logo"><img src='./equally-logo-sm.png'/></a>
+	      <a href="#!" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	      <ul class="right hide-on-med-and-down">
+		    <li><a href="/">Home</a></li>
+		    <!-- this will be log in when not logged in -->
+		    <li><a href="/profile">Profile</a></li>
+		    <!-- this will be sign up when not logged in -->
+		    <li><a href="/logout">Log Out</a></li>
+
+		    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Navigate<i class="material-icons right">arrow_drop_down</i></a></li>
+		  </ul>
+	    </div>
+  	</nav>
+  	<ul id="dropdown1" class="dropdown-content">
+	  <li><a href="/chat">Live Chat</a></li>
+	  <li class="divider"></li>
+	  <li><a href="/resources">Resources</a></li>
+	  <li class="divider"></li>
+	  <li><a href="/blog">Blog</a></li>
+	  <li class="divider"></li>
+	  <li><a href="/about">About Us</a></li>
+	  <li class="divider"></li>
+	</ul>
+	<ul class="side-nav" id="mobile-demo">
+		<li><a href="/">Home</a></li>
+		<!-- this will be log in when not logged in -->
+		<li><a href="/profile">Profile</a></li>
+		<!-- this will be sign up when not logged in -->
+		<li><a href="/logout">Log Out</a></li>
+
+		<li><a href="/chat">Live Chat</a></li>
+		<li><a href="/resources">Resources</a></li>
+		<li><a href="/blog">Blog</a></li>
+		<li><a href="/about">About Us</a></li>
+	</ul>
+	<!-- END OF NAV -->
+
+
+
+	<!-- START OF CAROUSEL -->
+	<div class="carousel carousel-slider">
+	    <a class="carousel-item" href="#one!"><img class='carousel-image' src="./couple-walking-sm.jpg"/></a>
+	    <a class="carousel-item" href="#two!"><img class='carousel-image' src="./seattle-trans-pride-march-sm.jpg"/></a>
+	    <a class="carousel-item" href="#three!"><img class='carousel-image' src="./hands-sm.jpg"/></a>
+	    <a class="carousel-item" href="#four!"><img class='carousel-image' src="./heart-hands-sm.jpg"/></a>
+ 	</div>
+    <!-- END OF CAROUSEL -->
+
+
+
+    <!-- START OF TABBED INFO -->
+    <div class="row main-info">
+	    <div class="col s12 m12 l6 tab-container">
+	      <ul class="tabs">
+	        <li class="tab col s3 m3 l3"><a class="active" href="#tab1">Support</a></li>
+	        <li class="tab col s3 m3 l3"><a href="#tab2">Safe</a></li>
+	        <li class="tab col s3 m3 l3"><a href="#tab3">Diverse</a></li>
+	        <li class="tab col s3 m3 l3"><a href="#tab4">Secure</a></li>
+	      </ul>
+	      <!-- these divs are in the tabbed info section -->
+	 	 	<div id="tab1" class="col s12 tab-content">
+	 	 		<h5>We're here for you.</h5>
+	 	 		<img class='tab-img' src='./support-icon.png'/>
+	 	 		<p>With experts available 24/7, we are a team wholeheartedly dedicated to your well-being and safety. In such a tumultuous political climate, it is of the utmost importance that we all feel like we have someone to confide in, no matter the topic. We are steadfast in our support for <em>all</em> people.</p>
+	 	 	</div>
+		    <div id="tab2" class="col s12 tab-content">
+		    	<h5>This is a safe space.</h5>
+	 	 		<img class='tab-img' src='./safespace.png'/>
+	 	 		<p>We go to great lengths to protect our users from any volatile individuals who may seek to harm or harass them. We have implemented thorough background checks and language filters as an initial safeguard. If you spot any incendiary language or behavior, please report it.</p>
+		    </div>
+		    <div id="tab3" class="col s12 tab-content">
+		    	<h5>Nobody is excluded.</h5>
+	 	 		<img class='tab-img' src='./diversity-icon.png'/>
+	 	 		<p>equ<em>ally</em> was created to encourage the inclusion and coexistence of people from all walks of life--all skin colors, all sexual orientations, all genders. We have a zero tolerance policy for discrimination or exclusionary ideology.</p>
+		    </div>
+		    <div id="tab4" class="col s12 tab-content">
+		    	<h5>Your information is safe.</h5>
+	 	 		<img class='tab-img' src='./security-icon.ico'/>
+	 	 		<p>In your Profile Journal, your entries are encrypted. You're the only one that can access that--not even our developers can access it. We want you to be able to feel like you can express yourself without worrying that someone will find out. </p>
+		    </div>
+		  <!-- end of tabbed info section divs -->
+	    </div>
+	    <!-- END OF TABBED INFO -->
+    	
+	    <!-- START OF COLUMNS -->
+
+    	<!-- this is the resource link column -->
+    	<div class='col s6 m6 l3 resources'>
+    		<h5>Relevant Resources</h5>
+    		<ul class='browser-default'>
+    			<li>Example</li>
+    			<li>Example</li>
+    			<li>Example</li>
+    			<li>Example</li>
+    			<li>Example</li>
+    			<li>Example</li>
+    		</ul>
+    	</div>
+    	<!-- end of resource link column -->
+
+    	<!-- this is the rss feed column -->
+    	<div class='col s6 m6 l3 rss'>
+    		<h5>RSS Feed</h5>
+    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    	</div>
+    	<!-- end of rss feed column -->
+	    
+	    <!-- END OF COLUMNS -->
+ 	 </div>
+     
+ 	 <!-- START OF FOOTER -->
+ 	 <footer class="page-footer cyan lighten-2">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Terms of Service</h5>
+            <p class="grey-text text-lighten-4">Please read our terms of service <a href='http://www.chilis.com'>here</a> and be a decent human being and treat others with respect. Why is this so hard for some people oh my god?</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Navigation</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#nav">Top of Page</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Profile</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Resources</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Blog</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Log Out</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2018 Copyright
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+
+	<!-- jQuery Minified CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Materialize JS CDN -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js'></script>
+	<script src='template.js'></script>
 </body>
 </html>

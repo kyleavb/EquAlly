@@ -1,4 +1,50 @@
 /*this is the css file for all the template.html files in this folder*/
 
-/*HOME PAGE STYLING*/
+.brand-logo {
+	margin: 5px 0 0 5px;
+}
 
+/*FRONT PAGE STYLING*/
+
+.tab-img {
+	height: 100px;
+	width: 100px!important;
+	float: left;
+	margin: 15px;
+}
+
+.tabs-content.carousel.initialized {
+	height: 300px!important;
+}
+
+.resources {
+	border-left: solid #4dd0e1 2px;
+	border-right: solid #4dd0e1 2px;
+	overflow: scroll;
+}
+
+.main-info {
+	border-bottom: solid #4dd0e1 2px;
+	margin-bottom: 0 !important;
+}
+
+@media (max-width: 992px) {
+	.tab-container {
+		border-bottom: solid #4dd0e1 2px;
+	}
+	.resources {
+		border-right: solid #4dd0e1 2px;
+	}
+}
+
+.rss, .tab-content {
+	overflow: scroll;
+}
+
+.main-info div {
+	height: 300px!important;
+}
+
+h5 {
+	color: #00bcd4;
+}
