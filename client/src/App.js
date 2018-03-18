@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import LoginTest from './LoginTest'
+import axios from 'axios'
+import LoginTest from './TestFiles/LoginTest'
 
 class App extends Component {
   constructor(props){
