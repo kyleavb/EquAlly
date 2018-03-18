@@ -7,20 +7,20 @@ var passport = require('./config/passportConfig.js')
 var mongoose = require('mongoose');
 var auth = require('./routes/auth');
 
-var app = express();
-mongoose.connect('mongodb://localhost/EquAlly')
+mongoose.connect('mongodb://localhost/equAlly')
 
+var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.use(passport.initialize())
+app.use(passport.session())
+app.use('/auth', auth);
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }))
-app.use(passport.initialize())
-app.use(passport.session())
-app.use('/auth', auth);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
