@@ -16,6 +16,11 @@ router.get('/google/callback',
   }
 );
 
+router.get('/facebook', (req, res) => {
+  res.send('Hit route')
+  console.log('Facebook route hit')
+})
+
 router.get('/user', function(req, res, next){
   if(req.user){
     return res.json({user: req.user})
