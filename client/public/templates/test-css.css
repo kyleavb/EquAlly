@@ -57,7 +57,12 @@ h1, h2, h3, h4, h5, h6 {
 	padding-left: 10px;
 }
 
-.article-body::first-letter {
+.about-body {
+	border-bottom: #00bcd4 solid 2px;
+	padding-bottom: 25px;
+}
+
+.article-body::first-letter, .about-body::first-letter {
   color: #fbc02d ;
   float: left;
   font-size: 60px;
@@ -65,4 +70,27 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 8px;
   padding-right: 8px;
   padding-left: 3px;
+}
+
+/*.about-desc::first-letter {
+  color: #fbc02d ;
+  float: left;
+  font-size: 48px;
+  line-height: 40px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+}*/
+
+.mostly-human-developer {
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+}
+
+.social-icons {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	filter: opacity(60%);
 }

@@ -11,7 +11,132 @@
 <body>
 	
 	<!-- THIS IS THE NAV BAR, WE CAN TRANSLATE <LI>S INTO <LINK />S LATER  -->
+	<nav>
+	    <div class="nav-wrapper cyan lighten-2">
+	      <a href="#!" class="brand-logo"><img src='./equally-logo-sm.png'/></a>
+	      <a href="#!" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	      <ul class="right hide-on-med-and-down">
+		    <li><a href="/">Home</a></li>
+		    <!-- this will be log in when not logged in -->
+		    <li><a href="/profile">Profile</a></li>
+		    <!-- this will be sign up when not logged in -->
+		    <li><a href="/auth/logout">Log Out</a></li>
 
+		    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Navigate<i class="material-icons right">arrow_drop_down</i></a></li>
+		  </ul>
+	    </div>
+  	</nav>
+  	<ul id="dropdown1" class="dropdown-content">
+	  <li><a href="/chat">Live Chat</a></li>
+	  <li class="divider"></li>
+	  <li><a href="/resources">Resources</a></li>
+	  <li class="divider"></li>
+	  <li><a href="/blog">Blog</a></li>
+	  <li class="divider"></li>
+	  <li><a href="/about">About Us</a></li>
+	  <li class="divider"></li>
+	</ul>
+	<ul class="side-nav" id="mobile-demo">
+		<li><a href="/">Home</a></li>
+		<!-- this will be log in when not logged in -->
+		<li><a href="/profile">Profile</a></li>
+		<!-- this will be sign up when not logged in -->
+		<li><a href="/auth/logout">Log Out</a></li>
+
+		<li><a href="/chat">Live Chat</a></li>
+		<li><a href="/resources">Resources</a></li>
+		<li><a href="/blog">Blog</a></li>
+		<li><a href="/about">About Us</a></li>
+	</ul>
+	<!-- END OF NAV -->
+
+	<!-- START OF ABOUT US SECTION -->
+	<div class='row cyan darken-2'>
+		<div class='col s12 m12 l8 offset-l2'>
+			<h1 class='white-text about-us-title'>About Us</h1>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col s12 m12 l8 offset-l2'>
+			<p class='about-body'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col s12 m12 l8 offset-l2'>
+			<div class='col s12 m12 l4'>
+				<img class='mostly-human-developer' src='./chilismaster.jpg'/>
+				<br/>
+				<p class='about-desc'>Born and raised in a Chili's, Dan is basically a walking basket of hot wings. Full stack developer.</p>
+			</div>
+			<div class='col s12 m12 l4'>
+				<img class='mostly-human-developer' src='./lemon.jpg'/>
+				<br/>
+				<p class='about-desc'>Will fight anyone at any moment. Has a lot of attitude and a lot of tattoos. Dogs please interact. Full stack developer.</p>
+			</div>
+			<div class='col s12 m12 l4'>
+				<img class='mostly-human-developer' src='./chilismaster.jpg'/>
+				<br/>
+				<p class='about-desc'>I can't find any picture of Kyle. Here's Dan again.</p>
+			</div>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col s12 m12 l8 offset-l2'>
+			<div class='col s12 m12 l4 center'>
+				<a href='https://www.linkedin.com/in/danheyward'><img class='social-icons' src='./linkedin.png'/></a>
+				<a href='http://www.github.com/danheyward'><img class='social-icons' src='./github.png'/></a>
+				<a href='mail-to:danheyward@gmail.com'><img class='social-icons' src='./email.png'/></a>
+			</div>
+			<div class='col s12 m12 l4 center'>
+				<a href='https://www.linkedin.com/in/emilymariegarrett94'><img class='social-icons' src='./linkedin.png'/></a>
+				<a href='http://www.github.com/egarrett94'><img class='social-icons' src='./github.png'/></a>
+				<a href='mail-to:e.marie.garrett@gmail.com'><img class='social-icons' src='./email.png'/></a>
+			</div>
+			<div class='col s12 m12 l4 center'>
+				<a href='https://www.linkedin.com/in/kylevanbergen'><img class='social-icons' src='./linkedin.png'/></a>
+				<a href='http://www.github.com/kyleavb'><img class='social-icons' src='./github.png'/></a>
+				<a href='mail-to:kyleavb@gmail.com'><img class='social-icons' src='./email.png'/></a>
+			</div>
+			</div>
+		</div>
+	</div>
+	<!-- END OF ABOUT US -->
+
+	<!-- START OF FOOTER -->
+ 	 <footer class="page-footer cyan lighten-2">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Terms of Service</h5>
+            <p class="grey-text text-lighten-4">Please read our terms of service <a href='http://www.chilis.com'>here</a> and be a decent human being and treat others with respect. Why is this so hard for some people oh my god?</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Navigation</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#">Top of Page</a></li>
+              <li><a class="grey-text text-lighten-3" href="/profile">Profile</a></li>
+              <li><a class="grey-text text-lighten-3" href="/resources">Resources</a></li>
+              <li><a class="grey-text text-lighten-3" href="/blog">Blog</a></li>
+              <li><a class="grey-text text-lighten-3" href="/about">About Us</a></li>
+              <li><a class="grey-text text-lighten-3" href="/auth/logout">Log Out</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2018 Copyright
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+    <!-- END OF FOOTER -->
 
 	<!-- jQuery Minified CDN -->
 	<script
