@@ -1,6 +1,6 @@
 var passport = require('passport')
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-var FacebookStrategy = require('passport-facebook').OAuth2Strategy;
+var FacebookStrategy = require('passport-facebook')
 var GoogleUser = require('../models/googleUser')
 
 passport.serializeUser(function(user, done){
@@ -49,5 +49,35 @@ passport.use(new GoogleStrategy({
 ));
 
 //FACEBOOK SETTINGS
+passport.use(new FacebookStrategy({
+    clientID: process.env.FACEBOOK_APP_ID,
+    clientSecret: process.env.FACEBOOK_APP_SECRET,
+    //Update when deployed
+    callbackURL: 'http://localhost:3000/auth/facebook/callback'
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    FacebookUser.findOne({
+      'facebookId': profile.id
+    },
+    function(err, user){
+      if(err){
+        return done(err)
+      }
+      if(user){
+        return done(null, user)
+      }else{
+        var newUser = new FacebookUser();
+        newUser.facebookId = profile.id
+        newUser.save(function(err){
+          if(err){
+            throw err;
+          }else{
+            return done(null, newUser)
+          }
+        })
+      }
+    })
+  }
+))
 
 module.exports = passport;
