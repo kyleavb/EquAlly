@@ -24,6 +24,6 @@ app.use('/auth', auth);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log('app listening', PORT)
+  console.log('EquAlly is running on: ', PORT)
 })
 module.exports = app;
