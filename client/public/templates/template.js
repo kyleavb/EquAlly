@@ -7,4 +7,6 @@
 	$('.carousel.carousel-slider').carousel({fullWidth: true, indicators: true});
 	//tabs init
 	$('ul.tabs').tabs();
+	//dropdown menu init
+    $('select').material_select();
 // }
