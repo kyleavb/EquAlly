@@ -11,6 +11,85 @@
 <body>
 	
 	<!-- THIS IS THE NAV BAR, WE CAN TRANSLATE <LI>S INTO <LINK />S LATER  -->
+	<nav>
+	    <div class="nav-wrapper cyan lighten-2">
+	      <a href="#!" class="brand-logo"><img src='./equally-logo-sm.png'/></a>
+	      <a href="#!" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	      <ul class="right hide-on-med-and-down">
+		    <li><a href="/">Home</a></li>
+		    <!-- this will be log in when not logged in -->
+		    <li><a href="/profile">Profile</a></li>
+		    <!-- this will be sign up when not logged in -->
+		    <li><a href="/auth/logout">Log Out</a></li>
+
+		    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Navigate<i class="material-icons right">arrow_drop_down</i></a></li>
+		  </ul>
+	    </div>
+  	</nav>
+  	<ul id="dropdown1" class="dropdown-content">
+	  <li><a href="/chat">Live Chat</a></li>
+	  <li class="divider"></li>
+	  <li><a href="/resources">Resources</a></li>
+	  <li class="divider"></li>
+	  <li><a href="/blog">Blog</a></li>
+	  <li class="divider"></li>
+	  <li><a href="/about">About Us</a></li>
+	  <li class="divider"></li>
+	</ul>
+	<ul class="side-nav" id="mobile-demo">
+		<li><a href="/">Home</a></li>
+		<!-- this will be log in when not logged in -->
+		<li><a href="/profile">Profile</a></li>
+		<!-- this will be sign up when not logged in -->
+		<li><a href="/auth/logout">Log Out</a></li>
+
+		<li><a href="/chat">Live Chat</a></li>
+		<li><a href="/resources">Resources</a></li>
+		<li><a href="/blog">Blog</a></li>
+		<li><a href="/about">About Us</a></li>
+	</ul>
+	<!-- END OF NAV -->
+
+	<div class='row'>
+		<div class='col s12 m4 l4 offset-m3 offset-l3'>
+			<i class="material-icons medium">mood</i> Oh Henlo
+		</div>
+	</div>
+
+
+
+
+	<!-- START OF FOOTER -->
+ 	 <footer class="page-footer cyan lighten-2">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Terms of Service</h5>
+            <p class="grey-text text-lighten-4">Please read our terms of service <a href='http://www.chilis.com'>here</a> and be a decent human being and treat others with respect. Why is this so hard for some people oh my god?</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Navigation</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#">Top of Page</a></li>
+              <li><a class="grey-text text-lighten-3" href="/profile">Profile</a></li>
+              <li><a class="grey-text text-lighten-3" href="/resources">Resources</a></li>
+              <li><a class="grey-text text-lighten-3" href="/blog">Blog</a></li>
+              <li><a class="grey-text text-lighten-3" href="/about">About Us</a></li>
+              <li><a class="grey-text text-lighten-3" href="/auth/logout">Log Out</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2018 Copyright
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+    <!-- END OF FOOTER -->
+
 
 
 	<!-- jQuery Minified CDN -->
