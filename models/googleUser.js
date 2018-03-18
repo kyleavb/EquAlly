@@ -10,6 +10,7 @@ var googleUserSchema = new mongoose.Schema({
   }
 })
 
+
 var GoogleUser = mongoose.model('GoogleUser', googleUserSchema)
 
 module.exports = GoogleUser;
