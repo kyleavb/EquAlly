@@ -71,10 +71,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <Nav linkClick={this.linkClick}/>
+=======
+        <Nav />
+        <Home />
+        <Footer />
+>>>>>>> 64b5010e157a2c398e9d6ca630d745f8417f0dc0
+=======
 
         <Nav />
         <Home />
         <Footer />
+>>>>>>> bbd0b090fc498fb33dada0d80b2c7f229c605260
         <Home />
         <LoginTest />
         <Footer />
