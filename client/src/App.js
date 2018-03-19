@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios'
 
 import Home from './Home';
+import Nav from './Nav';
+import Footer from './Footer';
+
+import Login from './Login';
 
 import LoginTest from './TestFiles/LoginTest'
 
@@ -61,6 +65,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Nav />
+        <Login />
+        <Footer />
         <Home />
         <LoginTest />
       </div>

@@ -10,7 +10,7 @@ import HomeRSS from './HomeRSS';
 export default () => (
 	<div className='col s12 m12 l6 tab-container section'>
 		<Tabs className='tab'>
-		    <Tab title="Support" active>
+		    <Tab title="Support" className='col s3' active>
 			<div id="tab1" className="tab-content">
 		 	 		<h5>We're here for you.</h5>
 		 	 		<img className='tab-img' src={TabImage1}/>
@@ -18,7 +18,7 @@ export default () => (
 		 	 	</div>
 		 	 </Tab>
 
-		    <Tab title="Safe">
+		    <Tab title="Safe" className='col s3' >
 		    	<div id="tab2" className="s12 tab-content">
 			    	<h5>This is a safe space.</h5>
 		 	 		<img className='tab-img' src={TabImage2}/>
@@ -26,7 +26,7 @@ export default () => (
 			    </div>
 			</Tab>
 
-		    <Tab title="Diverse">
+		    <Tab title="Diverse" className='col s3' >
 		    	<div id="tab3" className="s12 tab-content">
 			    	<h5>Nobody is excluded.</h5>
 		 	 		<img className='tab-img' src={TabImage3}/>
@@ -34,7 +34,7 @@ export default () => (
 			    </div>
 			</Tab>
 
-		    <Tab title="Secure">
+		    <Tab title="Secure" className='col s3' >
 		    	<div id="tab4" className="s12 tab-content">
 			    	<h5>Your information is safe.</h5>
 		 	 		<img className='tab-img' src={TabImage4}/>

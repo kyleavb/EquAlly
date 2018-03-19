@@ -54,8 +54,13 @@ a {
 	overflow: scroll;
 }
 
-.category-box {
+.category-box, .login {
 	border: solid 4px #f48fb1;
+}
+
+.login {
+	padding: 50px!important;
+	margin: 50px auto;
 }
 
 .section, .category-box {
@@ -86,16 +91,6 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 8px;
   padding-left: 3px;
 }
-
-/*.about-desc::first-letter {
-  color: #fbc02d ;
-  float: left;
-  font-size: 48px;
-  line-height: 40px;
-  padding-top: 4px;
-  padding-right: 8px;
-  padding-left: 3px;
-}*/
 
 .mostly-human-developer {
 	width: 250px;
