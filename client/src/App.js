@@ -5,7 +5,7 @@ import Home from './Home';
 import Nav from './Nav';
 import Footer from './Footer';
 
-import Profile from './Profile';
+import AllBlogs from './AllBlogs';
 
 import LoginTest from './TestFiles/LoginTest'
 
@@ -66,10 +66,9 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
-        <Home />
+        <AllBlogs />
         <Footer />
-        <Home />
-        <LoginTest />
+
       </div>
     );
   }
