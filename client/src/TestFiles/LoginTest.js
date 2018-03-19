@@ -18,6 +18,7 @@ class LoginTest extends Component {
                 <a href='/auth/google'>Sign in with Google!</a>
                 <br />
                 <a href='/auth/facebook'>Sign in with FaceBook!</a>
+                <p>This is to test</p>
             </form>
           </div>
         )
