@@ -8,6 +8,10 @@ a {
 	color: #f48fb1;
 }
 
+.carousel-h3, .carousel-p {
+	text-shadow: 2px 2px 4px #000000;
+}
+
 .tab-img {
 	height: 100px;
 	width: 100px!important;
@@ -37,10 +41,18 @@ a {
 	.resources {
 		border-right: solid #4dd0e1 2px;
 	}
+	.category-box {
+		border-bottom: #4dd0e1 solid 2px;
+		margin-top: 20px;
+	}
 }
 
 .rss, .tab-content, .category-box {
 	overflow: scroll;
+}
+
+.category-box {
+	border: solid 4px #f48fb1;
 }
 
 .main-info div, .category-box {
