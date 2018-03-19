@@ -21,7 +21,10 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
-
+app.get('/test', (req, res) => {
+  console.log('hit /test')
+  res.send('test');
+})
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log('EquAlly is running on: ', PORT)
