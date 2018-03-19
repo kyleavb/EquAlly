@@ -68,6 +68,8 @@ class App extends Component {
         <Nav />
         <Home />
         <Footer />
+        <Home />
+        <LoginTest />
       </div>
     );
   }
