@@ -18,7 +18,7 @@ passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     //Update when deployed
-    callbackURL: 'http://localhost:3000/auth/google/callback'
+    callbackURL: '/auth/google/callback'
   },
   function(acessToken, refreshToken, profile, done){
     console.log(profile)
@@ -53,7 +53,7 @@ passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
     //Update when deployed
-    callbackURL: 'http://localhost:3000/auth/facebook/callback'
+    callbackURL: '/auth/facebook/callback'
   },
   function(accessToken, refreshToken, profile, cb) {
     FacebookUser.findOne({
@@ -61,10 +61,10 @@ passport.use(new FacebookStrategy({
     },
     function(err, user){
       if(err){
-        return done(err)
+        return cb(err)
       }
       if(user){
-        return done(null, user)
+        return cb(null, user)
       }else{
         var newUser = new FacebookUser();
         newUser.facebookId = profile.id
@@ -72,7 +72,7 @@ passport.use(new FacebookStrategy({
           if(err){
             throw err;
           }else{
-            return done(null, newUser)
+            return cb(null, newUser)
           }
         })
       }
