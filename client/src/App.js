@@ -5,7 +5,7 @@ import Home from './Home';
 import Nav from './Nav';
 import Footer from './Footer';
 
-import Login from './Login';
+import Profile from './Profile';
 
 import LoginTest from './TestFiles/LoginTest'
 
@@ -71,7 +71,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Nav linkClick={this.linkClick}/>
+
+        <Nav />
+        <Home />
+        <Footer />
         <Home />
         <LoginTest />
         <Footer />
