@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import Carousel from './Carousel';
 import LoginTest from './TestFiles/LoginTest'
 
 class App extends Component {
@@ -44,15 +45,24 @@ class App extends Component {
       }
     })
   }
+
+  linkClick(e){
+    e.preventDefault()
+    axios.get(e.target.href)
+      .then(response => {
+        console.log(response);
+      })
+  }
   componentDidMount(){
     // this.checkForGoogleUser()
   }
   render() {
     return (
       <div className="App">
-          <LoginTest />
-          <a href='/test'>click this too</a>
-          <button onClick='/test'>click me</button>
+          <Carousel />
+          <LoginTest click={this.linkClick}/>
+          <a href='/test' onClick={this.linkClick}>click this too</a>
+          This is stuff
           <p>compile3</p>
       </div>
     );
