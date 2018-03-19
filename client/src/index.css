@@ -50,7 +50,7 @@ a {
 	}
 }
 
-.rss, .tab-content, .category-box {
+.rss, .tab-content, .category-box, .section {
 	overflow: scroll;
 }
 
@@ -58,7 +58,7 @@ a {
 	border: solid 4px #f48fb1;
 }
 
-.main-info div, .category-box {
+.section, .category-box {
 	height: 300px!important;
 }
 

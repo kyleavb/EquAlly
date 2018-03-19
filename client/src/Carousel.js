@@ -1,6 +1,10 @@
 import React from 'react';
 import { Carousel } from 'react-materialize';
 import { Button, Card, Row, Col } from 'react-materialize';
+import CarouselImage1 from './img/couple-walking-sm.jpg';
+import CarouselImage2 from './img/seattle-trans-pride-march-sm.jpg';
+import CarouselImage3 from './img/hands-sm.jpg';
+import CarouselImage4 from './img/heart-hands-sm.jpg';
 
 export default () => (
 		<Carousel 
@@ -14,10 +18,11 @@ export default () => (
 			}
 			options={{fullWidth: true, indicators: true}}
 			images={[
-				'http://www.placekitten.com/g/800/400',
-				'http://www.placekitten.com/g/800/400',
-				'http://www.placekitten.com/g/800/400',
-				'http://www.placekitten.com/g/800/400'
+				CarouselImage1,
+				CarouselImage2,
+				CarouselImage3,
+				CarouselImage4
 				]}
 		/>
 	)
+

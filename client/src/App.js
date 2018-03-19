@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import Home from './Home';
 import LoginTest from './TestFiles/LoginTest'
 
 class App extends Component {
@@ -50,10 +51,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <LoginTest />
-          <a href='/test'>click this too</a>
-          <button onClick='/test'>click me</button>
-          <p>compile3</p>
+        <Home/>
       </div>
     );
   }
