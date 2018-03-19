@@ -7,7 +7,13 @@ var passport = require('../config/passportConfig')
 
 router.get('/google', passport.authenticate('google', {
   scope: ['https://www.googleapis.com/auth/plus.login']
-}));
+}), (req, res) => {
+  console.log('lo!');
+});
+
+router.get('/proxy', (req, res) => {
+  res.redirect('/auth/google')
+})
 
 router.get('/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),

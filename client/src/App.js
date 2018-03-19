@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+
 import Home from './Home';
+
 import LoginTest from './TestFiles/LoginTest'
 
 class App extends Component {
@@ -44,6 +46,14 @@ class App extends Component {
         })
       }
     })
+  }
+
+  linkClick(e){
+    e.preventDefault()
+    axios.get(e.target.href)
+      .then(response => {
+        console.log(response);
+      })
   }
   componentDidMount(){
     // this.checkForGoogleUser()
