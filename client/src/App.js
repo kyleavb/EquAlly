@@ -19,6 +19,13 @@ class App extends Component {
     })
   }
 
+  checkApi = () => {
+    axios.get('/test')
+      .then((response) => {
+        console.log(response.data)
+      })
+  }
+
   checkForGoogleUser(){
     axios.get('/auth/user').then(response => {
       if(response.data.user){
@@ -38,12 +45,15 @@ class App extends Component {
     })
   }
   componentDidMount(){
-    this.checkForGoogleUser()
+    // this.checkForGoogleUser()
   }
   render() {
     return (
       <div className="App">
           <LoginTest />
+          <a href='/test'>click this too</a>
+          <button onClick='/test'>click me</button>
+          <p>compile3</p>
       </div>
     );
   }
