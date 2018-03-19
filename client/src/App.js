@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import Carousel from './Carousel';
+
+import Home from './Home';
+
 import LoginTest from './TestFiles/LoginTest'
 
 class App extends Component {
@@ -59,11 +61,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Carousel />
-          <LoginTest click={this.linkClick}/>
-          <a href='/test' onClick={this.linkClick}>click this too</a>
-          This is stuff
-          <p>compile3</p>
+        <Home/>
       </div>
     );
   }
