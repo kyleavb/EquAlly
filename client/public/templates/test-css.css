@@ -9,7 +9,7 @@ a {
 }
 
 .carousel-h3, .carousel-p {
-	text-shadow: 2px 2px 4px #000000;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
 }
 
 .tab-img {
@@ -44,6 +44,9 @@ a {
 	.category-box {
 		border-bottom: #4dd0e1 solid 2px;
 		margin-top: 20px;
+	}
+	.socials {
+		margin-bottom: 50px;
 	}
 }
 
