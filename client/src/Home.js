@@ -9,14 +9,12 @@ import Footer from './Footer';
 
 const Home = () => (
 	<div>
-		<Navbar />
 		<Carousel />
 		<div className='row main-info'>
 			<HomeTabs />
 			<HomeResources />
 			<HomeRSS />
 		</div>
-		<Footer />
 	</div>
 )
 
