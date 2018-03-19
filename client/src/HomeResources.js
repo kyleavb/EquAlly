@@ -13,7 +13,6 @@ const HomeResources = () => (
 			<li>Example</li>
 		</ul>
 	</div>
-
 )
 
 export default HomeResources

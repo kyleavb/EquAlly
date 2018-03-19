@@ -17,7 +17,5 @@ export default () => (
 		  <NavItem href='/blog'>Blog</NavItem>
 		  <NavItem href='/about'>About Us</NavItem>
 		</Dropdown>
-
 	</Navbar>
-
 )

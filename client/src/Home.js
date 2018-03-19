@@ -5,6 +5,7 @@ import Navbar from './Nav';
 import HomeTabs from './HomeTabs';
 import HomeResources from './HomeResources';
 import HomeRSS from './HomeRSS';
+import Footer from './Footer';
 
 const Home = () => (
 	<div>
@@ -15,6 +16,7 @@ const Home = () => (
 			<HomeResources />
 			<HomeRSS />
 		</div>
+		<Footer />
 	</div>
 )
 
