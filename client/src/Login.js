@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import { Row, Col, Button } from 'react-materialize';
-import Nav from './Nav';
-import Footer from './Footer';
 
 class Login extends Component {
 
@@ -13,7 +11,7 @@ class Login extends Component {
 					<Col s={12} m={8} l={6} offset={'m2 l3'}><h3 className='white-text'>Log In!</h3></Col>
 				</Row>
 				<Row>
-					<div class='center col s12 m8 l6 login offset-m2 offset-l3'>
+					<div className='center col s12 m8 l6 login offset-m2 offset-l3'>
 						<i className='material-icons large grey-text text-lighten-1'>account_circle</i>
 						<p>We take our users' privacy and safety very seriously, so we only offer logging in via Facebook or Google. We want to make sure you're a real person!</p>
 						<br/>
