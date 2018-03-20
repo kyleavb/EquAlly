@@ -7,7 +7,7 @@ import {
 import Logo from './img/equally-logo-sm.png';
 import Home from './Home';
 import Profile from './Profile';
-
+import LoginTest from './TestFiles/LoginTest'
 import AllBlogs from './AllBlogs';
 import Chat from './Chat';
 import Resources from './Resources';
