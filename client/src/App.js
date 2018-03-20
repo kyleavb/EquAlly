@@ -12,8 +12,6 @@ import LoginTest from './TestFiles/LoginTest'
 import Layout from './Layout';
 // import './TestFiles/index.css';
 
-const socketUrl = "http://localhost:5000"
-
 
 class App extends Component {
   constructor(props){

@@ -3,13 +3,18 @@ import { Row, Col } from 'react-materialize';
 import Navbar from './Nav';
 import Footer from './Footer';
 import io from 'socket.io-client';
+import { USER_CONNECTED, LOGOUT } from './TestFiles/Events';
+import LoginForm from './TestFiles/LoginForm';
+
+const socketUrl = "http://localhost:5000"
 
 
 class Layout extends Component {
   constructor(props){
       super(props)
       this.state = {
-        socket: null
+        socket: null,
+        user: null
       }
     }
 
@@ -17,21 +22,36 @@ class Layout extends Component {
     this.initSocket()
   }
 
-  // Connect to and the initializes the socket.
+  // Connect to and initializes the socket.
   initSocket = () => {
     const socket = io(socketUrl)
-    socket.on('connection', () => {
+    socket.on('connect', () => {
       console.log(`Connected`)
     })
     this.setState({ socket })
   }
 
+  // Sets the user property in state
+  setUser = user => {
+    const { socket } = this.state
+    socket.emit(USER_CONNECTED)
+    this.setState({ user })
+  }
+
+  // Sets the user property in state to null
+  logout = () => {
+    const { socket } = this.state
+    socket.emit(LOGOUT)
+    this.setState({ user: null })
+  }
+
   render() {
     const { title } = this.props
+    const { socket } = this.state
 
     return (
       <div className='container'>
-        {title}
+        <LoginForm socket={socket} setUser={this.setUser} />
       </div>
     )
   }
