@@ -11,6 +11,7 @@ import LoginTest from './TestFiles/LoginTest'
 import AllBlogs from './AllBlogs';
 import Chat from './Chat';
 import Resources from './Resources';
+import About from './About';
 
 
 var logo = <img src={Logo} alt=''/>
@@ -37,6 +38,7 @@ class Nav extends Component {
 				<Route exact path='/' render={() => <Home />} />
 
 		        <Route path='/profile' render={() => <Profile />} />
+		        <Route path='/about' render={() => <About />} />
 		        <Route path='/blog' render={() => <AllBlogs />} />
 		        <Route path='/chat' render={() => <Chat />} />
 		        <Route path='/resources' render={() => <Resources />} />
