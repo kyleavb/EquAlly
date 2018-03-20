@@ -3,13 +3,18 @@ import { Input } from 'react-materialize';
 
 class BlogFilter extends Component {
 
+
+	handleFilterList(){
+
+	}
+
 	render() {
 		return(
 			<div>
-				<div class="input-field col s6">
-		          <i class="white-text material-icons prefix">search</i>
-		          <input id="keywords" class="materialize-input"></input>
-		          <label for="keywords" class='white-text'></label>
+				<div className="input-field col s6">
+		          <i className="white-text material-icons prefix">search</i>
+		          <input id="keywords" className="materialize-input"></input>
+		          <label htmlFor="keywords" className='white-text'></label>
 		        </div>
 
 		         <Input s={3} type='select' className='white-text' label="Pick a category:" defaultValue=''>
@@ -20,20 +25,20 @@ class BlogFilter extends Component {
 					<option value="3">Events</option>
 				  </Input>
 
-				<div class="input-field col s3 white-text">
-				    <select>
-						<option value="" disabled selected>Choose your option</option>
+				<div className="input-field col s3 white-text">
+				    <select name='dropdown' onChange={this.handleFilterList}>
+						<option defaultValue="Choose your option" disabled selected>Choose your option</option>
 						<option value="1">LGBTQIA+</option>
 						<option value="2">Mental Health</option>
 						<option value="3">Opinions</option>
 						<option value="3">Events</option>
 				    </select>
-				    <label class='white-text'>Pick a category: </label>	
+				    <label className='white-text'>Pick a category: </label>
 				</div>
 
-				<div class='input-field col s3'>
-					<button class="btn waves-effect waves-light yellow darken-2" type="submit" name="action">Search
-				    	<i class="material-icons right">search</i>
+				<div className='input-field col s3'>
+					<button className="btn waves-effect waves-light yellow darken-2" type="submit" name="action">Search
+				    	<i className="material-icons right">search</i>
 					</button>
 				</div>
 			</div>

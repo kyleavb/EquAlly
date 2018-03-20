@@ -8,9 +8,9 @@ class CategoryBox extends Component {
 
 	render() {
 		return(
-			<div class='col s12 m8 l4 offset-m2 offset-l1 category-box'>
-				<a href='#'><h5>Title Type</h5></a>
-				<div class='col s12 article-preview'>
+			<div className='col s12 m8 l4 offset-m2 offset-l1 category-box'>
+				<a href='/'><h5>Title Type</h5></a>
+				<div className='col s12 article-preview'>
 					<ArticleTeaser />
 					<ArticleTeaser />
 					<ArticleTeaser />

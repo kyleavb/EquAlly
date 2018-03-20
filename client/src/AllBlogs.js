@@ -3,18 +3,18 @@ import BlogFilter from './BlogFilter';
 import CategoryBox from './CategoryBox';
 
 class AllBlogs extends Component {
-	
+
 	render() {
 		return(
 			<div>
-				<div class='row cyan darken-2'>
-					<div class='col s12 m12 l8 offset-l2'>
-						<h1 class='white-text blogs-title'>Blogs</h1>
+				<div className='row cyan darken-2'>
+					<div className='col s12 m12 l8 offset-l2'>
+						<h1 className='white-text blogs-title'>Blogs</h1>
 						<BlogFilter />
 					</div>
 				</div>
 
-				<div class='row'>
+				<div className='row'>
 					<CategoryBox />
 					<CategoryBox />
 					<CategoryBox />
@@ -22,7 +22,7 @@ class AllBlogs extends Component {
 				</div>
 				
 			</div>
-		)	
+		)
 	}
 
 }

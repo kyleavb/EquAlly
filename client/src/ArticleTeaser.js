@@ -6,11 +6,11 @@ import React, {Component} from 'react';
 
 
 class ArticleTeaser extends Component {
-
+	
 	render() {
 		return(
 			<div>
-				<i class='yellow-text text-darken-2 material-icons medium left'>description</i>
+				<i className='yellow-text text-darken-2 material-icons medium left'>description</i>
 				<h6>Article Title</h6>
 				<span>Article Teaser. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</span>
