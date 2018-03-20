@@ -9,16 +9,23 @@ import Login from './Login';
 
 import LoginTest from './TestFiles/LoginTest'
 
+import Layout from './Layout';
+// import './TestFiles/index.css';
+
+const socketUrl = "http://localhost:5000"
+
+
 class App extends Component {
   constructor(props){
       super(props)
       this.state = {
         token: '',
         user: null,
-        googleUser: null
+        googleUser: null,
       }
       this.liftTokenToState = this.liftTokenToState.bind(this)
     }
+
   liftTokenToState(data) {
     this.setState({
       token: data.token,
@@ -62,6 +69,7 @@ class App extends Component {
   componentDidMount(){
     // this.checkForGoogleUser()
   }
+
   render() {
     return (
       <div className="App">
@@ -70,6 +78,7 @@ class App extends Component {
         <Footer />
         <Home />
         <LoginTest />
+        <Layout title={'Example Title'}/>
       </div>
     );
   }

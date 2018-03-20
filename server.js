@@ -11,6 +11,9 @@ var cors = require('cors')
 mongoose.connect('mongodb://localhost/equAlly')
 
 var app = express();
+var http = require('http').Server(app)
+var io = require('socket.io')(http);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'client', 'build')));
@@ -30,8 +33,28 @@ app.get('/test', (req, res) => {
   console.log('hit /test')
   res.send('worked')
 })
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log('EquAlly is running on: ', PORT)
+
+app.get('/chat', (req, res) => {
+  res.sendFile(__dirname + '/client/src/TestFiles/index.html')
 })
+
+io.on('connection', socket => {
+  console.log(`User #${socket.id} connected`)
+  socket.on('disconnect', () => {
+    console.log(`User #${socket.id} disconnected`)
+  })
+})
+
+const PORT = process.env.PORT || 5000;
+
+http.listen(PORT, () => {
+  console.log(`Listening on ${PORT}`)
+})
+
+// app.listen(PORT, () => {
+//   console.log('EquAlly is running on: ', PORT)
+// })
+
+
+
 module.exports = app;
