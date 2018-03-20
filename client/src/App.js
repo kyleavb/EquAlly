@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-
-import Home from './Home';
 import Nav from './Nav';
 import Footer from './Footer';
 
-import LoginTest from './TestFiles/LoginTest'
+// import LoginTest from './TestFiles/LoginTest'
 
 class App extends Component {
   constructor(props){
@@ -37,7 +35,6 @@ class App extends Component {
     return (
       <div className="App">
         <Nav linkClick={this.linkClick}/>
-
         <Footer />
       </div>
 
