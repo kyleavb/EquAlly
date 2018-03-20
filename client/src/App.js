@@ -4,6 +4,10 @@ import Nav from './Nav';
 import Footer from './Footer';
 
 
+import Layout from './Layout';
+// import './TestFiles/index.css';
+
+
 class App extends Component {
   constructor(props){
       super(props)
@@ -12,6 +16,7 @@ class App extends Component {
       }
       this.liftTokenToState = this.liftTokenToState.bind(this)
     }
+
   liftTokenToState(data) {
     this.setState({
       token: data.token,
