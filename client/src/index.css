@@ -136,8 +136,17 @@ h1, h2, h3, h4, h5, h6 {
 	filter: opacity(60%);
 }
 
-.map {
+.map, .resources-list {
 	overflow: hidden;
+	height: 450px!important;
+}
+
+.resources-list {
+	overflow: scroll!important;
+}
+
+.resources-ul {
+	margin: 0 40px!important;
 }
 
 .resources-row {

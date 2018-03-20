@@ -28,7 +28,8 @@ export default () => (
 				<div class='col s12 m12 l4 center'>
 					<img class='mostly-human-developer' src={Chilismaster}/>
 					<br/>
-					<p class='about-desc'>Born and raised in a Chili's, Dan is basically a walking basket of hot wings. Full stack developer.</p>
+					<p className='yellow-text text-darken-2'>Daniel Heyward</p>
+					<p class='about-desc'>Dan's past life in marketing helped shape his perception of how we as a community think and interact with each other, and finds that true power comes from using our strengths to help those less fortunate. His goal is to apply his fullstack talents to bridge the gap between optimistic opportunity and impactful reality.</p>
 					<div class='col s12 center socials'>
 						<a href='https://www.linkedin.com/in/danheyward'><img class='social-icons' src={LinkedIn}/></a>
 						<a href='http://www.github.com/danheyward'><img class='social-icons' src={GitHub}/></a>
@@ -38,7 +39,8 @@ export default () => (
 				<div class='col s12 m12 l4 center'>
 					<img class='mostly-human-developer' src={Lemon}/>
 					<br/>
-					<p class='about-desc'>Will fight anyone at any moment. Has a lot of attitude and a lot of tattoos. Dogs please interact. Full stack developer.</p>
+					<p className='yellow-text text-darken-2'>Emily "Lemon" Garrett</p>
+					<p class='about-desc'>Lemon is passionate about taking the opportunity to utilize the endless resources that technology provides to help those in need. She deeply believes in using technology for more than just creating the slickest new product or game; she believes in employing it to promote inclusivity and create change.</p>
 					<div class='col s12 center socials'>
 						<a href='https://www.linkedin.com/in/emilymariegarrett94'><img class='social-icons' src={LinkedIn}/></a>
 						<a href='http://www.github.com/egarrett94'><img class='social-icons' src={GitHub}/></a>
@@ -48,7 +50,8 @@ export default () => (
 				<div class='col s12 m12 l4 center'>
 					<img class='mostly-human-developer' src={Gonthor}/>
 					<br/>
-					<p class='about-desc'>I can't find any picture of Kyle. Here's Dan again.</p>
+					<p className='yellow-text text-darken-2'>Kyle Van Bergen</p>
+					<p class='about-desc'>As a full-stack developer with robust experience as a technical consultant, Kyle's tendency toward purpose-driven work is deeply ingrained. Working in both large and small teams has allowed him to produce thoughtful, effective solutions through compromise and constructive collaboration.</p>
 					<div class='col s12 center socials'>
 						<a href='https://www.linkedin.com/in/kylevanbergen'><img class='social-icons' src={LinkedIn}/></a>
 						<a href='http://www.github.com/kyleavb'><img class='social-icons' src={GitHub}/></a>
