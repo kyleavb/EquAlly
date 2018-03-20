@@ -12,7 +12,7 @@ export default () => (
 				<h3 className='yellow-text text-darken-2 carousel-h3'>Talk to someone about it.</h3>
 				<p className='center white-text carousel-p'>Whatever you may be going through, we have someone who can help. Chat with an expert about it without fear of judgment.</p>
 				<br/><br/><br/>
-				<button className='btn waves-effect pink lighten-2 white-text'>Chat now!</button>
+				<a className='btn waves-effect pink lighten-2 white-text' href='/chat'>Chat now!</a>
 				</div>
 			}
 			options={{fullWidth: true, indicators: true}}

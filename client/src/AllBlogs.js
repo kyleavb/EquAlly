@@ -20,9 +20,7 @@ class AllBlogs extends Component {
 					<CategoryBox />
 					<CategoryBox />
 				</div>
-
-
-
+				
 			</div>
 		)
 	}

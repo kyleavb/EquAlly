@@ -7,8 +7,11 @@ import {
 import Logo from './img/equally-logo-sm.png';
 import Home from './Home';
 import Profile from './Profile';
-import AllBlogs from './AllBlogs'
-import LoginTest from './TestFiles/LoginTest'
+
+import AllBlogs from './AllBlogs';
+import Chat from './Chat';
+import Resources from './Resources';
+
 
 var logo = <img src={Logo} alt=''/>
 
@@ -32,9 +35,13 @@ class Nav extends Component {
 					</Dropdown>
 				</Navbar>
 				<Route exact path='/' render={() => <Home />} />
-        <Route path='/profile' render={() => <Profile />} />
-        <Route path='/blog' render={() => <AllBlogs />} />
-        <Route path='/logintest' render={() => <LoginTest />} />
+
+		        <Route path='/profile' render={() => <Profile />} />
+		        <Route path='/blog' render={() => <AllBlogs />} />
+		        <Route path='/chat' render={() => <Chat />} />
+		        <Route path='/resources' render={() => <Resources />} />
+            <Route path='/logintest' render={() => <LoginTest />} />
+
 				</div>
 			</Router>
 		)
