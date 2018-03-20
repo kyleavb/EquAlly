@@ -30,8 +30,8 @@ export default () => (
 				<div class='col s12 m12 l4 center'>
 					<img class='mostly-human-developer' src={Chilismaster} alt='img'/>
 					<br/>
-					<p className='yellow-text text-darken-2'>Daniel Heyward</p>
-					<p className='grey-text text-lighten-1'>He/Him</p>
+					<h5 className='yellow-text text-darken-2'>Daniel Heyward</h5>
+					<p className='grey-text text-lighten-1'><em>He/Him</em></p>
 					<p class='about-desc'>Dan's past life in marketing helped shape his perception of how we as a community think and interact with each other, and finds that true power comes from using our strengths to help those less fortunate. His goal is to apply his fullstack talents to bridge the gap between optimistic opportunity and impactful reality.</p>
 					<div class='col s12 center socials'>
 						<a href='http://www.github.com/danheyward'><img class='social-icons' src={GitHub} alt='img'/></a>
@@ -42,8 +42,8 @@ export default () => (
 				<div class='col s12 m12 l4 center'>
 					<img class='mostly-human-developer' src={Lemon} alt='img'/>
 					<br/>
-					<p className='yellow-text text-darken-2'>Emily "Lemon" Garrett</p>
-					<p className='grey-text text-lighten-1'>She/Her/They/Them</p>
+					<h5 className='yellow-text text-darken-2'>Emily "Lemon" Garrett</h5>
+					<p className='grey-text text-lighten-1'><em>She/Her/They/Them</em></p>
 					<p class='about-desc'>Lemon is passionate about taking the opportunity to utilize the endless resources that technology provides to help those in need. She deeply believes in using technology for more than just creating the slickest new product or game; she believes in employing it to promote inclusivity and create change.</p>
 					<div class='col s12 center socials'>
 						<a href='http://www.github.com/egarrett94'><img class='social-icons' src={GitHub} alt='img'/></a>
@@ -54,8 +54,8 @@ export default () => (
 				<div class='col s12 m12 l4 center'>
 					<img class='mostly-human-developer' src={Gonthor} alt='img'/>
 					<br/>
-					<p className='yellow-text text-darken-2'>Kyle Van Bergen</p>
-					<p className='grey-text text-lighten-1'>He/Him</p>
+					<h5 className='yellow-text text-darken-2'>Kyle Van Bergen</h5>
+					<p className='grey-text text-lighten-1'><em>He/Him</em></p>
 					<p class='about-desc'>As a full-stack developer with robust experience as a technical consultant, Kyle's tendency toward purpose-driven work is deeply ingrained. Working in both large and small teams has allowed him to produce thoughtful, effective solutions through compromise and constructive collaboration.</p>
 					<div class='col s12 center socials'>
 						<a href='http://www.github.com/kyleavb'><img class='social-icons' src={GitHub} alt='img'/></a>
