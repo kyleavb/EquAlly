@@ -8,18 +8,19 @@ import Logo from './img/equally-logo-sm.png';
 import Home from './Home';
 import Profile from './Profile';
 import AllBlogs from './AllBlogs'
+import LoginTest from './TestFiles/LoginTest'
 
 var logo = <img src={Logo} alt=''/>
 
 class Nav extends Component {
-
 	render(){
 		return(
 			<Router>
 			<div>
 				<Navbar brand={logo} className='cyan lighten-2' right>
 					<NavItem href='/'>Home</NavItem>
-					<NavItem href='/profile' href='/profile'>Profile</NavItem>
+          <NavItem href='/logintest'>Test Logins</NavItem>
+					<NavItem href='/profile'>Profile</NavItem>
 					<NavItem href="/auth/logout">Log Out</NavItem>
 					<Dropdown trigger={
 				    	<NavItem>Navigate</NavItem>
@@ -33,6 +34,7 @@ class Nav extends Component {
 				<Route exact path='/' render={() => <Home />} />
         <Route path='/profile' render={() => <Profile />} />
         <Route path='/blog' render={() => <AllBlogs />} />
+        <Route path='/logintest' render={() => <LoginTest />} />
 				</div>
 			</Router>
 		)
