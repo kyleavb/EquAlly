@@ -15,47 +15,52 @@ export default () => (
 		</div>
 		<div class='row'>
 			<div class='col s12 m12 l8 offset-l2'>
-				<p class='about-body'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p class='about-body'>Hey, friend. As the developers behind this product, we are steadfastly passionate about promoting equality and inclusivity. 
+				We all come from drastically different backgrounds, but very fortunately happened to take the same WDI course at the same time at
+				General Assembly in Seattle, WA. Upon having the opportunity to work together as a team, we decided to put our skills and 
+				our shared passion for using technology as a platform for positive, meaningful impact together to create this resourceful 
+				web application. Taking the tumultuous and unreliable political climate nowadays into consideration, we wanted to create something 
+				that would make existing as a marginalized member of the community feel a bit safer and make navigating the world as such a bit 
+				less daunting. Please feel free to leave us feedback regarding this app--we know there's always room for improvement, whether that 
+				is in regards to the construction of our site or the content itself.</p>
 			</div>
 		</div>
 		<div class='row'>
 			<div class='col s12 m12 l8 offset-l2'>
 				<div class='col s12 m12 l4 center'>
-					<img class='mostly-human-developer' src={Chilismaster}/>
+					<img class='mostly-human-developer' src={Chilismaster} alt='img'/>
 					<br/>
 					<p className='yellow-text text-darken-2'>Daniel Heyward</p>
+					<p className='grey-text text-lighten-1'>He/Him</p>
 					<p class='about-desc'>Dan's past life in marketing helped shape his perception of how we as a community think and interact with each other, and finds that true power comes from using our strengths to help those less fortunate. His goal is to apply his fullstack talents to bridge the gap between optimistic opportunity and impactful reality.</p>
 					<div class='col s12 center socials'>
-						<a href='https://www.linkedin.com/in/danheyward'><img class='social-icons' src={LinkedIn}/></a>
-						<a href='http://www.github.com/danheyward'><img class='social-icons' src={GitHub}/></a>
-						<a href='mail-to:danheyward@gmail.com'><img class='social-icons' src={Email}/></a>
+						<a href='http://www.github.com/danheyward'><img class='social-icons' src={GitHub} alt='img'/></a>
+						<a href='https://www.linkedin.com/in/danheyward'><img class='social-icons' src={LinkedIn} alt='img'/></a>
+						<a href='mail-to:danheyward@gmail.com'><img class='social-icons' src={Email} alt='img'/></a>
 					</div>
 				</div>
 				<div class='col s12 m12 l4 center'>
-					<img class='mostly-human-developer' src={Lemon}/>
+					<img class='mostly-human-developer' src={Lemon} alt='img'/>
 					<br/>
 					<p className='yellow-text text-darken-2'>Emily "Lemon" Garrett</p>
+					<p className='grey-text text-lighten-1'>She/Her/They/Them</p>
 					<p class='about-desc'>Lemon is passionate about taking the opportunity to utilize the endless resources that technology provides to help those in need. She deeply believes in using technology for more than just creating the slickest new product or game; she believes in employing it to promote inclusivity and create change.</p>
 					<div class='col s12 center socials'>
-						<a href='https://www.linkedin.com/in/emilymariegarrett94'><img class='social-icons' src={LinkedIn}/></a>
-						<a href='http://www.github.com/egarrett94'><img class='social-icons' src={GitHub}/></a>
-						<a href='mail-to:e.marie.garrett@gmail.com'><img class='social-icons' src={Email}/></a>
+						<a href='http://www.github.com/egarrett94'><img class='social-icons' src={GitHub} alt='img'/></a>
+						<a href='https://www.linkedin.com/in/emilymariegarrett94'><img class='social-icons' src={LinkedIn} alt='img'/></a>
+						<a href='mail-to:e.marie.garrett@gmail.com'><img class='social-icons' src={Email} alt='img'/></a>
 					</div>
 				</div>
 				<div class='col s12 m12 l4 center'>
-					<img class='mostly-human-developer' src={Gonthor}/>
+					<img class='mostly-human-developer' src={Gonthor} alt='img'/>
 					<br/>
 					<p className='yellow-text text-darken-2'>Kyle Van Bergen</p>
+					<p className='grey-text text-lighten-1'>He/Him</p>
 					<p class='about-desc'>As a full-stack developer with robust experience as a technical consultant, Kyle's tendency toward purpose-driven work is deeply ingrained. Working in both large and small teams has allowed him to produce thoughtful, effective solutions through compromise and constructive collaboration.</p>
 					<div class='col s12 center socials'>
-						<a href='https://www.linkedin.com/in/kylevanbergen'><img class='social-icons' src={LinkedIn}/></a>
-						<a href='http://www.github.com/kyleavb'><img class='social-icons' src={GitHub}/></a>
-						<a href='mail-to:kyleavb@gmail.com'><img class='social-icons' src={Email}/></a>
+						<a href='http://www.github.com/kyleavb'><img class='social-icons' src={GitHub} alt='img'/></a>
+						<a href='https://www.linkedin.com/in/kylevanbergen'><img class='social-icons' src={LinkedIn} alt='img'/></a>
+						<a href='mail-to:kyleavb@gmail.com'><img class='social-icons' src={Email} alt='img'/></a>
 					</div>
 				</div>
 			</div>
