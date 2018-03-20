@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Row } from 'react-materialize';
-import CommentForm from './CommentForm';
 class Comment extends Component {
 
 	render() {
@@ -12,8 +11,6 @@ class Comment extends Component {
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 				consequat.</p>
-
-				<Row><CommentForm /></Row>
 			</div>
 		)
 

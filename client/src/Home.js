@@ -4,7 +4,6 @@ import HomeTabs from './HomeTabs';
 import HomeResources from './HomeResources';
 import HomeRSS from './HomeRSS';
 
-
 const Home = () => (
 	<div>
 		<Carousel />

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Row, Col, Button} from 'react-materialize';
 import Comment from './Comment';
+import CommentForm from './CommentForm';
 
 class SingleArticle extends Component {
 
@@ -34,6 +35,11 @@ class SingleArticle extends Component {
 					<h4>Comments</h4>
 					<Comment />
 					<Comment />
+				</div>
+			</Row>
+			<Row>
+				<div class="input-field col s12 m6 l6 offset-m2 offset-l2">
+					<CommentForm />
 				</div>
 			</Row>
 			</div>

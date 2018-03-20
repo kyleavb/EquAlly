@@ -6,7 +6,7 @@ import CarouselImage3 from './img/hands-sm.jpg';
 import CarouselImage4 from './img/heart-hands-sm.jpg';
 
 export default () => (
-		<Carousel 
+		<Carousel
 			fixedItem={
 				<div>
 				<h3 className='yellow-text text-darken-2 carousel-h3'>Talk to someone about it.</h3>
@@ -24,4 +24,3 @@ export default () => (
 				]}
 		/>
 	)
-
