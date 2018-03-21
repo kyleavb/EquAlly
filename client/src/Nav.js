@@ -13,6 +13,7 @@ import Chat from './Chat';
 import Resources from './Resources';
 
 
+
 var logo = <img src={Logo} alt=''/>
 
 class Nav extends Component {

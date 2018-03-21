@@ -11,6 +11,7 @@ class LoginTest extends Component {
                 <br />
                 <a href='/auth/facebook' onClick={this.props.click}>Sign in with FaceBook!</a>
                 <p>This is to test</p>
+                <a href='/test'>test</a>
             </form>
           </div>
         )
