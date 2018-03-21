@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import {
   addComment
 } from '../action/actions'
+
 import store from '../store/store'
+
 
 class LoginTest extends Component {
   handleButton(){
