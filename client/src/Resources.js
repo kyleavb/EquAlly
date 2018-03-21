@@ -1,7 +1,26 @@
 import React, {Component} from 'react';
-import { Row, Col } from 'react-materialize';
+import { Row, Col, Input } from 'react-materialize';
+import Map from './Map';
 
 class Resources extends Component {
+
+	constructor(props) {
+	    super(props);
+	    this.state = {
+	      query: ''
+	    }
+	    this.handleChange = this.handleChange.bind(this)
+	    this.handleSubmit = this.handleSubmit.bind(this)
+	}
+
+	handleChange(event) {
+	    this.setState({query: event.target.value});
+	}
+
+	handleSubmit(event) {
+	    console.log('a search query was submitted: ' + this.state.query);
+	    event.preventDefault();
+	}
 
 	render() {
 
@@ -9,17 +28,28 @@ class Resources extends Component {
 			<Row>
 				<div>
 				<Col s={12} m={8} l={8} offset='m2 l2' className='resources-row'>
-					<Col s={6} m={6} l={6} className='resources-list cyan lighten-5'>
+					<Col s={12} m={12} l={6} className='resources-list cyan lighten-5'>
+						<Row>
 						<h4><i className='material-icons medium yellow-text text-darken-2 inline'>flag</i>Resources</h4>
-						<ul className='browser-default grey-text resources-ul'>
-							<li><a href='/'>This is a link</a></li>
-							<li><a href='/'>This is a link</a></li>
-							<li><a href='/'>This is a link</a></li>
-							<li><a href='/'>This is a link</a></li>
-						</ul>
+						 <form onSubmit={this.handleSubmit}  className='browser-default'>
+				          <Input type='text' value={this.state.query} onChange={this.handleChange} label='Search here...'/>
+				          <Input type='submit' className='btn waveseffect pink lighten-2 white-text' />
+				        </form>
+				        </Row>
+				        <Row>
+				        	<p>If you're having trouble thinking of what you may need, here's a list of helpful search queries: </p>
+				        	<ul className='resources-ul center'>
+				        		<li>LGBT healthcare</li>
+				        		<li>Trans healthcare</li>
+				        		<li>Women's health</li>
+				        		<li>LGBT youth care</li>
+				        		<li>Youth counseling</li>
+				        		<li>ACLU location</li>
+				        	</ul>
+				        </Row>
 					</Col>
-					<Col s={6} m={6} l={6} className='map'>
-						<img src='http://vignette4.wikia.nocookie.net/halo/images/a/a5/Blood_gulch.jpg/revision/20091020035023' alt='halo duh'/>
+					<Col s={12} m={12} l={6} className='map'>
+						<Map query={this.state.query} />
 					</Col>
 				</Col>
 				</div>
