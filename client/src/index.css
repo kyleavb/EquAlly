@@ -19,6 +19,10 @@ a {
 	margin: 15px;
 }
 
+.carousel-item img {
+	object-fit: none!important;
+}
+
 .journal-container {
 	overflow: scroll;
 	height: 300px!important;
@@ -134,10 +138,20 @@ h1, h2, h3, h4, h5, h6 {
 	height: 50px;
 	display: inline-block;
 	filter: opacity(60%);
+	margin: 0 4px;
 }
 
-.map {
+.map, .resources-list {
 	overflow: hidden;
+	height: 450px!important;
+}
+
+.resources-list {
+	overflow: scroll!important;
+}
+
+.resources-ul {
+	margin: 0 40px!important;
 }
 
 .resources-row {
