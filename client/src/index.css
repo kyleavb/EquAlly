@@ -19,14 +19,8 @@ a {
 	margin: 15px;
 }
 
-.carousel-item.active img {
-	width: auto;
-	height: 345px;
-	overflow: hidden;
-}
-
-.carousel-item {
-	width: 100%;
+.carousel-item img {
+	object-fit: none!important;
 }
 
 .journal-container {
