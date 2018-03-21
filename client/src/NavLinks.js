@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import { Navbar, Dropdown, NavItem } from 'react-materialize';
+import { Navbar, Dropdown } from 'react-materialize';
 import {
-	BrowserRouter as Router,
-	Route,
 	Link
 } from 'react-router-dom';
 import Logo from './img/equally-logo-sm.png';
@@ -19,7 +17,7 @@ class NavLinks extends Component {
 				<li><Link to='/profile'>Profile</Link></li>
 				<li><Link to='/auth/logout'>Log Out</Link></li>
 				<Dropdown trigger={
-			    	<li>Navigate</li>
+			    	<li><a href='#!'>Navigate</a></li>
 			  	}>
 				  <li><Link to='/chat'>Live Chat</Link></li>
 				  <li><Link to='/resources'>Resources</Link></li>
