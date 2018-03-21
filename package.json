@@ -3,14 +3,10 @@
   "version": "1.0.0",
   "description": "ally site",
   "main": "index.js",
-  "watch": {
-    "build": "client/src/"
-  },
   "scripts": {
-    "server": "nodemon server.js",
     "client": "cd client && HTTPS=true npm start",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon HTTPS=true server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -40,5 +36,8 @@
     "redux": "^3.7.2",
     "socket.io": "^2.0.4",
     "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
   }
 }

@@ -1,38 +1,31 @@
-require('dotenv').config();
-var express = require('express');
-var path = require('path');
-var bodyParser = require('body-parser');
-var session = require('express-session')
-var passport = require('./config/passportConfig.js')
-var mongoose = require('mongoose');
-var auth = require('./routes/auth');
-var cors = require('cors')
+require('dotenv').config()
+const express = require('express');
+const app = express();
+const path = require('path');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const passport = require('./config/passportConfig.js')
+const mongoose = require('mongoose');
+const auth = require('./routes/auth');
+const http = require('http').Server(app)
+const io = require('socket.io')(http);
 
-mongoose.connect('mongodb://localhost/equAlly')
+mongoose.connect('mongodb://localhost/5000')
 
-var app = express();
-var http = require('http').Server(app)
-var io = require('socket.io')(http);
+
+const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(cors({origin: "http://localhost:3000"}))
 app.use('/auth', auth);
-
-
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }))
-
-app.get('/test', (req, res) => {
-  console.log('hit /test')
-  res.send('worked')
-})
 
 app.get('/chat', (req, res) => {
   res.sendFile(__dirname + '/client/src/TestFiles/index.html')
@@ -45,16 +38,10 @@ io.on('connection', socket => {
   })
 })
 
-const PORT = process.env.PORT || 5000;
 
+//app.listen(port, () => console.log(`Listening on port ${port}`));
 http.listen(PORT, () => {
   console.log(`Listening on ${PORT}`)
 })
-
-// app.listen(PORT, () => {
-//   console.log('EquAlly is running on: ', PORT)
-// })
-
-
 
 module.exports = app;
