@@ -5,9 +5,9 @@ export default () => (
 
 
 	<Footer copyrights="&copy; 2018 Copyright"
-	  moreLinks={
-	    <a className="white-text right" href="#!">More Links</a>
-	  }
+	  // moreLinks={
+	  //   <a className="white-text right" href="#!">More Links</a>
+	  // }
 	  links={
 	    <ul>
 	      <li><a className="grey-text text-lighten-3" href="/">Home</a></li>
