@@ -17,7 +17,6 @@ const HomeRSS = () => (
 		    onLoad={() => console.log('Timeline is loaded!')}
 		  />
 	</div>
-
 )
 
 export default HomeRSS;
