@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import axios from 'axios'
 import Nav from './Nav';
 import Footer from './Footer';
@@ -7,20 +8,6 @@ import Footer from './Footer';
 
 
 class App extends Component {
-  constructor(props){
-      super(props)
-      this.state = {
-        user: ''
-      }
-      this.liftToState = this.liftToState.bind(this)
-    }
-
-  liftTokenToState(data) {
-    this.setState({
-      token: data.token,
-      user: data.user
-    })
-  }
 
   linkClick(e){
     e.preventDefault()
@@ -32,21 +19,17 @@ class App extends Component {
     )
   }
 
-  liftToState(data){
-    this.setState({
-      user: data
-    })
-  }
-
   render() {
     return (
       <div className="App">
-        <Nav linkClick={this.linkClick} stateLift={this.liftToState}/>
+        <Nav linkClick={this.linkClick}/>
         <Footer />
       </div>
 
-    );
+    )
   }
 }
 
-export default App;
+export default connect((state, props) => {
+  return {}
+})(App);
