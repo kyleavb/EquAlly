@@ -29,11 +29,13 @@ class Resources extends Component {
 				<div>
 				<Col s={12} m={8} l={8} offset='m2 l2' className='resources-row'>
 					<Col s={12} m={12} l={6} className='resources-list cyan lighten-5'>
-						<Row>
-						<h4><i className='material-icons medium yellow-text text-darken-2 inline'>flag</i>Resources</h4>
-						 <form onSubmit={this.handleSubmit}  className='browser-default'>
-				          <Input type='text' value={this.state.query} onChange={this.handleChange} label='Search here...'/>
-				          <Input type='submit' className='btn waveseffect pink lighten-2 white-text' />
+					<h4><i className='material-icons medium yellow-text text-darken-2 inline'>flag</i>Resources</h4>
+						<Row className='center'>
+						 <form onSubmit={this.handleSubmit}>
+						 <label HTMLfor='search'>Search here...</label>
+				          <input type='text' value={this.state.query} onChange={this.handleChange} className='center'/>
+
+				          <input type='submit' className='btn waves-effect pink lighten-2 white-text' />
 				        </form>
 				        </Row>
 				        <Row>
