@@ -2,11 +2,15 @@ import React, {Component} from 'react';
 import {
   addComment
 } from '../action/actions'
-import store from '../store/store';
+
+import store from '../store/store'
+
 
 class LoginTest extends Component {
   handleButton(){
-    store.dispatch()
+    console.log(store.getState())
+    store.dispatch(addComment('test'))
+    console.log(store.getState())
   }
   render(){
     console.log('test')
