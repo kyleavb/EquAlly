@@ -14,6 +14,7 @@ import Resources from './Resources';
 import About from './About';
 
 
+
 var logo = <img src={Logo} alt=''/>
 
 class Nav extends Component {
