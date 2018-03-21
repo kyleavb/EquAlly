@@ -3,7 +3,6 @@ import axios from 'axios'
 import Nav from './Nav';
 import Footer from './Footer';
 
-import Layout from './Layout';
 // import './TestFiles/index.css';
 
 
@@ -13,7 +12,7 @@ class App extends Component {
       this.state = {
         user: ''
       }
-      this.liftTokenToState = this.liftTokenToState.bind(this)
+      this.liftToState = this.liftToState.bind(this)
     }
 
   liftTokenToState(data) {
@@ -29,13 +28,20 @@ class App extends Component {
     axios.get(e.target.href)
       .then(response => {
         console.log(response);
-      })
+      }
+    )
+  }
+
+  liftToState(data){
+    this.setState({
+      user: data
+    })
   }
 
   render() {
     return (
       <div className="App">
-        <Nav linkClick={this.linkClick}/>
+        <Nav linkClick={this.linkClick} stateLift={this.liftToState}/>
         <Footer />
       </div>
 

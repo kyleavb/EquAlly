@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Row, Col, Button } from 'react-materialize';
+import { Row, Col } from 'react-materialize';
 
 class Resources extends Component {
 
@@ -10,11 +10,11 @@ class Resources extends Component {
 				<Col s={12} m={8} l={8} offset='m2 l2'>
 					<Col s={6} m={6} l={6} className='resources-list cyan lighten-5'>
 						<h4><i className='material-icons medium yellow-text text-darken-2 inline'>flag</i>Resources</h4>
-						<ul className='browser-default grey-text resources-ul'>  
-							<li><a href='#'>This is a link</a></li>
-							<li><a href='#'>This is a link</a></li>
-							<li><a href='#'>This is a link</a></li>
-							<li><a href='#'>This is a link</a></li>
+						<ul className='browser-default grey-text resources-ul'>
+							<li><a href='/'>This is a link</a></li>
+							<li><a href='/'>This is a link</a></li>
+							<li><a href='/'>This is a link</a></li>
+							<li><a href='/'>This is a link</a></li>
 						</ul>
 					</Col>
 					<Col s={6} m={6} l={6} className='map'>

@@ -1,4 +1,4 @@
-
+import {ADD_COMMENT} from '../action/actions'
 const initialState = {
   userId: '',
   firstName: '',
@@ -10,3 +10,23 @@ const initialState = {
   admin: false,
   zipcode: 0,
 }
+
+function userApp(state = initialState, action){
+  switch(action.type){
+    case ADD_COMMENT:
+      return(
+        console.log('ADD_COMMENT reducer fired'),
+        Object.assign({}, state, {
+          comments: [
+            ...state.comments,
+            {
+              text: action.text
+            }
+          ]
+        })
+      )
+    default:
+      return state
+  }
+}
+export default userApp
