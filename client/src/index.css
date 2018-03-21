@@ -68,8 +68,12 @@ a {
 	}
 }
 
-.rss, .tab-content, .category-box, .section {
+ .tab-content, .category-box, .section {
 	overflow: scroll;
+}
+
+.rss {
+	overflow: hidden;
 }
 
 .category-box {
@@ -141,7 +145,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 4px;
 }
 
-.map, .resources-list {
+.map {
 	overflow: hidden;
 	height: 450px!important;
 }
