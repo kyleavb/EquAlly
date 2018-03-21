@@ -10,7 +10,7 @@ import AllBlogs from './AllBlogs';
 import Chat from './Chat';
 import Resources from './Resources';
 import About from './About';
-import NavLinks from './NavLinks';
+import NavLinks from './NavLinks'; 
 
 
 class Nav extends Component {

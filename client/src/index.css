@@ -68,8 +68,12 @@ a {
 	}
 }
 
-.rss, .tab-content, .category-box, .section {
+ .tab-content, .category-box, .section {
 	overflow: scroll;
+}
+
+.rss {
+	overflow: hidden;
 }
 
 .category-box {

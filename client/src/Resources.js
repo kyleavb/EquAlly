@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Row, Col, Input } from 'react-materialize';
+import { Row, Col } from 'react-materialize';
 import Map from './Map';
 
 class Resources extends Component {
