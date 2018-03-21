@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-materialize';
+import Layout from './components/Layout'
+import './chat.css';
 
 class Chat extends Component {
-
-	render() {
-		return(
-
-			<Row>
-				<Col s={12} m={8} l={8} offset='m2 l2' className='red'>
-					chat will go in here 
-				</Col>
-			</Row>
-
-		)
-	}
+  render() {
+    return (
+        <Layout />
+    );
+  }
 }
 
 export default Chat;
