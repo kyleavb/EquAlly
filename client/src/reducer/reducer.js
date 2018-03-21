@@ -20,7 +20,7 @@ function userApp(state = initialState, action){
           comments: [
             ...state.comments,
             {
-              text: action.text
+              text: action.data
             }
           ]
         })

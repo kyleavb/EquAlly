@@ -19,7 +19,7 @@ class NavLinks extends Component {
 				<li><Link to='/profile'>Profile</Link></li>
 				<li><Link to='/auth/logout'>Log Out</Link></li>
 				<Dropdown trigger={
-			    	<NavItem>Navigate</NavItem>
+			    	<li>Navigate</li>
 			  	}>
 				  <li><Link to='/chat'>Live Chat</Link></li>
 				  <li><Link to='/resources'>Resources</Link></li>
