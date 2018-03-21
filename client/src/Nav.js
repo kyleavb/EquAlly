@@ -10,11 +10,12 @@ import AllBlogs from './AllBlogs';
 import Chat from './Chat';
 import Resources from './Resources';
 import About from './About';
-import NavLinks from './NavLinks'; 
+import NavLinks from './NavLinks';
+import {connect} from 'react-redux'
 
 
 class Nav extends Component {
-  
+
 	render(){
 		return(
 			<Router>
@@ -26,10 +27,14 @@ class Nav extends Component {
 			        <Route path='/blog' render={() => <AllBlogs />} />
 			        <Route path='/chat' render={() => <Chat />} />
 			        <Route path='/resources' render={() => <Resources />} />
-	     			<Route path='/logintest' render={() => <LoginTest stateLift={this.props.stateLift}/>} />
+	     			<Route path='/logintest' render={() => <LoginTest />} />
 				</div>
 			</Router>
 		)
 	}
 }
-export default Nav;
+export default connect((state, props) => {
+  console.log('connected state nav', state)
+  console.log('connected props nav', props)
+  return{}
+})(Nav);

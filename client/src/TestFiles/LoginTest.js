@@ -1,19 +1,29 @@
 import React, {Component} from 'react';
-import {
-  addComment
-} from '../action/actions'
+import {addComment} from '../action/actions'
+import { connect } from 'react-redux'
 
-import store from '../store/store'
 
+const mapStateToProps = state => {
+  return{ state }
+}
+
+const mapDispatchToProps = dispatch => {
+  return{
+    addComment: comment => dispatch(addComment(comment)),
+  }
+}
 
 class LoginTest extends Component {
+  constructor(props){
+    super(props)
+    this.handleButton = this.handleButton.bind(this)
+  }
   handleButton(){
-    console.log(store.getState())
-    store.dispatch(addComment('mike'))
-    console.log(store.getState())
+    console.log('props', this.props)
+    this.props.addComment('New Redux')
   }
   render(){
-    console.log('test')
+    console.log(this.props)
     return(
       <div>
       <h1>Testing oAuth with Google and Facebook</h1>
@@ -32,4 +42,4 @@ class LoginTest extends Component {
   }
 }
 
-export default LoginTest
+export default connect(mapStateToProps, mapDispatchToProps)(LoginTest)

@@ -9,10 +9,6 @@ router.get('/google', passport.authenticate('google', {
   scope: ['https://www.googleapis.com/auth/plus.login']
 }));
 
-router.get('/proxy', (req, res) => {
-  res.redirect('/auth/google')
-})
-
 router.get('/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   function(req, res){
