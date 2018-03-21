@@ -9,7 +9,7 @@ import store from '../store/store'
 class LoginTest extends Component {
   handleButton(){
     console.log(store.getState())
-    store.dispatch(addComment('test'))
+    store.dispatch(addComment('mike'))
     console.log(store.getState())
   }
   render(){
