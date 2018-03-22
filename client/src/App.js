@@ -9,23 +9,12 @@ import Footer from './Footer';
 
 class App extends Component {
 
-  linkClick(e){
-    e.preventDefault()
-    console.log('clicked', e.target.href)
-    axios.get(e.target.href)
-      .then(response => {
-        console.log(response);
-      }
-    )
-  }
-
   render() {
     return (
       <div className="App">
         <Nav linkClick={this.linkClick}/>
         <Footer />
       </div>
-
     )
   }
 }

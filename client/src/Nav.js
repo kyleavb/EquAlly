@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import Home from './Home';
 import Profile from './Profile';
+import Login from './Login'
 import LoginTest from './TestFiles/LoginTest'
 import AllBlogs from './AllBlogs';
 import Chat from './Chat';
@@ -27,14 +28,11 @@ class Nav extends Component {
 			        <Route path='/blog' render={() => <AllBlogs />} />
 			        <Route path='/chat' render={() => <Chat />} />
 			        <Route path='/resources' render={() => <Resources />} />
+              <Route path='/login' render={() => <Login />} />
 	     			<Route path='/logintest' render={() => <LoginTest />} />
 				</div>
 			</Router>
 		)
 	}
 }
-export default connect((state, props) => {
-  console.log('connected state nav', state)
-  console.log('connected props nav', props)
-  return{}
-})(Nav);
+export default Nav;
