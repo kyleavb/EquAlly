@@ -1,13 +1,18 @@
 import React, {Component} from 'react';
 import { Row, Col } from 'react-materialize';
 import Map from './Map';
+import { connect } from 'react-redux'
+
+const mapStateToProps = state => {
+  return{ state }
+}
 
 class Resources extends Component {
 
 	constructor(props) {
 	    super(props);
 	    this.state = {
-	      query: ''
+	      query: this.props.state.zipcode
 	    }
 	    this.handleChange = this.handleChange.bind(this)
 	    this.handleSubmit = this.handleSubmit.bind(this)
@@ -63,4 +68,4 @@ class Resources extends Component {
 
 }
 
-export default Resources;
+export default connect(mapStateToProps)(Resources)
