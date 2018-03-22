@@ -1,13 +1,18 @@
 import React, {Component} from 'react';
 import { Row, Col } from 'react-materialize';
 import Map from './Map';
+import { connect } from 'react-redux'
+
+const mapStateToProps = state => {
+  return{ state }
+}
 
 class Resources extends Component {
 
 	constructor(props) {
 	    super(props);
 	    this.state = {
-	      query: ''
+	      query: this.props.state.zipcode
 	    }
 	    this.handleChange = this.handleChange.bind(this)
 	    this.handleSubmit = this.handleSubmit.bind(this)
@@ -32,7 +37,7 @@ class Resources extends Component {
 					<h4><i className='material-icons medium yellow-text text-darken-2 inline'>flag</i>Resources</h4>
 						<Row className='center'>
 						 <form onSubmit={this.handleSubmit}>
-						 <label HTMLfor='search'>Search here...</label>
+						 <label htmlFor='search'>Search here...</label>
 				          <input type='text' value={this.state.query} onChange={this.handleChange} className='center'/>
 
 				          <input type='submit' className='btn waves-effect pink lighten-2 white-text' />
@@ -63,4 +68,4 @@ class Resources extends Component {
 
 }
 
-export default Resources;
+export default connect(mapStateToProps)(Resources)
