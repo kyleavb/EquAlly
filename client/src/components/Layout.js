@@ -45,12 +45,11 @@ class Layout extends Component {
 	}
 
 	// Sets the user property in state to null.
-	logout = ()=>{
-		const { socket } = this.props.state
-		socket.emit(LOGOUT)
-		this.props.startChat({socket:null})
-
-	}
+	// logout = ()=>{
+	// 	const { socket } = this.props.state
+	// 	socket.emit(LOGOUT)
+	// 	this.props.startChat({socket:null})
+	// }
 
 	render() {
 		console.log('Layout State',this.props.state)
@@ -58,12 +57,7 @@ class Layout extends Component {
 		const { socket, username } = this.props.state
 		return (
 			<div className="container">
-				{
-					!username ?
-					<LoginForm socket={socket} setUser={this.setUser} />
-					:
-					<ChatContainer socket={socket} user={username} logout={this.logout}/>
-				}
+				<ChatContainer socket={socket} user={username} logout={this.logout}/>
 			</div>
 		);
 	}

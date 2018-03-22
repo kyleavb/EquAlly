@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import FAMenu from 'react-icons/lib/fa/list-ul'
-import FASearch from 'react-icons/lib/fa/search'
-import MdEject from 'react-icons/lib/md/eject'
 
 export default class SideBar extends Component{
 	constructor(props){

@@ -4,16 +4,10 @@ import { COMMUNITY_CHAT, MESSAGE_SENT, MESSAGE_RECEIVED, TYPING, PRIVATE_MESSAGE
 import ChatHeading from './ChatHeading'
 import Messages from '../messages/Messages'
 import MessageInput from '../messages/MessageInput'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 const mapStateToProps = state => {
   return{ state }
-}
-
-const mapDispatchToProps = dispatch => {
-  return{
-
-  }
 }
 
 class ChatContainer extends Component {
@@ -171,4 +165,4 @@ class ChatContainer extends Component {
 		);
 	}
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ChatContainer)
+export default connect(mapStateToProps)(ChatContainer)
