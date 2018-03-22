@@ -59,7 +59,7 @@ class Layout extends Component {
 		return (
 			<div className="container">
 				{
-					!username ?
+					username ?
 					<LoginForm socket={socket} setUser={this.setUser} />
 					:
 					<ChatContainer socket={socket} user={username} logout={this.logout}/>

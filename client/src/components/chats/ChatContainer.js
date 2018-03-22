@@ -55,6 +55,7 @@ class ChatContainer extends Component {
 	// and sets that chat to the main chat.
 	// Sets the message and typing socket events for the chat.
 	addChat = (chat, reset = false)=>{
+		console.log('````````````````````chat add')
 		const { socket } = this.props.state
 		const { chats } = this.state
 
@@ -71,6 +72,7 @@ class ChatContainer extends Component {
 	// Returns a function that will
 	// adds message to chat with the chatId passed in.
 	addMessageToChat = (chatId)=>{
+
 		return message => {
 			const { chats } = this.state
 			let newChats = chats.map((chat)=>{
@@ -107,7 +109,7 @@ class ChatContainer extends Component {
 
 	// Adds a message to the specified chat
 	sendMessage = (chatId, message)=>{
-		const { socket } = this.props
+		const { socket } = this.props.state
 		socket.emit(MESSAGE_SENT, {chatId, message} )
 	}
 
@@ -121,8 +123,8 @@ class ChatContainer extends Component {
 		this.setState({activeChat})
 	}
 	render() {
-		console.log(this.props.state)
-		console.log(this.state)
+		console.log('redux state',this.props.state)
+		console.log('local state',this.state)
 		const { user, logout } = this.props
 		const { chats, activeChat } = this.state
 		return (
@@ -158,7 +160,6 @@ class ChatContainer extends Component {
 										}
 									}
 									/>
-
 							</div>
 						):
 						<div className="chat-room choose">
