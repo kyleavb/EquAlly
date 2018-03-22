@@ -26,18 +26,6 @@ app.use(session({
   saveUninitialized: true
 }))
 
-app.get('/chat', (req, res) => {
-  res.sendFile(__dirname + '/client/src/TestFiles/index.html')
-})
-
-io.on('connection', socket => {
-  console.log(`User #${socket.id} connected`)
-  socket.on('disconnect', () => {
-    console.log(`User #${socket.id} disconnected`)
-  })
-})
-
-
 //app.listen(port, () => console.log(`Listening on port ${port}`));
 http.listen(PORT, () => {
   console.log(`Listening on ${PORT}`)

@@ -23,14 +23,7 @@ export default class SideBar extends Component{
 					<div className="heading">
 						<div className="app-name">Chats</div>
 					</div>
-					<form onSubmit={this.handleSubmit} className="search">
-						<input
-							placeholder="Search"
-							type="text"
-							value={receiver}
-							onChange={(e)=>{ this.setState({receiver:e.target.value}) }}/>
-						<div className="plus"></div>
-					</form>
+
 					<div
 						className="users"
 						ref='users'

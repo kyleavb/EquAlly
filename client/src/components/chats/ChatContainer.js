@@ -24,11 +24,12 @@ class ChatContainer extends Component {
     const socket = this.props.state.socket
     console.log('mount socket', socket)
 		this.initSocket(socket)
+    console.log(socket)
 	}
 
 	initSocket(socket) {
 		const { username } = this.props.state
-		socket.emit(COMMUNITY_CHAT, this.resetChat)
+		socket.emit(COMMUNITY_CHAT, this.addChat)
 		socket.on(PRIVATE_MESSAGE, this.addChat)
 		socket.on('connect', ()=>{
 			socket.emit(COMMUNITY_CHAT, this.resetChat(COMMUNITY_CHAT))
@@ -42,8 +43,9 @@ class ChatContainer extends Component {
 	}
 
 	// Reset the chat back to only the chat passed in.
-	resetChat(chat){
-		console.log('resetChat')
+
+	resetChat = (chat)=>{
+    console.log('resetting the chat')
 		return this.addChat(chat, true)
 	}
 
