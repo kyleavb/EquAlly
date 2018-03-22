@@ -21,7 +21,8 @@ class ChatContainer extends Component {
 	}
 
 	componentDidMount() {
-		const { socket } = this.props.state
+    const socket = this.props.state.socket
+    console.log('mount socket', socket)
 		this.initSocket(socket)
 	}
 
@@ -30,17 +31,19 @@ class ChatContainer extends Component {
 		socket.emit(COMMUNITY_CHAT, this.resetChat)
 		socket.on(PRIVATE_MESSAGE, this.addChat)
 		socket.on('connect', ()=>{
-			socket.emit(COMMUNITY_CHAT, this.resetChat)
+			socket.emit(COMMUNITY_CHAT, this.resetChat(COMMUNITY_CHAT))
 		})
 	}
 
 	sendOpenPrivateMessage = receiver => {
 		const { socket, username } = this.props.state
+    console.log(socket)
 		socket.emit(PRIVATE_MESSAGE, {receiver, sender:username })
 	}
 
 	// Reset the chat back to only the chat passed in.
-	resetChat = (chat)=>{
+	resetChat(chat){
+		console.log('resetChat')
 		return this.addChat(chat, true)
 	}
 
@@ -51,6 +54,7 @@ class ChatContainer extends Component {
 	addChat = (chat, reset = false)=>{
 		console.log('````````````````````chat add')
 		const { socket } = this.props.state
+    console.log('addchat socket', socket)
 		const { chats } = this.state
 
 		const newChats = reset ? [chat] : [...chats, chat]
@@ -117,16 +121,15 @@ class ChatContainer extends Component {
 		this.setState({activeChat})
 	}
 	render() {
-		console.log('redux state',this.props.state)
-		console.log('local state',this.state)
-		const { user, logout } = this.props
+		const { username, logout } = this.props.state
+    console.log('user', username)
 		const { chats, activeChat } = this.state
 		return (
 			<div className="container">
 				<SideBar
 					logout={logout}
 					chats={chats}
-					user={user}
+					user={username}
 					activeChat={activeChat}
 					setActiveChat={this.setActiveChat}
 					onSendPrivateMessage={this.sendOpenPrivateMessage}
@@ -139,7 +142,7 @@ class ChatContainer extends Component {
 								<ChatHeading name={activeChat.name} />
 								<Messages
 									messages={activeChat.messages}
-									user={user}
+									user={username}
 									typingUsers={activeChat.typingUsers}
 									/>
 								<MessageInput
