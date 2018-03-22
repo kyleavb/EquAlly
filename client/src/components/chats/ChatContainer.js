@@ -4,9 +4,19 @@ import { COMMUNITY_CHAT, MESSAGE_SENT, MESSAGE_RECEIVED, TYPING, PRIVATE_MESSAGE
 import ChatHeading from './ChatHeading'
 import Messages from '../messages/Messages'
 import MessageInput from '../messages/MessageInput'
+import {connect} from 'react-redux'
 
+const mapStateToProps = state => {
+  return{ state }
+}
 
-export default class ChatContainer extends Component {
+const mapDispatchToProps = dispatch => {
+  return{
+
+  }
+}
+
+class ChatContainer extends Component {
 	constructor(props) {
 	  super(props);
 
@@ -17,12 +27,12 @@ export default class ChatContainer extends Component {
 	}
 
 	componentDidMount() {
-		const { socket } = this.props
+		const { socket } = this.props.state
 		this.initSocket(socket)
 	}
 
 	initSocket(socket) {
-		const { user } = this.props
+		const { username } = this.props.state
 		socket.emit(COMMUNITY_CHAT, this.resetChat)
 		socket.on(PRIVATE_MESSAGE, this.addChat)
 		socket.on('connect', ()=>{
@@ -31,8 +41,8 @@ export default class ChatContainer extends Component {
 	}
 
 	sendOpenPrivateMessage = receiver => {
-		const { socket, user } = this.props
-		socket.emit(PRIVATE_MESSAGE, {receiver, sender:user.name })
+		const { socket, username } = this.props.state
+		socket.emit(PRIVATE_MESSAGE, {receiver, sender:username })
 	}
 
 	// Reset the chat back to only the chat passed in.
@@ -45,7 +55,7 @@ export default class ChatContainer extends Component {
 	// and sets that chat to the main chat.
 	// Sets the message and typing socket events for the chat.
 	addChat = (chat, reset = false)=>{
-		const { socket } = this.props
+		const { socket } = this.props.state
 		const { chats } = this.state
 
 		const newChats = reset ? [chat] : [...chats, chat]
@@ -76,7 +86,7 @@ export default class ChatContainer extends Component {
 	// Updates the typing of chat with id passed in.
 	updateTypingInChat = (chatId) =>{
 		return ({isTyping, user})=>{
-			if(user !== this.props.user.name){
+			if(user !== this.props.state.username){
 
 				const { chats } = this.state
 
@@ -111,6 +121,8 @@ export default class ChatContainer extends Component {
 		this.setState({activeChat})
 	}
 	render() {
+		console.log(this.props.state)
+		console.log(this.state)
 		const { user, logout } = this.props
 		const { chats, activeChat } = this.state
 		return (
@@ -159,3 +171,4 @@ export default class ChatContainer extends Component {
 		);
 	}
 }
+export default connect(mapStateToProps, mapDispatchToProps)(ChatContainer)

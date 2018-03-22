@@ -23,6 +23,7 @@ class Login extends Component {
 
 	fakeLogin(e){
 		e.preventDefault()
+    console.log('props', this.props)
 		let userAt = e.target.getAttribute("custom");
     axios.post(e.target.href, {
 			num: userAt

@@ -8,15 +8,20 @@ import { startChat } from '../action/actions';
 
 const socketUrl = "http://localhost:5000"
 
+const mapStateToProps = state => {
+  return{ state }
+}
+
+const mapDispatchToProps = dispatch => {
+  return{
+    startChat: chat => dispatch(startChat(chat)),
+  }
+}
 class Layout extends Component {
 
 	constructor(props) {
 	  super(props);
-
-	  this.state = {
-	  	socket: null,
-	  	user: null
-	  };
+		this.initSocket = this.initSocket.bind(this)
 	}
 
 	componentWillMount() {
@@ -24,45 +29,44 @@ class Layout extends Component {
 	}
 
 	// Connect to and initializes the socket.
-	initSocket = ()=>{
+	initSocket(){
 		const socket = io(socketUrl)
-
+		console.log('props', this.props)
 		socket.on('connect', ()=>{
 			console.log("Connected");
 		})
-
-		this.setState({socket})
+		this.props.startChat({socket})
 	}
 
 	// Sets the user property in state
 	setUser = (user)=>{
-		const { socket } = this.state
+		const { socket } = this.props.state
 		socket.emit(USER_CONNECTED, user);
-		this.setState({user})
 	}
 
 	// Sets the user property in state to null.
 	logout = ()=>{
-		const { socket } = this.state
+		const { socket } = this.props.state
 		socket.emit(LOGOUT)
-		this.setState({user:null})
+		this.props.startChat({socket:null})
 
 	}
 
 	render() {
+		console.log('Layout State',this.props.state)
 		const { title } = this.props
-		const { socket, user } = this.state
+		const { socket, username } = this.props.state
 		return (
 			<div className="container">
 				{
-					!user ?
+					!username ?
 					<LoginForm socket={socket} setUser={this.setUser} />
 					:
-					<ChatContainer socket={socket} user={user} logout={this.logout}/>
+					<ChatContainer socket={socket} user={username} logout={this.logout}/>
 				}
 			</div>
 		);
 	}
 }
 
-export default Layout
+export default connect(mapStateToProps, mapDispatchToProps)(Layout)
