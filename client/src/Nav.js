@@ -14,7 +14,6 @@ import About from './About';
 import NavLinks from './NavLinks';
 import {connect} from 'react-redux'
 
-
 class Nav extends Component {
 
 	render(){
