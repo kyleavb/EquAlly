@@ -43,10 +43,11 @@ function userApp(state = initialState, action){
       )
     case START_CHAT:
       return(
-        console.log('START_CHAT reducer fired'),
-        Object.assign({}, state, {
-          socket: action.data.socket
-        })
+          console.log('START_CHAT reducer fired'),
+          Object.assign({}, state, {
+            socket: action.data.socket
+          }
+         )
       )
     default:
       return state

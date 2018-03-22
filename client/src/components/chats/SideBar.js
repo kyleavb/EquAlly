@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import FAChevronDown from 'react-icons/lib/md/keyboard-arrow-down'
-import FAMenu from 'react-icons/lib/fa/list-ul'
-import FASearch from 'react-icons/lib/fa/search'
-import MdEject from 'react-icons/lib/md/eject'
 
 export default class SideBar extends Component{
 	constructor(props){
@@ -25,13 +21,9 @@ export default class SideBar extends Component{
 		return (
 			<div id="side-bar">
 					<div className="heading">
-						<div className="app-name">Chats <FAChevronDown /></div>
-						<div className="menu">
-							<FAMenu />
-						</div>
+						<div className="app-name">Chats</div>
 					</div>
 					<form onSubmit={this.handleSubmit} className="search">
-						<i className="search-icon"><FASearch /></i>
 						<input
 							placeholder="Search"
 							type="text"
@@ -75,10 +67,7 @@ export default class SideBar extends Component{
 
 					</div>
 					<div className="current-user">
-						<span>{user.name}</span>
-						<div onClick={()=>{logout()}} title="Logout" className="logout">
-							<MdEject/>
-						</div>
+						<span>{user}</span>
 					</div>
 			</div>
 		);
