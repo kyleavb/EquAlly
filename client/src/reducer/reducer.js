@@ -47,7 +47,7 @@ function userApp(state = initialState, action){
           Object.assign({}, state, {
             socket: action.data.socket
           }
-         )
+        )
       )
     default:
       return state
