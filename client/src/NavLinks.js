@@ -48,6 +48,7 @@ class NavLinks extends Component {
 			<Navbar brand={logo} className='cyan lighten-2 right'>
 				<li><Link to='/'>Home</Link></li>
 				<li><Link to='/logintest'>Test Logins</Link></li>
+				<li><Link to='/blog/article'>test blog post</Link></li>
 				<li><Link to='/profile'>Profile</Link></li>
 				<li><Link to={login}>{text}</Link></li>
 				<Dropdown trigger={

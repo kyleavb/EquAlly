@@ -30,6 +30,14 @@ app.get('/chat', (req, res) => {
   res.sendFile(__dirname + '/client/src/TestFiles/index.html')
 })
 
+app.post('/comment/create', function(req,res) {
+	// route should add comment & add user 2 comment
+
+	// should also find user, push new comment 2 comments
+
+	// send back as res
+})
+
 io.on('connection', socket => {
   console.log(`User #${socket.id} connected`)
   socket.on('disconnect', () => {

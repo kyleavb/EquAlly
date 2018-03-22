@@ -12,6 +12,7 @@ import Chat from './Chat';
 import Resources from './Resources';
 import About from './About';
 import NavLinks from './NavLinks';
+import SingleArticle from './SingleArticle';
 import {connect} from 'react-redux'
 
 class Nav extends Component {
@@ -24,10 +25,11 @@ class Nav extends Component {
 					<Route exact path='/' render={() => <Home />} />
 			        <Route path='/profile' render={() => <Profile />} />
 			        <Route path='/about' render={() => <About />} />
-			        <Route path='/blog' render={() => <AllBlogs />} />
+			        <Route exact path='/blog' render={() => <AllBlogs />} />
 			        <Route path='/chat' render={() => <Chat />} />
+			        <Route exact path='/blog/article' render={() => <SingleArticle />} />
 			        <Route path='/resources' render={() => <Resources />} />
-             	<Route path='/login' render={() => <Login />} />
+             		<Route path='/login' render={() => <Login />} />
 	     			<Route path='/logintest' render={() => <LoginTest />} />
 				</div>
 			</Router>
