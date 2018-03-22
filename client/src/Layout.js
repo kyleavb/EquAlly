@@ -16,17 +16,19 @@ class Layout extends Component {
     }
 
   componentWillMount() {
-    this.initSocket()
+    console.log('mounted')
+    //this.initSocket()
   }
 
   // Connect to and initializes the socket.
-  initSocket = () => {
-    const socket = io(socketUrl)
-    socket.on('connect', () => {
-      console.log(`Connected`)
-    })
-    this.setState({ socket })
-  }
+  // initSocket = () => {
+  //   const socket = io(socketUrl)
+  //   socket.on('connect', () => {
+  //     console.log(`Connectedoooo`)
+  //   })
+  //   console.log({socket})
+  //   this.setState({ socket })
+  // }
 
   // Sets the user property in state
   setUser = user => {
