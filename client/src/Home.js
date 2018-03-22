@@ -3,6 +3,11 @@ import Carousel from './Carousel';
 import HomeTabs from './HomeTabs';
 import HomeResources from './HomeResources';
 import HomeRSS from './HomeRSS';
+import {connect} from 'react-redux'
+
+const mapStateToProps = state => {
+  return{ state }
+}
 
 const Home = () => (
 	<div>
@@ -14,5 +19,5 @@ const Home = () => (
 		</div>
 	</div>
 )
-
-export default Home;
+export default connect(mapStateToProps)(Home)
+//export default Home;

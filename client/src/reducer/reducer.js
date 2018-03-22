@@ -3,6 +3,7 @@ const initialState = {
   userId: '',
   firstName: '',
   lastName: '',
+  username: '',
   loginMethod: '',
   pronouns: '',
   comments: [],
@@ -10,6 +11,7 @@ const initialState = {
   posts: [],
   admin: false,
   zipcode: 0,
+  socket: 0
 }
 
 function userApp(state = initialState, action){
@@ -34,7 +36,8 @@ function userApp(state = initialState, action){
             firstName: action.data.firstName,
             lastName: action.data.lastName,
             admin: action.data.admin,
-            pronouns: action.data.pronouns
+            pronouns: action.data.pronouns,
+            username: action.data.username
           }
         )
       )
