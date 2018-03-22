@@ -14,6 +14,7 @@ const mapDispatchToProps = dispatch => {
 		liftUser: userInfo => dispatch(liftUser(userInfo)),
   }
 }
+
 class Login extends Component {
 	constructor(props){
 		super(props)
@@ -26,7 +27,6 @@ class Login extends Component {
     axios.post(e.target.href, {
 			num: userAt
 		}).then(res => {
-			let userData = JSON.stringify(res)
 			console.log(this.props.state)
 			console.log(res.data)
 			this.props.liftUser(res.data)

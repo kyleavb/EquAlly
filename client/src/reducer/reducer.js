@@ -1,4 +1,4 @@
-import {ADD_COMMENT, LIFT_USER} from '../action/actions'
+import {ADD_COMMENT, LIFT_USER, START_CHAT} from '../action/actions'
 const initialState = {
   userId: '',
   firstName: '',
@@ -10,6 +10,8 @@ const initialState = {
   posts: [],
   admin: false,
   zipcode: 0,
+  // Daniel's Socket fun
+  socket: null
 }
 
 function userApp(state = initialState, action){
@@ -37,6 +39,13 @@ function userApp(state = initialState, action){
             pronouns: action.data.pronouns
           }
         )
+      )
+    case START_CHAT:
+      return(
+        console.log('START_CHAT reducer fired'),
+        Object.assign({}, state, {
+          socket: action.data.socket
+        })
       )
     default:
       return state
