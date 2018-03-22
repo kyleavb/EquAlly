@@ -14,6 +14,7 @@ const mapDispatchToProps = dispatch => {
 		liftUser: (userInfo) => dispatch(liftUser(userInfo)),
   }
 }
+
 class Login extends Component {
 	constructor(props){
 		super(props)

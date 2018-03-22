@@ -3,16 +3,19 @@ import io from 'socket.io-client'
 import { USER_CONNECTED, LOGOUT } from '../Events'
 import LoginForm from './LoginForm'
 import ChatContainer from './chats/ChatContainer'
+import { connect } from 'react-redux';
+import { startChat } from '../action/actions';
 
 const socketUrl = "http://localhost:5000"
-export default class Layout extends Component {
+
+class Layout extends Component {
 
 	constructor(props) {
 	  super(props);
 
 	  this.state = {
-	  	socket:null,
-	  	user:null
+	  	socket: null,
+	  	user: null
 	  };
 	}
 
@@ -61,3 +64,5 @@ export default class Layout extends Component {
 		);
 	}
 }
+
+export default Layout
