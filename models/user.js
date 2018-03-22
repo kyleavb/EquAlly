@@ -2,9 +2,6 @@ var mongoose = require('mongoose');
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
 var userSchema = new mongoose.Schema({
-  _id : {
-    type: ObjectId
-  }
   firstName: {
     type: String,
     required: true

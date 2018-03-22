@@ -3,6 +3,7 @@ var mongoose = require('mongoose')
 var express = require('express')
 var router = express.Router();
 var passport = require('../config/passportConfig')
+var user = require('../models/user')
 
 
 router.get('/google', passport.authenticate('google', {
@@ -24,6 +25,13 @@ router.get('/facebook/callback',
     res.redirect('/')
   }
 )
+
+router.post('/fakelogin', (req, res) => {
+  user.find().then( data => {
+    res.send(data[req.body.num])
+  })
+
+})
 
 router.get('/user', function(req, res, next){
   if(req.user){

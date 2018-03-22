@@ -10,8 +10,7 @@ const auth = require('./routes/auth');
 const http = require('http').Server(app)
 const io = require('socket.io')(http);
 
-mongoose.connect('mongodb://localhost/5000')
-
+mongoose.connect('mongodb://localhost/equAlly')
 
 const PORT = process.env.PORT || 5000;
 

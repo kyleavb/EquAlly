@@ -1,9 +1,10 @@
-import {ADD_COMMENT} from '../action/actions'
+import {ADD_COMMENT, LIFT_USER} from '../action/actions'
 const initialState = {
   userId: '',
   firstName: '',
   lastName: '',
   loginMethod: '',
+  pronouns: '',
   comments: [],
   journals: [],
   posts: [],
@@ -24,6 +25,18 @@ function userApp(state = initialState, action){
             }
           ]
         })
+      )
+    case LIFT_USER:
+      return(
+          console.log('LIFT_USER reducer fired', action.data),
+          Object.assign({}, state, {
+            userId: action.data._id,
+            firstName: action.data.firstName,
+            lastName: action.data.lastName,
+            admin: action.data.admin,
+            pronouns: action.data.pronouns
+          }
+        )
       )
     default:
       return state

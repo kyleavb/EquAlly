@@ -24,10 +24,11 @@ class LoginForm extends Component {
           <input
             ref={ input => { this.textInput = input } }
             type='text'
+            name='nickname'
             id='nickname'
             value={nickname}
             onChange={this.handleChange}
-            placeholder={'My username'}
+            placeholder='My username'
           />
           <div className='error'>{ error ? error : null }</div>
         </form>
