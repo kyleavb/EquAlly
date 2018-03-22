@@ -7,11 +7,11 @@ const HomeRSS = () => (
 		<h5 className='yellow-text text-darken-2'>RSS Feed</h5>
 		<Timeline
 		    dataSource={{
-		      sourceType: 'profile',
-		      screenName: 'ACLU'
+		      sourceType: 'list',
+		      ownerScreenName: 'equally_sea',
+					slug: 'equally'
 		    }}
 		    options={{
-		      username: 'ACLU',
 		      height: '400'
 		    }}
 		    onLoad={() => console.log('Timeline is loaded!')}
