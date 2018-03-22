@@ -19,8 +19,18 @@ a {
 	margin: 15px;
 }
 
-.carousel-item img {
-	object-fit: none!important;
+.carousel.carousel-slider.initialized {
+	display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+    overflow: hidden!important;
+}
+
+.carousel-item.active img {
+	object-fit: cover;
+	flex-shrink: 0!important;
+    min-width: 100%!important;
+    min-height: 100%!important;
 }
 
 .journal-container {

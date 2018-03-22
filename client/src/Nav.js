@@ -27,7 +27,7 @@ class Nav extends Component {
 			        <Route path='/blog' render={() => <AllBlogs />} />
 			        <Route path='/chat' render={() => <Chat />} />
 			        <Route path='/resources' render={() => <Resources />} />
-              <Route path='/login' render={() => <Login />} />
+             		<Route path='/login' render={() => <Login />} />
 	     			<Route path='/logintest' render={() => <LoginTest />} />
 				</div>
 			</Router>

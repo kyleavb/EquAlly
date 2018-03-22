@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-materialize';
 import JournalEntryTeaser from './JournalEntryTeaser';
+import { connect } from 'react-redux'
+
+const mapStateToProps = state => {
+  return{ state }
+}
 
 class Profile extends Component {
 
@@ -22,25 +27,25 @@ class Profile extends Component {
 					</div>
 				</Row>
 				<Row>
-					<div className='center col s12 m3 l3 offset-m1 offset-l2 profile-box cyan lighten-5'>
+					<div className='center col s12 m3 l3 offset-m2 offset-l2 profile-box cyan lighten-5'>
 						<i className='material-icons large grey-text text-lighten-1'>account_circle</i>
-						<p className='yellow-text text-darken-2'>Display Name: <span className='grey-text text-darken-2'>props here</span></p>
-						<p className='yellow-text text-darken-2'>Preferred Pronouns: <span className='grey-text text-darken-2'>props here</span></p>
-						<p className='yellow-text text-darken-2'>Zip: <span className='grey-text text-darken-2'>props here</span></p>
+						<p className='yellow-text text-darken-2'>Display Name: <span className='grey-text text-darken-2'>{this.props.state.firstName} {this.props.state.lastName}</span></p>
+						<p className='yellow-text text-darken-2'>Preferred Pronouns: <span className='grey-text text-darken-2'>{this.props.state.pronouns}</span></p>
+						<p className='yellow-text text-darken-2'>Zip: <span className='grey-text text-darken-2'>{this.props.state.zipcode}</span></p>
 					</div>
 					<div className='center col s12 m4 l4 offset-m1 offset-l1 profile-box cyan lighten-5'>
 						<i className='material-icons large grey-text text-lighten-1'>chat</i>
-						<p className='yellow-text text-darken-2'>Number of posts: <span className='grey-text text-darken-2'>props here</span></p>
-						<p className='yellow-text text-darken-2'>Number of comments: <span className='grey-text text-darken-2'>props here</span></p>
-						<p className='yellow-text text-darken-2'>Your relevant resources: <span className='grey-text text-darken-2'>props here</span></p>
+						<p className='yellow-text text-darken-2'>Number of posts: <span className='grey-text text-darken-2'>{(this.props.state.posts).length}</span></p>
+						<p className='yellow-text text-darken-2'>Number of comments: <span className='grey-text text-darken-2'>{(this.props.state.comments).length}</span></p>
+						<p className='yellow-text text-darken-2'>Number of journal entries: <span className='grey-text text-darken-2'>{(this.props.state.journals).length}</span></p>
 					</div>
 				</Row>
 				<Row>
 					<Col s={12} m={8} l={8} offset={'m2 l2'}>
 						<h5>Your Journal</h5>
-						<p>This journal's contents are totally encrypted and unique to your account, meaning nobody <em>but you</em> can read the contents. Your confidentiality and privacy is important to us.</p>
+						<p>This journal's contents are totally encrypted and unique to your account, meaning nobody <em>but you</em> can read the contents. Your confidentiality and privacy are important to us.</p>
 						<div className="textarea-container col s12 journal-container">
-						  <textarea></textarea>
+						  <textarea name='journal'></textarea>
 						<div className="textarea-size"></div>
 						</div>
 					</Col>
@@ -68,4 +73,4 @@ class Profile extends Component {
 
 }
 
-export default Profile;
+export default connect(mapStateToProps)(Profile)
