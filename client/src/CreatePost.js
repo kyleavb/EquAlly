@@ -38,9 +38,7 @@ class CreatePost extends Component {
 	submitAction(e){
 		e.preventDefault()
 		let {userId, title, content} = this.state
-		console.log('userID', userId)
-		console.log('title', title)
-		console.log('content',content)
+		
 	}
 
 	render() {
@@ -67,7 +65,7 @@ class CreatePost extends Component {
 						</div>
 					</Row>
 					<Row>
-						<Input s={12} type='select' className='white-text' label="Pick a category:" defaultValue='Opinions'>
+						<Input s={12} type='select' className='white-text' label="Pick a category:" defaultValue='Opinions' onChange={this.selectChange}>
 				         	<option value="" disabled selected>Choose your option</option>
 						    <option value="1">LGBTQIA+</option>
 							<option value="2">Mental Health</option>
