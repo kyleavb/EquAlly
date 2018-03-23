@@ -120,14 +120,16 @@ export default class ChatContainer extends Component {
     console.log(activeChat)
 		return (
 			<div className="container">
-				<SideBar
-					logout={logout}
-					chats={chats}
-					user={user}
-					activeChat={activeChat}
-					setActiveChat={this.setActiveChat}
-					onSendPrivateMessage={this.sendOpenPrivateMessage}
-					/>
+				{
+					// <SideBar
+					// logout={logout}
+					// chats={chats}
+					// user={user}
+					// activeChat={activeChat}
+					// setActiveChat={this.setActiveChat}
+					// onSendPrivateMessage={this.sendOpenPrivateMessage}
+					// />
+				}
 				<div className="chat-room-container">
 					{
 
