@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Input } from 'react-materialize';
+import { Link } from 'react-router-dom';
 
 class BlogFilter extends Component {
 
@@ -40,6 +41,11 @@ class BlogFilter extends Component {
 					<button className="btn waves-effect waves-light yellow darken-2" type="submit" name="action">Search
 				    	<i className="material-icons right">search</i>
 					</button>
+				</div>
+				<div className='row center'>
+					<div className='input-field col s3'>
+						<Link to='/blog/add' className='btn waves-light yellow darken-2'>Add Post</Link>
+					</div>
 				</div>
 			</div>
 		)

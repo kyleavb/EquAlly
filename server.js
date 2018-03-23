@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const auth = require('./routes/auth');
 
 const comment = require('./routes/comment');
-const post = require('./routes/post')
+const post = require('./routes/posts')
 const http = require('http').Server(app)
 const io = module.exports.io = require('socket.io').listen(http);
 const SocketManager = require('./SocketManager')
