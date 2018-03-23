@@ -112,6 +112,7 @@ export default class ChatContainer extends Component {
 
 	setActiveChat = (activeChat)=>{
 		this.setState({activeChat})
+		console.log('Active chat is now this: ',this.state.activeChat)
 	}
 	render() {
 		const { user, logout } = this.props
@@ -130,24 +131,24 @@ export default class ChatContainer extends Component {
 				<div className="chat-room-container">
 					{
 
-						activeChat !== null ? (
+						chats.length > 0 ? (
 
 							<div className="chat-room">
-								<ChatHeading name={activeChat.name} />
+								<ChatHeading name={chats[0].name} />
 								<Messages
-									messages={activeChat.messages}
+									messages={chats[0].messages}
 									user={user}
-									typingUsers={activeChat.typingUsers}
+									typingUsers={chats[0].typingUsers}
 									/>
 								<MessageInput
 									sendMessage={
 										(message)=>{
-											this.sendMessage(activeChat.id, message, 'Jeff')
+											this.sendMessage(chats[0].id, message, 'Jeff')
 										}
 									}
 									sendTyping={
 										(isTyping)=>{
-											this.sendTyping(activeChat.id, isTyping)
+											this.sendTyping(chats[0].id, isTyping)
 										}
 									}
 									/>
