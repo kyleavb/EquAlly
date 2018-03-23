@@ -45,12 +45,12 @@ export default class Messages extends Component {
 						})
 					}
 					{
-						typingUsers.map((name)=>{
-							return (
-								<div key={name} className="typing-user">
-									{`${name} is typing . . .`}
-								</div>
-							)
+						// typingUsers.map((name)=>{
+						// 	return (
+						// 		<div key={name} className="typing-user">
+						// 			{`${name} is typing . . .`}
+						// 		</div>
+						// 	)
 						})
 					}
 				</div>
