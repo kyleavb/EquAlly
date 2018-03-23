@@ -1,4 +1,4 @@
-const io = require('./server.js').io
+const io = require('./server').io
 
 const { VERIFY_USER, USER_CONNECTED, USER_DISCONNECTED,
 		LOGOUT, COMMUNITY_CHAT, MESSAGE_RECEIVED, MESSAGE_SENT,
@@ -18,10 +18,12 @@ module.exports = function(socket){
 	let sendTypingFromUser;
 
 	//Verify Username
-	socket.on(VERIFY_USER, (nickname, callback)=>{
+	socket.on(VERIFY_USER, (nickname,callback)=>{
 		if(isUser(connectedUsers, nickname)){
+			console.log('first')
 			callback({ isUser:true, user:null })
 		}else{
+			console.log('second')
 			callback({ isUser:false, user:createUser({name:nickname, socketId:socket.id})})
 		}
 	})
@@ -34,7 +36,6 @@ module.exports = function(socket){
 
 		sendMessageToChatFromUser = sendMessageToChat(user.name)
 		sendTypingFromUser = sendTypingToChat(user.name)
-
 		io.emit(USER_CONNECTED, connectedUsers)
 		console.log(connectedUsers);
 
@@ -61,6 +62,7 @@ module.exports = function(socket){
 
 	//Get Community Chat
 	socket.on(COMMUNITY_CHAT, (callback)=>{
+		console.log(callback)
 		callback(communityChat)
 	})
 
