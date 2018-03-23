@@ -27,6 +27,15 @@ class CreatePost extends Component {
 						</div>
 					</Row>
 					<Row>
+						<Input s={12} type='select' className='white-text' label="Pick a category:" defaultValue='Opinions'>
+				         	<option value="" disabled selected>Choose your option</option>
+						    <option value="1">LGBTQIA+</option>
+							<option value="2">Mental Health</option>
+							<option value="3">Opinions</option>
+							<option value="3">Events</option>
+						  </Input>
+					</Row>
+					<Row>
 						<div className='center col s12 m4 l4 offset-m4 offset-l4'>
 							<br/>
 							<a className='btn-large col s12 waves-effect yellow darken-2 white-text' href='/chat'>Submit Blog Entry</a>

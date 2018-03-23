@@ -56,11 +56,12 @@ class CommentForm extends Component {
 
 	render() {
 		return(
-				<div>
-					<form onSubmit={this.handleAddComment}>
+				<div className='row'>
+					<form onSubmit={this.handleAddComment} className='col s12'>
 					    <Input s={12} type='textarea' id="comment" className="materialize-textarea col 12" label='Enter comment here...' value={this.props.fuck} onChange={this.handleChange}>
 					    	<Icon className='cyan-text text-lighten-2'>create</Icon>
 					    </Input>
+					    <br/><br/><br/>
 						<button className="btn waves-effect waves-light col s12 m6 offset-m3 yellow darken-2" type="submit" name="action" >Add Comment</button>
 					</form>
 				</div>
