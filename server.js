@@ -31,8 +31,24 @@ app.get('/chat', (req, res) => {
 })
 
 app.post('/comment/create', function(req,res) {
+	console.log('we are in the comment/create route!');
+	console.log(req.body.user)
 	// route should add comment & add user 2 comment
-
+	User.find({userId: req.body.user.userId}, function(err, user) {
+    User.findOneAndUpdate(
+      {$push: {comments: req.body.comment}},
+      {upsert: true},
+      function(err, result) {
+      console.log(result)
+    })
+  })
+	// Comment.find({userId: req.body.user.userId}, function(err, user) {
+	// 	Comment.findOneAndUpdate(
+	// 		{$push: req.body.comment}
+	// 		function(err,result) {
+	// 			console.log(result)
+	// 	})
+	// }
 	// should also find user, push new comment 2 comments
 
 	// send back as res
@@ -44,7 +60,6 @@ io.on('connection', socket => {
     console.log(`User #${socket.id} disconnected`)
   })
 })
-
 
 //app.listen(port, () => console.log(`Listening on port ${port}`));
 http.listen(PORT, () => {

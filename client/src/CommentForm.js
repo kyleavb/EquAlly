@@ -20,11 +20,12 @@ class CommentForm extends Component {
 	constructor(props) {
 		super(props)
 		this.handleAddComment = this.handleAddComment.bind(this)
+		this.handleChange = this.handleChange.bind(this)
 	}
 
 	handleAddComment(e){
 		e.preventDefault()
-    	console.log('this is from the comment spot =' + e.target.value)
+    	console.log('this is from the comment spot = ' + e.target.value)
     	// post 2 route
 
     	// route should add comment & add user 2 comment
@@ -32,9 +33,8 @@ class CommentForm extends Component {
     	// should also find user, push new comment 2 comments
 
     	// send back as res
-
 		// let userAt = e.target.getAttribute("custom");
-	 //    axios.post('/comment/create', {
+	 	//    axios.post('/comment/create', {
 		// 		num: userAt
 		// 	}).then(res => {
 		// 		this.props.liftUser(res.data)
@@ -45,14 +45,21 @@ class CommentForm extends Component {
 		// 	});
   	}
 
+  	handleChange(e) {
+  		console.log(e.target.value);	    
+	    
+  	}
+
 
 	render() {
 		return(
 				<div>
-				    <Input s={12} type='textarea' id="comment" className="materialize-textarea" value={this.props.value} label='Enter comment here...'>
+					<form onSubmit={this.addComment}>
+				    <Input s={12} type='textarea' id="comment" className="materialize-textarea" label='Enter comment here...' onChange={this.handleChange}>
 				    	<Icon className='cyan-text text-lighten-2'>create</Icon>
 				    </Input>
 					<button className="btn waves-effect waves-light col s12 m6 offset-m3 yellow darken-2" type="submit" name="action" onClick={this.handleAddComment} >Add Comment</button>
+					</form>
 				</div>
 			)
 

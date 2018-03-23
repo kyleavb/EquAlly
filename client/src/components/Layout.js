@@ -31,7 +31,6 @@ class Layout extends Component {
 	// Connect to and initializes the socket.
 	initSocket(){
 		const socket = io(socketUrl)
-		console.log('props', this.props)
 		socket.on('connect', ()=>{
 			console.log("Connected");
 		})
@@ -52,7 +51,6 @@ class Layout extends Component {
 	// }
 
 	render() {
-		console.log('Layout State',this.props.state)
 		const { title } = this.props
 		const { socket, username } = this.props.state
 		return (
