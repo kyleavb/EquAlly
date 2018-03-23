@@ -12,7 +12,7 @@ let communityChat = createChat()
 
 module.exports = function(socket){
 
-	console.log("Socket Id:" + socket.id);
+	// console.log("Socket Id:" + socket.id);
 
 	let sendMessageToChatFromUser;
 	let sendTypingFromUser;
@@ -20,10 +20,10 @@ module.exports = function(socket){
 	//Verify Username
 	socket.on(VERIFY_USER, (nickname,callback)=>{
 		if(isUser(connectedUsers, nickname)){
-			console.log('first')
+			// console.log('first')
 			callback({ isUser:true, user:null })
 		}else{
-			console.log('second')
+			// console.log('second')
 			callback({ isUser:false, user:createUser({name:nickname, socketId:socket.id})})
 		}
 	})
@@ -37,7 +37,7 @@ module.exports = function(socket){
 		sendMessageToChatFromUser = sendMessageToChat(user.name)
 		sendTypingFromUser = sendTypingToChat(user.name)
 		io.emit(USER_CONNECTED, connectedUsers)
-		console.log(connectedUsers);
+		// console.log(connectedUsers);
 
 	})
 
@@ -47,7 +47,7 @@ module.exports = function(socket){
 			connectedUsers = removeUser(connectedUsers, socket.user.name)
 
 			io.emit(USER_DISCONNECTED, connectedUsers)
-			console.log("Disconnect", connectedUsers);
+			// console.log("Disconnect", connectedUsers);
 		}
 	})
 
@@ -56,18 +56,19 @@ module.exports = function(socket){
 	socket.on(LOGOUT, ()=>{
 		connectedUsers = removeUser(connectedUsers, socket.user.name)
 		io.emit(USER_DISCONNECTED, connectedUsers)
-		console.log("Disconnect", connectedUsers);
+		// console.log("Disconnect", connectedUsers);
 
 	})
 
 	//Get Community Chat
 	socket.on(COMMUNITY_CHAT, (callback)=>{
-		console.log(callback)
+		// console.log(callback)
 		callback(communityChat)
 	})
 
-	socket.on(MESSAGE_SENT, ({chatId, message})=>{
-		sendMessageToChatFromUser(chatId, message)
+	socket.on(MESSAGE_SENT, ({chatId, message, user})=>{
+		sendMessageToChatFromUser(chatId, message, user)
+		console.log('This is MESSAGE_SENT on SocketManager', chatId, message)
 	})
 
 	socket.on(TYPING, ({chatId, isTyping})=>{
@@ -97,6 +98,14 @@ function sendTypingToChat(user){
 // Returns a function that will take a chat id and message
 // and then emit a broadcast to the chat id.
 function sendMessageToChat(sender){
+	console.log('This is sendMessageToChat on SocketManager', sender)
+	return (chatId, message)=>{
+		io.emit(`${MESSAGE_RECEIVED}-${chatId}`, createMessage({message, sender}))
+	}
+}
+
+function sendMessageToChatFromUser(chatId, message, sender){
+	console.log('This is sendMessageToChatFromUser on SocketManager', sender)
 	return (chatId, message)=>{
 		io.emit(`${MESSAGE_RECEIVED}-${chatId}`, createMessage({message, sender}))
 	}

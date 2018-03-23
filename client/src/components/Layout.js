@@ -17,7 +17,7 @@ class Layout extends Component {
 	  super(props);
 		this.state = {
 			socket: null,
-			user: null
+			user: null,
 		}
     this.setUser = this.setUser.bind(this)
 	}
@@ -47,7 +47,7 @@ class Layout extends Component {
 		const {socket} = this.state
 
 		socket.emit(USER_CONNECTED, user);
-    console.log(user)
+    console.log('this is the user', user)
 		this.setState({user: user.user.name})
     // this.setState({user})
     console.log('post state', this.state)
