@@ -48,6 +48,7 @@ export default class ChatContainer extends Component {
 	addChat = (chat, reset = false)=>{
 		const { socket } = this.props
 		const { chats } = this.state
+		console.log('Just added a chat!', chat)
 
 		const newChats = reset ? [chat] : [...chats, chat]
 		this.setState({chats:newChats, activeChat:reset ? chat : this.state.activeChat})
@@ -97,9 +98,10 @@ export default class ChatContainer extends Component {
 	}
 
 	// Adds a message to the specified chat
-	sendMessage = (chatId, message)=>{
+	sendMessage = (chatId, message, user)=>{
 		const { socket } = this.props
-		socket.emit(MESSAGE_SENT, {chatId, message} )
+		socket.emit(MESSAGE_SENT, {chatId, message, user} )
+		console.log('this is sendMessage on ChatContiner', chatId, message, user)
 	}
 
 	// Sends typing status to server.
@@ -140,7 +142,7 @@ export default class ChatContainer extends Component {
 								<MessageInput
 									sendMessage={
 										(message)=>{
-											this.sendMessage(activeChat.id, message)
+											this.sendMessage(activeChat.id, message, 'Jeff')
 										}
 									}
 									sendTyping={

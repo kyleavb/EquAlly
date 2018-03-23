@@ -15,12 +15,13 @@ export default class MessageInput extends Component {
 	handleSubmit = (e)=>{
 		e.preventDefault()
 		this.sendMessage()
+		console.log('this is handleSubmit on MessageInput')
 		this.setState({message:""})
 	}
 
 	sendMessage = ()=>{
 		this.props.sendMessage(this.state.message)
-
+		console.log('this is sendMessage on MessageInput', this.state.message)
 	}
 
 	componentWillUnmount() {

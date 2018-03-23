@@ -290,6 +290,7 @@ input,textarea {
   flex-grow: 1;
   overflow-y: scroll;
   position: relative;
+  height: 400px;
 }
 
 .thread-container::-webkit-scrollbar-track {
