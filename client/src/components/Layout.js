@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import io from 'socket.io-client'
-import { USER_CONNECTED, LOGOUT } from '../Events'
+import { USER_CONNECTED, LOGOUT, VERIFY_USER } from '../Events'
 import LoginForm from './LoginForm'
 import ChatContainer from './chats/ChatContainer'
-import { connect } from 'react-redux';
-import { startChat } from '../action/actions';
+import Login from '../Login'
 
 const socketUrl = "http://localhost:5000"
 
@@ -12,35 +12,44 @@ const mapStateToProps = state => {
   return{ state }
 }
 
-const mapDispatchToProps = dispatch => {
-  return{
-    startChat: chat => dispatch(startChat(chat)),
-  }
-}
 class Layout extends Component {
-
 	constructor(props) {
 	  super(props);
-		this.initSocket = this.initSocket.bind(this)
+		this.state = {
+			socket: null,
+			user: null
+		}
+    this.setUser = this.setUser.bind(this)
 	}
 
 	componentWillMount() {
 		this.initSocket()
 	}
-
+	componentDidMount(){
+    const {socket} = this.state
+    var username = this.props.state.username
+		if(!this.props.user){
+      socket.emit(VERIFY_USER, username, this.setUser)
+		}
+	}
 	// Connect to and initializes the socket.
 	initSocket(){
-		const socket = io(socketUrl)
+		const socket = io()
 		socket.on('connect', ()=>{
 			console.log("Connected");
 		})
-		this.props.startChat({socket})
+		this.setState({socket})
 	}
 
 	// Sets the user property in state
-	setUser = (user)=>{
-		const { socket } = this.props.state
+	setUser(user){
+    console.log('setUser State', this.state)
+		const {socket} = this.state
+
 		socket.emit(USER_CONNECTED, user);
+    
+		this.setState({user: user.user.name})
+    console.log('post state', this.state)
 	}
 
 	// Sets the user property in state to null.
@@ -51,14 +60,17 @@ class Layout extends Component {
 	// }
 
 	render() {
-		const { title } = this.props
-		const { socket, username } = this.props.state
+		const { socket, user } = this.state
 		return (
 			<div className="container">
-				<ChatContainer socket={socket} user={username} logout={this.logout}/>
+			{
+				!this.state.user ?
+					<Login />
+				:
+					<ChatContainer socket={socket} user={user}/>
+			}
 			</div>
 		);
 	}
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(Layout)
+export default connect(mapStateToProps)(Layout)
