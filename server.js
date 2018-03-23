@@ -7,7 +7,6 @@ const session = require('express-session');
 const passport = require('./config/passportConfig.js')
 const mongoose = require('mongoose');
 const auth = require('./routes/auth');
-
 const comment = require('./routes/comment');
 const post = require('./routes/post')
 const http = require('http').Server(app)
