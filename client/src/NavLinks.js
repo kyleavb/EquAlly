@@ -49,6 +49,7 @@ class NavLinks extends Component {
 				<li><Link to='/'>Home</Link></li>
 				<li><Link to='/logintest'>Test Logins</Link></li>
 				<li><Link to='/blog/article'>test blog post</Link></li>
+				<li><Link to='/blog/add'>test new blog post</Link></li>
 				<li><Link to='/profile'>Profile</Link></li>
 				<li><Link to={login}>{text}</Link></li>
 				<Dropdown trigger={

@@ -13,6 +13,7 @@ import Resources from './Resources';
 import About from './About';
 import NavLinks from './NavLinks';
 import SingleArticle from './SingleArticle';
+import CreatePost from './CreatePost';
 import {connect} from 'react-redux'
 
 class Nav extends Component {
@@ -31,6 +32,7 @@ class Nav extends Component {
 			        <Route path='/resources' render={() => <Resources />} />
              		<Route path='/login' render={() => <Login />} />
 	     			<Route path='/logintest' render={() => <LoginTest />} />
+	     			<Route exact path='/blog/add' render={() => <CreatePost />} />
 				</div>
 			</Router>
 		)
