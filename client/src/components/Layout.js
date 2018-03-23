@@ -47,8 +47,9 @@ class Layout extends Component {
 		const {socket} = this.state
 
 		socket.emit(USER_CONNECTED, user);
-    
+    console.log(user)
 		this.setState({user: user.user.name})
+    // this.setState({user})
     console.log('post state', this.state)
 	}
 
