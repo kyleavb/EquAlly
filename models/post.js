@@ -2,9 +2,6 @@ var mongoose = require('mongoose');
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
 var postSchema = new mongoose.Schema({
-  _id: {
-    type: ObjectId
-  },
   userId: {
     type: ObjectId,
     ref: 'User'
