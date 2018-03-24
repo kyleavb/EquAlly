@@ -41,7 +41,7 @@ export default class Messages extends Component {
 									<div className="time">{mes.time}</div>
 									<div className="data">
 										<div className="message">{mes.message}</div>
-										<div className="name">{mes.sender}</div>
+										<div className="name">{mes.sender}{mes.ally === true && ' - EquAlly'}</div>
 									</div>
 								</div>
 
