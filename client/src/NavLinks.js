@@ -40,26 +40,27 @@ class NavLinks extends Component {
   }
 
 	render() {
-		let user = this.props.state.userId
-		let login = user ? '/logout' : '/login'
-		let text = user ? 'Log Out' : 'Log In'
-
+    let {userId, ally, admin, username} = this.props.state
+		let login = userId ? <li><Link to='/logout'>Log Out</Link></li> : <li><Link to='/login'>Log In</Link></li>
+    let profile = userId ? <li><Link to='/profile'>{username}s Profile</Link></li> : ''
+    let blogPost = ally ?  <li><Link to='/blog/add'>New Blog Post</Link></li> : ''
+    let adminPage = admin ? <li><Link to='/'>Admin</Link></li> : ''
+    let chatAccess = userId ? <li><Link to='/chat'>Live Chat</Link></li> : ''
 		return(
-			<Navbar brand={logo} className='cyan lighten-2 right'>
+      <Navbar brand={logo} className='cyan lighten-2 right'>
 				<li><Link to='/'>Home</Link></li>
-				<li><Link to='/logintest'>Test Logins</Link></li>
-				<li><Link to='/blog/article'>test blog post</Link></li>
-				<li><Link to='/blog/add'>test new blog post</Link></li>
-				<li><Link to='/profile'>Profile</Link></li>
-				<li><Link to={login}>{text}</Link></li>
+        <li><Link to='/blog'>Blog</Link></li>
+        <li><Link to='/resources'>Resources</Link></li>
+        <li><Link to='/about'>About Us</Link></li>
 				<Dropdown trigger={
 			    	<li><a href='#!'>Navigate</a></li>
 			  	}>
-				  <li><Link to='/chat'>Live Chat</Link></li>
-				  <li><Link to='/resources'>Resources</Link></li>
-				  <li><Link to='/blog'>Blog</Link></li>
-				  <li><Link to='/about'>About Us</Link></li>
+          {chatAccess}
+          {blogPost}
+  				{profile}
+          {adminPage}
 				</Dropdown>
+        {login}
 			</Navbar>
 		)
 	}

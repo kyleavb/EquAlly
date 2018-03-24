@@ -35,6 +35,7 @@ function userApp(state = initialState, action){
             userId: action.data._id,
             firstName: action.data.firstName,
             lastName: action.data.lastName,
+            ally: action.data.ally,
             admin: action.data.admin,
             pronouns: action.data.pronouns,
             username: action.data.username
