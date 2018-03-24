@@ -30,7 +30,7 @@ class Login extends Component {
 		}).then(res => {
 			this.props.liftUser(res.data)
 		}).then(res =>{
-			console.log(this.props.state)
+			console.log('User info',this.props.state)
 		}).catch(error => {
 		    console.log('here is the error response ' + error.response)
 		});
