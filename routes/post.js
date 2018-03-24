@@ -1,6 +1,7 @@
 require('dotenv').config()
 var mongoose = require('mongoose')
 var express = require('express')
+var bodyParser = require('body-parser')
 var router = express.Router();
 var passport = require('../config/passportConfig')
 const Post = require('../models/post')
@@ -11,10 +12,14 @@ router.get('/', (req, res) => {
 })
 
 router.post('/create', (req, res) => {
-  Post.create({ userId: '', title: '', content: ''}, (err, post) =>{
+  console.log('You hit the post route!', req)
+  Post.create({
+    userId: req.body.userId,
+    title: req.body.title,
+    content: req.body.content,
+    category: req.body.category
+  }, (err, post) =>{
     console.log('created post', post)
-  }).then(()=>{
-    console.log('callback test')
     res.send(post)
   })
 })
