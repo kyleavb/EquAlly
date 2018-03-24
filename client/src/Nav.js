@@ -20,21 +20,9 @@ class Nav extends Component {
 
 	render(){
 		return(
-			<Router>
-				<div>
-					<NavLinks/>
-					<Route exact path='/' render={() => <Home />} />
-			        <Route path='/profile' render={() => <Profile />} />
-			        <Route path='/about' render={() => <About />} />
-			        <Route exact path='/blog' render={() => <AllBlogs />} />
-			        <Route path='/chat' render={() => <Chat />} />
-			        <Route exact path='/blog/article' render={() => <SingleArticle />} />
-			        <Route path='/resources' render={() => <Resources />} />
-             		<Route path='/login' render={() => <Login />} />
-	     			<Route path='/logintest' render={() => <LoginTest />} />
-	     			<Route exact path='/blog/add' render={() => <CreatePost />} />
-				</div>
-			</Router>
+  		<div>
+  			<NavLinks/>
+  		</div>
 		)
 	}
 }
