@@ -14,6 +14,7 @@ export default class Messages extends Component {
 
 	componentDidMount() {
 		this.scrollDown()
+		console.log('I am an ally in Messages?', this.props.ally)
 	}
 
 	componentDidUpdate(prevProps, prevState) {
@@ -21,7 +22,7 @@ export default class Messages extends Component {
 	}
 
 	render() {
-		const { messages, user, typingUsers } = this.props
+		const { messages, user, typingUsers, ally } = this.props
 		console.log('messages', messages)
 		console.log('user', user)
 		console.log('typingUsers', typingUsers)
@@ -35,7 +36,7 @@ export default class Messages extends Component {
 							return (
 								<div
 									key={mes.id}
-									className={`message-container ${mes.sender === user && 'right'}`}
+									className={`message-container ${mes.sender === user && 'right'} ${ally === false && mes.ally === true && 'ally'}`}
 								>
 									<div className="time">{mes.time}</div>
 									<div className="data">

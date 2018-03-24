@@ -19,6 +19,7 @@ export default class ChatContainer extends Component {
 		console.log('user',this.props.user)
 		const { socket } = this.props
 		this.initSocket(socket)
+		console.log('I am an ally in ChatContainer?', this.props.ally)
 	}
 
 	initSocket(socket) {
@@ -110,14 +111,14 @@ export default class ChatContainer extends Component {
 		socket.emit(TYPING, {chatId, isTyping})
 	}
 
-	setActiveChat = (activeChat)=>{
-		this.setState({activeChat})
-		console.log('Active chat is now this: ',this.state.activeChat)
-	}
+	// setActiveChat = (activeChat)=>{
+	// 	this.setState({activeChat})
+	// 	console.log('Active chat is now this: ',this.state.activeChat)
+	// }
 	render() {
-		const { user, logout } = this.props
+		const { user, logout, ally } = this.props
 		const { chats, activeChat } = this.state
-    console.log(activeChat)
+    // console.log(activeChat)
 		return (
 			<div className="container">
 				{
@@ -140,6 +141,7 @@ export default class ChatContainer extends Component {
 									messages={chats[0].messages}
 									user={user}
 									typingUsers={chats[0].typingUsers}
+									ally={ally}
 									/>
 								<MessageInput
 									sendMessage={

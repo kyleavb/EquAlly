@@ -1,21 +1,23 @@
 const uuidv4 = require('uuid/v4')
 
 // Creates a user.
-const createUser = ({name = "", socketId = null} = {})=>{
+const createUser = ({name = "", socketId = null, ally = false} = {})=>{
 	return{
 		id:uuidv4(),
 		name,
-		socketId
+		socketId,
+		ally
 	}
 }
 
 // Creates a messages object.
-const createMessage = ({message = "", sender = ""} = { })=>(
+const createMessage = ({message = "", sender = "", ally = false} = { })=>(
 		{
 			id:uuidv4(),
 			time:getTime(new Date(Date.now())),
 			message,
-			sender
+			sender,
+			ally
 		}
 	)
 

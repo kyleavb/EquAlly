@@ -24,12 +24,13 @@ class Layout extends Component {
 
 	componentWillMount() {
 		this.initSocket()
+    console.log('I am an ally in Layout?', this.props.state.ally)
 	}
 	componentDidMount(){
     const {socket} = this.state
     var username = this.props.state.username
 		if(!this.props.user){
-      socket.emit(VERIFY_USER, username, this.setUser)
+      socket.emit(VERIFY_USER, username, this.props.state.ally, this.setUser)
 		}
 	}
 	// Connect to and initializes the socket.
@@ -62,13 +63,14 @@ class Layout extends Component {
 
 	render() {
 		const { socket, user } = this.state
-		return (
+    const { state } = this.props
+ 		return (
 			<div className="container">
 			{
 				!this.state.user ?
 					<Login />
 				:
-					<ChatContainer socket={socket} user={user}/>
+					<ChatContainer socket={socket} user={user} ally={state.ally}/>
 			}
 			</div>
 		);

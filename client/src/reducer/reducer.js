@@ -10,6 +10,7 @@ const initialState = {
   journals: [],
   posts: [],
   admin: false,
+  ally: false,
   zipcode: 0,
   socket: null
 }
@@ -37,7 +38,8 @@ function userApp(state = initialState, action){
             lastName: action.data.lastName,
             admin: action.data.admin,
             pronouns: action.data.pronouns,
-            username: action.data.username
+            username: action.data.username,
+            ally: action.data.ally
           }
         )
       )
