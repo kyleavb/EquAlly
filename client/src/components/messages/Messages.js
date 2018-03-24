@@ -25,6 +25,7 @@ export default class Messages extends Component {
 		console.log('messages', messages)
 		console.log('user', user)
 		console.log('typingUsers', typingUsers)
+		console.log("tell me what", typeof user)
 		return (
 			<div ref='container'
 				className="thread-container">
