@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SideBar from './SideBar'
 import { COMMUNITY_CHAT, MESSAGE_SENT, MESSAGE_RECEIVED, TYPING, PRIVATE_MESSAGE } from '../../Events'
-import ChatHeading from './ChatHeading'
+// import ChatHeading from './ChatHeading'
 import Messages from '../messages/Messages'
 import MessageInput from '../messages/MessageInput'
 
@@ -134,7 +134,6 @@ export default class ChatContainer extends Component {
 						chats.length > 0 ? (
 
 							<div className="chat-room">
-								<ChatHeading name={chats[0].name} />
 								<Messages
 									messages={chats[0].messages}
 									user={user}
