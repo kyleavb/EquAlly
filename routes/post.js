@@ -20,8 +20,6 @@ router.post('/create', (req, res) => {
     category: req.body.category
   }, (err, post) =>{
     console.log('created post', post)
-  }).then(()=>{
-    console.log('callback test')
     res.send(post)
   })
 })
