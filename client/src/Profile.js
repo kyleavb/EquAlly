@@ -44,6 +44,12 @@ class Profile extends Component {
 					<Col s={12} m={8} l={8} offset={'m2 l2'}>
 						<h5>Your Journal</h5>
 						<p>This journal's contents are totally encrypted and unique to your account, meaning nobody <em>but you</em> can read the contents. Your confidentiality and privacy are important to us.</p>
+
+						<div className="textarea-container col s12">
+							<label htmlFor='journal'>Enter title: </label>
+							  <input name='journal' type='text' onChange='' value=''></input>
+						</div>
+
 						<div className="textarea-container col s12 journal-container">
 						  <textarea name='journal'></textarea>
 						<div className="textarea-size"></div>
