@@ -1,12 +1,7 @@
 html,body,#root {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   height: 100%;
-}
-
-input,textarea {
-  font-family: Arial;
 }
 
 .login {
@@ -33,6 +28,7 @@ input,textarea {
   font-size: 20px;
   border-bottom: solid 2px #b3b2ca;
   transition: all .23s ease-in;
+  color: black;
 }
 
 .login-form input:focus {
@@ -48,7 +44,6 @@ input,textarea {
 }
 
 .container {
-  color: #cac8ee;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -62,7 +57,8 @@ input,textarea {
   height: 100%;
   display: flex;
   justify-content: space-around;
-  flex-direction: column
+  flex-direction: column;
+  color: white;
 }
 
 #side-bar .heading {
@@ -75,6 +71,7 @@ input,textarea {
   align-items: center;
   justify-content: space-between;
   background: #2e2e4f;
+  color: white;
 }
 
 #side-bar .search {
@@ -149,6 +146,16 @@ input,textarea {
   flex-grow: 1;
 }
 
+.instructions {
+  text-align: center;
+  margin: 20px;
+}
+
+.chatto {
+  width: 100%!important;
+  padding: 15px;
+}
+
 #side-bar .users::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   background-color: #cac8ee;
@@ -198,7 +205,7 @@ input,textarea {
 
 #side-bar .current-user {
   align-items: center;
-  background: #484d79;
+  background: #0097a7;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -232,6 +239,7 @@ input,textarea {
 .chat-header .user-info {
   align-items: center;
   display: flex;
+  color: white;
 }
 
 .chat-header .user-info .user-name {
@@ -295,7 +303,7 @@ input,textarea {
 
 .thread-container::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  background-color: #cac8ee;
+  background-color: white;
 }
 
 .thread-container::-webkit-scrollbar {
@@ -304,7 +312,7 @@ input,textarea {
 }
 
 .thread-container::-webkit-scrollbar-thumb {
-  background-color: #484d79;
+  background-color: #0097a7;
 }
 
 .thread-container .thread {
@@ -314,8 +322,10 @@ input,textarea {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  color: #b3b2ca;
-  background: #dcddf5;
+  color: white;
+  border: 1px lightgrey solid;
+  /*main chat background*/
+  background: #e0f7fa;
 }
 
 .message-container {
@@ -340,14 +350,15 @@ input,textarea {
   font-size: .65em;
   margin-top: 5px;
   text-align: right;
+  color: #f48fb1;
 }
 
 .message-container .message {
-  background: #fff;
+  background: #0097a7;
   border-radius: 5px;
   border-top-left-radius: 0;
   box-sizing: border-box;
-  color: #b3b2ca;
+  color: white;
   height: 100%;
   padding: 10px 15px;
   position: relative;
@@ -365,9 +376,9 @@ input,textarea {
 .message-container .message::before {
   border-bottom-color: transparent;
   border-left-color: transparent;
-  border-right-color: #fff;
+  border-right-color: #0097a7;
   border-style: solid;
-  border-top-color: #fff;
+  border-top-color: #0097a7;
   border-width: 4px;
   content: '';
   height: 0;
@@ -397,15 +408,15 @@ input,textarea {
 }
 
 .message-container.right .message {
-  background: #89a1fc;
+  background: #fbc02d;
   color: #fff;
   border-top-right-radius: 0;
   border-top-left-radius: 5px;
 }
 
 .message-container.right .message::before {
-  border-top-color: #89a1fc;
-  border-left-color: #89a1fc;
+  border-top-color: #fbc02d;
+  border-left-color: #fbc02d;
   border-right-color: transparent;
   left: auto;
   right: -7px;
@@ -468,11 +479,11 @@ input,textarea {
   border: none;
   height: 100%;
   color: #fff;
-  background: #3e3e5e;
+  background: #f8bbd0;
   transition: all .35s ease-out;
 }
 
 .message-input .message-form .send:disabled {
   opacity: .2;
-  background: #5d5d8a;
+  background: #f8bbd0;
 }
