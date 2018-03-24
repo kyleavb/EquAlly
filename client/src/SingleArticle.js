@@ -2,6 +2,12 @@ import React, {Component} from 'react';
 import {Row, Col, Button} from 'react-materialize';
 import Comment from './Comment';
 import CommentForm from './CommentForm';
+import {connect} from 'react-redux';
+import {liftUser} from './action/actions';
+
+const mapStateToProps = state => {
+	return { state }
+}
 
 class SingleArticle extends Component {
 
@@ -49,4 +55,4 @@ class SingleArticle extends Component {
 
 }
 
-export default SingleArticle;
+export default connect(mapStateToProps)(SingleArticle);
