@@ -6,7 +6,6 @@ import {
 import Home from './Home';
 import Profile from './Profile';
 import Login from './Login'
-import LoginTest from './TestFiles/LoginTest'
 import AllBlogs from './AllBlogs';
 import Chat from './Chat';
 import Resources from './Resources';
@@ -35,7 +34,6 @@ class App extends Component {
               <Route exact path='/blog/article' render={() => <SingleArticle />} />
               <Route path='/resources' render={() => <Resources />} />
                 <Route path='/login' render={() => <Login />} />
-            <Route path='/logintest' render={() => <LoginTest />} />
             <Route exact path='/blog/add' render={() => <CreatePost />} />
           <Footer />
           </div>

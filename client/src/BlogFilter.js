@@ -1,15 +1,27 @@
 import React, {Component} from 'react';
 import { Input } from 'react-materialize';
 import { Link } from 'react-router-dom';
+import{connect} from 'react-redux'
+
+const mapStateToProps = state => {
+  return{ state }
+}
 
 class BlogFilter extends Component {
-
 
 	handleFilterList(){
 
 	}
 
 	render() {
+		let addBlog = this.props.state.ally ?
+				<div className='row center'>
+					<div className='input-field col s3'>
+						<Link to='/blog/add' className='btn waves-light yellow darken-2'>Add Post</Link>
+					</div>
+				</div>
+				:
+				''
 		return(
 			<div>
 				<div className="input-field col s6">
@@ -42,16 +54,11 @@ class BlogFilter extends Component {
 				    	<i className="material-icons right">search</i>
 					</button>
 				</div>
-				<div className='row center'>
-					<div className='input-field col s3'>
-						<Link to='/blog/add' className='btn waves-light yellow darken-2'>Add Post</Link>
-					</div>
-				</div>
+				{addBlog}
 			</div>
 		)
 
 	}
 
 }
-
-export default BlogFilter;
+export default connect(mapStateToProps)(BlogFilter)
