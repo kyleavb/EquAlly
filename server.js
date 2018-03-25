@@ -13,7 +13,7 @@ const http = require('http').Server(app)
 const io = module.exports.io = require('socket.io').listen(http);
 const SocketManager = require('./SocketManager')
 
-mongoose.connect('mongodb://localhost/equAlly')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/equAlly')
 
 const PORT = process.env.PORT || 5000;
 
