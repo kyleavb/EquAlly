@@ -34,7 +34,7 @@ app.use(session({
 
 app.get('*', (req,res) => {
   console.log('attempt')
-  res.sendFile(path.join(__dirname, 'client/build/index.html'));
+  res.sendFile(path.join(__dirname, 'client/public/index.html'));
 })
 
 app.get('/chat', (req, res) => {
