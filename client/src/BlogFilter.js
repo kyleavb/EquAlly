@@ -13,6 +13,10 @@ class BlogFilter extends Component {
 
 	}
 
+  componentWillMount(){
+    
+  }
+
 	render() {
 		let addBlog = this.props.state.ally ?
 				<div className='row center'>
