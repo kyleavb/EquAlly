@@ -33,7 +33,7 @@ app.use(session({
 }))
 
 app.get('*', (req,res) => {
-  res.sendFile(__dirname+'client/build/index.html');
+  res.sendFile(__dirname+'/client/build/index.html');
 })
 
 app.get('/chat', (req, res) => {
