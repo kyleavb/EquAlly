@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col } from 'react-materialize';
 import JournalEntryTeaser from './JournalEntryTeaser';
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom';
 
 const mapStateToProps = state => {
   return{ state }
@@ -22,7 +23,7 @@ class Profile extends Component {
 				<Row>
 					<div className='center col s12 m4 l4 offset-m4 offset-l4'>
 						<br/>
-						<a className='btn-large col s12 waves-effect yellow darken-2 white-text profile-chat' href='/chat'>Chat now!</a>
+						<Link className='btn-large col s12 waves-effect yellow darken-2 white-text profile-chat' to='/chat'>Chat now!</Link>
 						<p className='grey-text lighten-2'>(We're always here for you.)</p>
 					</div>
 				</Row>

@@ -438,25 +438,31 @@ html,body,#root {
 .message-container.ally .message {
   background: #fbc02d;
   color: #fff;
-  border-top-right-radius: 0;
-  border-top-left-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 5px;
 }
 
 .message-container.ally .message::before {
   border-top-color: #fbc02d;
-  border-left-color: #fbc02d;
-  border-right-color: transparent;
-  left: auto;
-  right: -7px;
+  border-right-color: #fbc02d;
+  border-left-color: transparent;
+  right: auto;
+  left: -7px;
 }
 
 .message-container.ally.right .message {
+  border-top-right-radius: 0;
+  border-top-left-radius: 5px;
   background: lightgrey;
 }
 
 .message-container.ally.right .message::before {
   border-top-color: lightgrey;
   border-left-color: lightgrey;
+  border-right-color: transparent;
+  left: auto;
+  right: -7px;
+
 }
 
 .typing-user {
