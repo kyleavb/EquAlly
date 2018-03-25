@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Carousel } from 'react-materialize';
 import CarouselImage1 from './img/couple-walking-sm.jpg';
 import CarouselImage2 from './img/seattle-trans-pride-march-sm.jpg';
@@ -22,7 +23,8 @@ export default () => {
 				<h3 className='yellow-text text-darken-2 carousel-h3'>Talk to someone about it.</h3>
 				<p className='center white-text carousel-p'>Whatever you may be going through, we have someone who can help. Chat with an expert about it without fear of judgment.</p>
 				<br/><br/><br/>
-				<a className='btn waves-effect pink lighten-2 white-text' href='/chat'>Chat now!</a>
+				<Link className='btn waves-effect pink lighten-2 white-text' to='/chat'>Chat now!</Link>
+				
 				</div>
 			}
 
