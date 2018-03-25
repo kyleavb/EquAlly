@@ -32,6 +32,10 @@ app.use(session({
   saveUninitialized: true
 }))
 
+app.get('/', (req,res) => {
+  res.send('this is bull')
+})
+
 app.get('/chat', (req, res) => {
   res.sendFile(__dirname + '/client/src/TestFiles/index.html')
 })
