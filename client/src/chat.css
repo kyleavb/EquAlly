@@ -353,6 +353,8 @@ html,body,#root {
   color: #f48fb1;
 }
 
+
+/* EDIT THIS JACKASS */
 /*THIS IS ALSO THE LEFT BABY*/
 .message-container .message {
   background: #0097a7; /* EDIT THIS */
@@ -375,7 +377,11 @@ html,body,#root {
 }
 
 
+/* EDIT THIS JACKASS */
+
+
 /*THIS IS THE LEFT BABY */
+
 .message-container .message::before {
   border-bottom-color: transparent;
   border-left-color: transparent;
@@ -410,21 +416,47 @@ html,body,#root {
   display: none;
 }
 
-/*THE RIGHT BABY*/
+
+/* EDIT THIS JACKASS */
 .message-container.right .message {
-  background: #fbc02d; /* EDIT THIS */
+  background: lightgrey;
   color: #fff;
   border-top-right-radius: 0;
   border-top-left-radius: 5px;
 }
 
-/*THE RIGHT BABY*/
+
+/* EDIT THIS JACKASS */
 .message-container.right .message::before {
-  border-top-color: #fbc02d;  /* EDIT THIS */
-  border-left-color: #fbc02d; /* EDIT THIS */
+  border-top-color: lightgrey;
+  border-left-color: lightgrey;
   border-right-color: transparent;
   left: auto;
   right: -7px;
+}
+
+.message-container.ally .message {
+  background: #fbc02d;
+  color: #fff;
+  border-top-right-radius: 0;
+  border-top-left-radius: 5px;
+}
+
+.message-container.ally .message::before {
+  border-top-color: #fbc02d;
+  border-left-color: #fbc02d;
+  border-right-color: transparent;
+  left: auto;
+  right: -7px;
+}
+
+.message-container.ally.right .message {
+  background: lightgrey;
+}
+
+.message-container.ally.right .message::before {
+  border-top-color: lightgrey;
+  border-left-color: lightgrey;
 }
 
 .typing-user {

@@ -18,22 +18,23 @@ module.exports = function(socket){
 	let sendTypingFromUser;
 
 	//Verify Username
-	socket.on(VERIFY_USER, (nickname,callback)=>{
+	socket.on(VERIFY_USER, (nickname, ally, callback)=>{
 		if(isUser(connectedUsers, nickname)){
-			// console.log('first')
+			console.log('first')
 			callback({ isUser:true, user:null })
 		}else{
-			// console.log('second')
-			callback({ isUser:false, user:createUser({name:nickname, socketId:socket.id})})
+			console.log('second')
+			callback({ isUser:false, user:createUser({name:nickname, socketId:socket.id, ally})})
 		}
 	})
 
 	//User Connects with username
 	socket.on(USER_CONNECTED, (user)=>{
+		console.log('In the USER_CONNECTED event in SocketManager', user)
 		user.socketId = socket.id
 		connectedUsers = addUser(connectedUsers, user)
 		// socket.user = user
-		sendMessageToChatFromUser = sendMessageToChat(user.user.name)
+		sendMessageToChatFromUser = sendMessageToChat(user.user.name, user.user.ally)
 		sendTypingFromUser = sendTypingToChat(user.name)
 		io.emit(USER_CONNECTED, connectedUsers)
 		// console.log(connectedUsers);
@@ -96,10 +97,10 @@ function sendTypingToChat(user){
 
 // Returns a function that will take a chat id and message
 // and then emit a broadcast to the chat id.
-function sendMessageToChat(sender){
+function sendMessageToChat(sender, ally){
 	console.log('This is sendMessageToChat on SocketManager', sender)
 	return (chatId, message)=>{
-		io.emit(`${MESSAGE_RECEIVED}-${chatId}`, createMessage({message, sender}))
+		io.emit(`${MESSAGE_RECEIVED}-${chatId}`, createMessage({message, sender, ally}))
 	}
 }
 
