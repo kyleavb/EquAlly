@@ -4,7 +4,8 @@
   "description": "ally site",
   "main": "index.js",
   "scripts": {
-    "client": "cd client && HTTPS=true npm start",
+    "prod": "",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
