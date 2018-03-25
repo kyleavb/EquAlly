@@ -54,7 +54,11 @@ class CreatePost extends Component {
     console.log(post)
 		axios.post('/post/create', post)
       .then(res => {
-        console.log(res)
+        this.setState({
+          title: '',
+    			content: '',
+          category: ''
+        })
       })
         .catch( err => {
           console.log(err)
@@ -80,7 +84,7 @@ class CreatePost extends Component {
 					</Row>
 					<Row>
 						<div className="textarea-container col s12 journal-container">
-							  <textarea name='journal' onChange={this.contentChange}></textarea>
+							  <textarea name='journal' onChange={this.contentChange} value={this.state.content}></textarea>
 							<div className="textarea-size"></div>
 						</div>
 					</Row>

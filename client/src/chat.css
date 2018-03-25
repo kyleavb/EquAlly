@@ -353,9 +353,11 @@ html,body,#root {
   color: #f48fb1;
 }
 
+
 /* EDIT THIS JACKASS */
+/*THIS IS ALSO THE LEFT BABY*/
 .message-container .message {
-  background: #0097a7;
+  background: #0097a7; /* EDIT THIS */
   border-radius: 5px;
   border-top-left-radius: 0;
   box-sizing: border-box;
@@ -374,13 +376,18 @@ html,body,#root {
   }
 }
 
+
 /* EDIT THIS JACKASS */
+
+
+/*THIS IS THE LEFT BABY */
+
 .message-container .message::before {
   border-bottom-color: transparent;
   border-left-color: transparent;
-  border-right-color: #0097a7;
+  border-right-color:  #0097a7; /* EDIT THIS */
   border-style: solid;
-  border-top-color: #0097a7;
+  border-top-color: #0097a7;/* EDIT THIS */
   border-width: 4px;
   content: '';
   height: 0;
@@ -409,6 +416,7 @@ html,body,#root {
   display: none;
 }
 
+
 /* EDIT THIS JACKASS */
 .message-container.right .message {
   background: lightgrey;
@@ -416,6 +424,7 @@ html,body,#root {
   border-top-right-radius: 0;
   border-top-left-radius: 5px;
 }
+
 
 /* EDIT THIS JACKASS */
 .message-container.right .message::before {
