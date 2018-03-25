@@ -20,7 +20,8 @@ const PORT = process.env.PORT || 5000;
 io.on('connection', SocketManager)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+//app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.use(express.static(path.resolve(__dirname, 'client', 'build')));
 app.use(passport.initialize())
 app.use(passport.session())
 app.use('/auth', auth);
@@ -32,8 +33,8 @@ app.use(session({
   saveUninitialized: true
 }))
 
-app.get('*', (req,res) => {
-  res.sendFile(__dirname+'/client/build/index.html');
+app.get('*', (req,res, next) => {
+  res.sendFile(__dirname, '/client', 'build', 'index.html');
 })
 
 app.get('/chat', (req, res) => {
