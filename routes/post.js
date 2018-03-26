@@ -8,9 +8,14 @@ const Post = require('../models/post')
 var user = require('../models/user')
 
 router.get('/', (req, res) => {
-  console.log('Get all Post Route')
-  Post.find().then((data) => {
-    console.log('returning', data.length)
+  Post.find().lean().then((data) => {
+    res.send(data)
+  })
+})
+
+router.get('/:id', (req, res) => {
+  console.log('hitting get specific')
+  Post.findOne({_id:req.params.id}).then(data =>{
     res.send(data)
   })
 })

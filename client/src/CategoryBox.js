@@ -9,12 +9,11 @@ class CategoryBox extends Component {
 	render() {
 
 		let articleExcise = this.props.blogs.map((blog, index) => {
-			console.log(blog)
-			return <ArticleTeaser key={index} title={blog.title} content={blog.content} blogId={blog.Id} />
+			return <ArticleTeaser key={index} title={blog.title} content={blog.content} blogId={blog._id} blogObj={blog} />
 		})
 		return(
 			<div className='col s12 m8 l4 offset-m2 offset-l1 category-box'>
-				<h5><a href='/' className='cyan-text text-lighten-1'>{this.props.title}</a></h5>
+				<h5><a className='cyan-text text-lighten-1'>{this.props.title}</a></h5>
 				<div className='col s12 article-preview'>
 					{articleExcise}
 				</div>
