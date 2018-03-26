@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
-import { Row, Col, Button } from 'react-materialize';
+import { Row, Col } from 'react-materialize';
 import axios from 'axios';
 import {connect} from 'react-redux'
 import {liftUser} from './action/actions'
@@ -52,7 +51,10 @@ class Login extends Component {
 						    <a className='btn waves-effect yellow darken-2 col s12 ' href='#'>Facebook</a>
 						    <br/>
 						    <br/>
-						    <a className='btn waves-effect yellow darken-2 col s12 ' href='/auth/fakelogin' custom={random} onClick={this.fakeLogin}>Google</a>
+						    <a className='btn waves-effect yellow darken-2 col s12 ' href='/auth/google' custom={random} onClick={this.fakeLogin}>Google</a>
+                <br/>
+						    <br/>
+						    <a className='btn waves-effect yellow darken-2 col s12 ' href='/auth/fakelogin' custom={random} onClick={this.fakeLogin}>Super Real Login</a>
 					    </div>
 					</div>
 				</Row>

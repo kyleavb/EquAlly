@@ -1,1 +1,1 @@
-web: npm run build-client && node server.js
+web: node server.js

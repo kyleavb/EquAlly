@@ -13,27 +13,22 @@ const http = require('http').Server(app)
 const io = module.exports.io = require('socket.io').listen(http);
 const SocketManager = require('./SocketManager')
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/equAlly')
+mongoose.connect(process.env.MONGODB_URI);
 
 const PORT = process.env.PORT || 5000;
 
 io.on('connection', SocketManager)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.use(express.static(path.resolve(__dirname, 'client', 'build')));
 app.use(passport.initialize())
 app.use(passport.session())
 app.use('/auth', auth);
 app.use('/comment', comment)
 app.use('/post', post)
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: true
-}))
 
-app.get('*', (req,res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build'));
+app.get('*', (req,res, next) => {
+  res.sendFile(__dirname, '/client', 'build', 'index.html');
 })
 
 app.get('/chat', (req, res) => {
