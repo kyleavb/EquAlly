@@ -52,7 +52,6 @@ class NavLinks extends Component {
         <li><Link to='/blog'>Blog</Link></li>
         <li><Link to='/resources'>Resources</Link></li>
         <li><Link to='/about'>About Us</Link></li>
-        <li>Kyle is Testing</li>
 				<Dropdown trigger={
     	<li><a href='#!'>Navigate</a></li>
 			  	}>
