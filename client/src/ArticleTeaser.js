@@ -8,12 +8,13 @@ import React, {Component} from 'react';
 class ArticleTeaser extends Component {
 
 	render() {
+		
+		let cutContent = this.props.content.substring(0,100)
 		return(
 			<div>
 				<i className='yellow-text text-darken-2 material-icons medium left'>description</i>
-				<h6><a href='/'>Article Title</a></h6>
-				<span>Article Teaser. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</span>
+				<h6><a href='/'>{this.props.title}</a></h6>
+				<span>{cutContent}</span>
 				<br/>
 			</div>
 

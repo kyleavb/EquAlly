@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Input } from 'react-materialize';
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 import{connect} from 'react-redux'
 
 const mapStateToProps = state => {
@@ -12,10 +13,6 @@ class BlogFilter extends Component {
 	handleFilterList(){
 
 	}
-
-  componentWillMount(){
-    
-  }
 
 	render() {
 		let addBlog = this.props.state.ally ?
