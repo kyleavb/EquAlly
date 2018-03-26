@@ -33,7 +33,8 @@ class App extends Component {
               <Route path='/chat' render={() => <Chat />} />
               <Route exact path='/blog/article' render={() => <SingleArticle />} />
               <Route path='/resources' render={() => <Resources />} />
-                <Route path='/login' render={() => <Login />} />
+              <Route path='/login' render={() => <Login />} />
+              <Route path='/post/:id' render={() => <SingleArticle />} />
             <Route exact path='/blog/add' render={() => <CreatePost />} />
           <Footer />
           </div>
