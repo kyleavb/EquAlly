@@ -91,10 +91,9 @@ Equally's main functional feature is the chat component. Dan spent the lion's sh
 After trying to implement redux, the team decided local state would be preferred for the chat feature and could be causing some of the bugs. Kyle worked closely with a General Assembly IA to initialize the chat object and display individual messages. Once complete, Dan took over and added logic to ensure the messages were assigned correctly and were distinguishable by user. Lemon took over for the final step and styled in accordance with the site branding.
 
 ## Kyle's database management
-
+It was very challenging working on the backend with react and express.  After working with just solo express app with EJS this proved to be a bit more complex.  After making a call to the database and passing that property from one page to the next was a bit challenging.
 
 ## Some extra neat features
-
 
 Lemon implemented the Google Maps feature on the Resources page and a specially made Twitter List feed on the Home page, which Dan curated. The user's zipcode is used to initialize the map's starting viewport. The site is fully responsive and optimized for mobile. Users that are administrators have different access to the site than the average user does.
 
