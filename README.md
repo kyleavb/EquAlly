@@ -95,7 +95,13 @@ After trying to implement redux, the team decided local state would be preferred
 
 ## Some extra neat features
 
-Lemon implemented the Google Maps feature on the Resources page and the ACLU Twitter feed on the Home page. The user's zipcode is used to initialize the map's starting viewport.
+
+Lemon implemented the Google Maps feature on the Resources page and a specially made Twitter List feed on the Home page, which Dan curated. The user's zipcode is used to initialize the map's starting viewport. The site is fully responsive and optimized for mobile. Users that are administrators have different access to the site than the average user does.
+
+## Examples of mobile responsiveness
+![img_8887](https://user-images.githubusercontent.com/25888207/37885933-d2d0bcc8-306c-11e8-81d2-8fdc6636c9fa.PNG)
+![img_8889](https://user-images.githubusercontent.com/25888207/37885934-d2ec0b9a-306c-11e8-8612-c5b8020d0943.PNG)
+![img_8891](https://user-images.githubusercontent.com/25888207/37885935-d2fe68c6-306c-11e8-8ac8-f8117ec88f0e.PNG)
 
 ## Next steps
 
