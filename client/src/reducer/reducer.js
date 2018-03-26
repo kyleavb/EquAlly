@@ -1,4 +1,4 @@
-import {ADD_COMMENT, LIFT_USER, START_CHAT} from '../action/actions'
+import {ADD_COMMENT, LIFT_USER, START_CHAT, TEMP} from '../action/actions'
 const initialState = {
   userId: '',
   firstName: '',
@@ -12,7 +12,8 @@ const initialState = {
   admin: false,
   ally: false,
   zipcode: 0,
-  socket: null
+  socket: null,
+  temp: ''
 }
 
 function userApp(state = initialState, action){
@@ -51,6 +52,12 @@ function userApp(state = initialState, action){
             socket: action.data.socket
           }
         )
+      )
+    case TEMP:
+      return(
+        Object.assign({}, state, {
+          temp: action.data
+        })
       )
     default:
       return state

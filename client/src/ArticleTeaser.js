@@ -1,10 +1,20 @@
 import React, {Component} from 'react';
 import { Route, BrowserRouter, withRouter, Redirect } from 'react-router-dom'
 import axios from 'axios'
-
+import { connect } from 'react-redux'
+import {temp} from './action/actions'
 //here we can get props of the individual articles and truncate
 //the body into this description area
 
+const mapDispatchToProps = dispatch => {
+  return{
+		temp: (data) => dispatch(temp(data)),
+  }
+}
+
+const mapStateToProps = state => {
+  return{ state }
+}
 
 class ArticleTeaser extends Component {
 	constructor(props){
@@ -19,9 +29,9 @@ class ArticleTeaser extends Component {
 		e.preventDefault()
 		let target = '/post/' + this.props.blogId;
 		axios.get(target).then(res =>{
+			this.props.temp(res.data)
 			this.setState({
 				toArticle: true,
-				articleInfo: res
 			})
 		})
 	}
@@ -29,7 +39,7 @@ class ArticleTeaser extends Component {
 		let cutContent = this.props.content.substring(0,100)
 		let blogLink = '/post/' + this.props.blogId;
 		if(this.state.toArticle){
-			return (<Redirect to={blogLink} article={this.state.Article} />)
+			return (<Redirect to={blogLink} blog={this.props.blogObj}/>)
 		}
 		return(
 			<div className='row'>
@@ -45,4 +55,4 @@ class ArticleTeaser extends Component {
 
 }
 
-export default withRouter(ArticleTeaser);
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleTeaser);

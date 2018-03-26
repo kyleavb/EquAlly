@@ -9,7 +9,7 @@ class CategoryBox extends Component {
 	render() {
 
 		let articleExcise = this.props.blogs.map((blog, index) => {
-			return <ArticleTeaser key={index} title={blog.title} content={blog.content} blogId={blog._id} />
+			return <ArticleTeaser key={index} title={blog.title} content={blog.content} blogId={blog._id} blogObj={blog} />
 		})
 		return(
 			<div className='col s12 m8 l4 offset-m2 offset-l1 category-box'>
