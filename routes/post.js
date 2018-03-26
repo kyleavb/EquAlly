@@ -8,7 +8,11 @@ const Post = require('../models/post')
 var user = require('../models/user')
 
 router.get('/', (req, res) => {
-  console.log('root posts route')
+  console.log('Get all Post Route')
+  Post.find().then((data) => {
+    console.log('returning', data.length)
+    res.send(data)
+  })
 })
 
 router.post('/create', (req, res) => {
