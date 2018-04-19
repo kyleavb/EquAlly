@@ -36,7 +36,6 @@ class Login extends Component {
   }
 
 	render() {
-
 		let random = Math.floor(Math.random() * 6);
 		return(
 			<div>
