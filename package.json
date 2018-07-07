@@ -21,27 +21,26 @@
   },
   "homepage": "https://github.com/kyleavb/EquAlly#readme",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "concurrently": "^3.5.1",
+    "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
-    "mongoose": "^5.0.10",
+    "mongoose": "^5.2.1",
     "npm-watch": "^0.3.0",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
     "passport-google-oauth": "^1.0.0",
     "react-icons": "^2.2.7",
-    "react-materialize": "^2.1.2",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
+    "react-materialize": "^2.3.3",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "react-twitter-widgets": "^1.7.1",
     "redux": "^3.7.2",
-    "socket.io": "^2.0.4",
-    "uuid": "^3.2.1"
+    "socket.io": "^2.1.1",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "concurrently": "^3.5.0"
+    "concurrently": "^3.6.0"
   }
 }
