@@ -13,7 +13,7 @@ export default () => (
 	    <ul>
 
 	      <li><Link className="grey-text text-lighten-3" to='/'>Home</Link></li>
-	      <li><Link className="grey-text text-lighten-3" to='/profile'>Profile</Link></li>
+	      <li><Link className="grey-text text-lighten-3" to='/chat'>Chat</Link></li>
 	      <li><Link className="grey-text text-lighten-3" to='/resources'>Resources</Link></li>
 	      <li><Link className="grey-text text-lighten-3" to='/blog'>Blog</Link></li>
 	      <li><Link className="grey-text text-lighten-3" to='/about'>About Us</Link></li>
