@@ -47,6 +47,7 @@ class NavLinks extends Component {
 	    let adminPage = admin ? <li><Link to='/'>Admin</Link></li> : ''
 	    let chatAccess = userId ? <li><Link to='/chat'>Live Chat</Link></li> : ''
 		return(
+
       <Navbar brand={logo} className='cyan lighten-2 right'>
 		<li><Link to='/'>Home</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
@@ -62,6 +63,7 @@ class NavLinks extends Component {
 				</Dropdown>
         {login}
 			</Navbar>
+
 		)
 	}
 }
