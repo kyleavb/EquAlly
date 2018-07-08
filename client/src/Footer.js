@@ -12,12 +12,12 @@ export default () => (
 	  links={
 	    <ul>
 
-	      <li><Link className="grey-text text-lighten-3" to='/'>Home</Link></li>
-	      <li><Link className="grey-text text-lighten-3" to='/chat'>Chat</Link></li>
-	      <li><Link className="grey-text text-lighten-3" to='/resources'>Resources</Link></li>
-	      <li><Link className="grey-text text-lighten-3" to='/blog'>Blog</Link></li>
-	      <li><Link className="grey-text text-lighten-3" to='/about'>About Us</Link></li>
-	      <li><Link className="grey-text text-lighten-3" to='/logout'>Log Out</Link></li>
+	      <li><Link className="grey-text text-lighten-3 thislink" to='/'>Home</Link></li>
+	      <li><Link className="grey-text text-lighten-3 thislink" to='/chat'>Chat</Link></li>
+	      <li><Link className="grey-text text-lighten-3 thislink" to='/resources'>Resources</Link></li>
+	      <li><Link className="grey-text text-lighten-3 thislink" to='/blog'>Blog</Link></li>
+	      <li><Link className="grey-text text-lighten-3 thislink" to='/about'>About Us</Link></li>
+	      <li><Link className="grey-text text-lighten-3 thislink" to='/logout'>Log Out</Link></li>
 	    </ul>
 	  }
 	  className='cyan lighten-2'>

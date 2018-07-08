@@ -218,3 +218,16 @@ textarea {
 .page-footer p , .page-footer h5, .footer-copyright .container{
 	margin-left: 20px!important;
 }
+
+.page-footer .offset-l2 {
+	padding: 0!important;
+	padding-left: 75px!important;
+}
+
+.page-footer .row {
+	width: 100%!important;
+}
+
+.page-footer .row, .page-footer .offset-l2 {
+	margin-left: -10px!important;
+}
