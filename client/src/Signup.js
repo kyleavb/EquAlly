@@ -75,7 +75,8 @@ class Signup extends Component {
                         <input name="zipcode" onChange={this.handleChange} type="text" className="validate" />
                         <label htmlFor="zipcode">Zipcode</label>
                     </div>
-                    <Input type='select' value={this.state.pronoun} name='pronouns' s={12} m={6} onChange={this.handleChange} label='Pronouns'>
+
+                    <Input type='select' value={this.state.pronouns} name='pronouns' s={12} m={6} onChange={this.handleChange} label='Pronouns'>
                         <option value="0" disabled>Select your preferred pronouns</option>
                         <option value="She/Her">She/Her</option>
                         <option value="He/Him">He/Him</option>
@@ -96,6 +97,7 @@ class Signup extends Component {
                         <label htmlFor="password">Password</label>
                     </div>
                 </div>
+              
                 <div className="row">
                     <button className="btn waves-effect waves-light col s6 m4 l4 offset-s3 offset-m4 offset-l4 yellow darken-2" onClick={this.submitForm}>Sign Up!
                     <i className="material-icons right">account_box</i>
