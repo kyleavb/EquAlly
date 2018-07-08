@@ -17,11 +17,11 @@ export default () => (
 			<div className='col s12 m12 l8 offset-l2'>
 				<p className='about-body'>Hey, friend. As the developers behind this product, we are steadfastly passionate about promoting equality and inclusivity. 
 				We all come from drastically different backgrounds, but very fortunately happened to take the same WDI course at the same time at
-				General Assembly in Seattle, WA. Upon having the opportunity to work together as a team, we decided to put our skills and 
+				General Assembly in Seattle, WA. <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;Upon having the opportunity to work together as a team, we decided to put our skills and 
 				our shared passion for using technology as a platform for positive, meaningful impact together to create this resourceful 
 				web application. Taking the tumultuous and unreliable political climate nowadays into consideration, we wanted to create something 
 				that would make existing as a marginalized member of the community feel a bit safer and make navigating the world as such a bit 
-				less daunting. Please feel free to leave us feedback regarding this app--we know there's always room for improvement, whether that 
+				less daunting.  <br /><br />&nbsp;&nbsp;&nbsp;&nbsp; Please feel free to leave us feedback regarding this app--we know there's always room for improvement, whether that 
 				is in regards to the construction of our site or the content itself.</p>
 			</div>
 		</div>

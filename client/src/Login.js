@@ -22,16 +22,18 @@ class Login extends Component {
 
 	fakeLogin(e){
 		e.preventDefault()
-    console.log('props', this.props)
 		let userAt = e.target.getAttribute("custom");
+		console.log(userAt)
+		console.log(e.target.href)
     axios.post(e.target.href, {
 			num: userAt
 		}).then(res => {
+			console.log('HERE', res)
 			this.props.liftUser(res.data)
 		}).then(res =>{
 			console.log('User info',this.props.state)
 		}).catch(error => {
-		    console.log('here is the error response ' + error.response)
+		    console.log('here is the error response ', error.response)
 		});
   }
 
