@@ -51,10 +51,10 @@ class Signup extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="input-field col s12 m6">
-                        <i className="material-icons prefix">email</i>
-                        <input name="email" type="email" onChange={this.handleChange} className="validate" />
-                        <label htmlFor="email">Email</label>
+                 <div className="input-field col s12 m6">
+                        <i className="material-icons prefix">location_on</i>
+                        <input name="zipcode" onChange={this.handleChange} type="text" className="validate" />
+                        <label htmlFor="zipcode">Zipcode</label>
                     </div>
                     <Input type='select' value={this.state.pronoun} name='pronoun' s={12} m={6} onChange={this.handleChange} label='Pronouns'>
                         <option value="0" disabled>Select your preferred pronouns</option>
@@ -66,15 +66,16 @@ class Signup extends Component {
                 </div>
                 <div className="row">
                     <div className="input-field col s12 m6">
+                        <i className="material-icons prefix">email</i>
+                        <input name="email" type="email" onChange={this.handleChange} className="validate" />
+                        <label htmlFor="email">Email</label>
+                    </div>
+                    <div className="input-field col s12 m6">
                         <i className="material-icons prefix">vpn_key</i>
                         <input name="password" onChange={this.handleChange} type="password" className="validate" />
                         <label htmlFor="password">Password</label>
                     </div>
-                    <div className="input-field col s12 m6">
-                        <i className="material-icons prefix">location_on</i>
-                        <input name="zipcode" onChange={this.handleChange} type="text" className="validate" />
-                        <label htmlFor="zipcode">Zipcode</label>
-                    </div>
+                   
                 </div>
                 <div className="row">
                     <button className="btn waves-effect waves-light col s6 m4 l4 offset-s3 offset-m4 offset-l4 yellow darken-2" type="submit" name="action">Sign Up!
