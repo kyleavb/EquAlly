@@ -15,35 +15,35 @@ class CreatePost extends Component {
 			userId: '',
 			title: '',
 			content: '',
-      category: ''
+      		category: ''
 		}
 		this.titleChange = this.titleChange.bind(this)
 		this.contentChange = this.contentChange.bind(this)
 		this.submitAction = this.submitAction.bind(this)
-    this.categoryChange = this.categoryChange.bind(this)
+    	this.categoryChange = this.categoryChange.bind(this)
 	}
 
 	componentDidMount(){
 		this.setState({userId: this.props.state.userId})
-    console.log('UserId', this.props.state.userId)
+    	console.log('UserId', this.props.state.userId)
 	}
 
 	titleChange(e){
 		let title = e.target.value
 		this.setState({title})
-    console.log('Title', this.state.title)
+    	console.log('Title', this.state.title)
 	}
 
 	contentChange(e){
 		let content = e.target.value
 		this.setState({content})
-    console.log('Content', this.state.content)
+    	console.log('Content', this.state.content)
 	}
 
   categoryChange(e) {
     let category = e.target.value
     this.setState({category})
-    console.log('Category', this.state.category)
+    	console.log('Category', this.state.category)
   }
 
 
@@ -56,7 +56,7 @@ class CreatePost extends Component {
       .then(res => {
         this.setState({
           title: '',
-    			content: '',
+    		content: '',
           category: ''
         })
       })

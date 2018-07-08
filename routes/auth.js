@@ -32,7 +32,6 @@ router.post('/fakelogin', (req, res) => {
     console.log('Return Fake Shit',data[req.body.num])
     res.send(data[req.body.num])
   })
-
 })
 
 router.get('/user', function(req, res, next){

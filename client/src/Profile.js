@@ -1,14 +1,57 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-materialize';
 import JournalEntryTeaser from './JournalEntryTeaser';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import {liftUser} from './action/actions';
+import axios from 'axios';
 
 const mapStateToProps = state => {
   return{ state }
 }
 
+const mapDispatchToProps = dispatch => {
+    return{
+        liftUser: (userInfo) => dispatch(liftUser(userInfo)),
+    }
+}
+
 class Profile extends Component {
+	constructor(props){
+		super(props);
+		this.state={
+			userId: this.props.state.userId,
+            title: '',
+            journalContent: ''
+        };
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+    
+    handleChange(e){
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    handleSubmit(e){
+        e.preventDefault()
+		let {title, journalContent, userId} = this.state
+		axios.post('/profile/create', {
+			userId: userId,
+			journals: {
+				title: title,
+				content: journalContent
+			}
+		}).then(res => {
+			console.log(res)
+		})
+    }
+
+    componentDidMount() {
+    	axios.get('/profile').then(() => {console.log('hitting the profile route', this.props.state.userId)})
+
+    }
 
 	render() {
 
@@ -47,20 +90,20 @@ class Profile extends Component {
 						<p>This journal's contents are totally encrypted and unique to your account, meaning nobody <em>but you</em> can read the contents. Your confidentiality and privacy are important to us.</p>
 
 						<div className="textarea-container col s12">
-							<label htmlFor='journal'>Enter title: </label>
-							  <input name='journal' type='text' onChange='' value=''></input>
+							<label htmlFor='title'>Enter title: </label>
+							<input name='title' onChange={this.handleChange} type='text' defaultValue=''></input>
 						</div>
 
 						<div className="textarea-container col s12 journal-container">
-						  <textarea name='journal'></textarea>
-						<div className="textarea-size"></div>
+							<textarea onChange={this.handleChange} name='journalContent'></textarea>
+							<div className="textarea-size"></div>
 						</div>
 					</Col>
 				</Row>
 				<Row>
 					<div className='center col s12 m4 l4 offset-m4 offset-l4'>
 						<br/>
-						<a className='btn-large col s12 waves-effect yellow darken-2 white-text' href='/chat'>Submit Journal Entry</a>
+						<button className='btn-large col s12 waves-effect yellow darken-2 white-text' onClick={this.handleSubmit} type='submit'>Submit Journal Entry</button>
 					</div>
 				</Row>
 				<Row>
@@ -80,4 +123,4 @@ class Profile extends Component {
 
 }
 
-export default connect(mapStateToProps)(Profile)
+export default connect(mapStateToProps,  mapDispatchToProps)(Profile)
