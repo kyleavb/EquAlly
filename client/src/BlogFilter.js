@@ -26,18 +26,17 @@ class BlogFilter extends Component {
 		return(
 			<div>
 				<div className="input-field col s6">
-		          <i className="white-text material-icons prefix">search</i>
-		          <input id="keywords" className="materialize-input"></input>
-		          <label htmlFor="keywords" className='white-text'></label>
-		        </div>
-
-		         <Input s={3} type='select' className='white-text' label="Pick a category:" defaultValue=''>
-		         	<option value="" disabled selected>Choose your option</option>
-				    <option value="1">LGBTQIA+</option>
+					<i className="white-text material-icons prefix">search</i>
+					<input id="keywords" className="materialize-input"></input>
+					<label htmlFor="keywords" className='white-text'></label>
+				</div>
+				<Input s={3} type='select' className='white-text' label="Pick a category:" defaultValue=''>
+					<option value="" disabled selected>Choose your option</option>
+					<option value="1">LGBTQIA+</option>
 					<option value="2">Mental Health</option>
 					<option value="3">Opinions</option>
 					<option value="3">Events</option>
-				  </Input>
+				</Input>
 
 				<div className="input-field col s3 white-text">
 				    <select name='dropdown' onChange={this.handleFilterList}>
