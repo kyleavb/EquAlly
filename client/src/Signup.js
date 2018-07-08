@@ -20,7 +20,7 @@ class Signup extends Component {
             firstName: '',
             lastName: '',
             email: '',
-            pronoun: '',
+            pronoun: '0',
             password: ''
         }
         this.handleChange = this.handleChange.bind(this)
@@ -39,35 +39,29 @@ class Signup extends Component {
                 <form className="col s12 m8 l8 offset-m2 offset-l2">
                 <h1>Sign Up!</h1>
                 <div className="row">
-                    <div className="input-field col s6">
+                    <div className="input-field col s12 m6">
                         <i className="material-icons prefix">account_circle</i>
                         <input name="firstName" onChange={this.handleChange} type="text" className="validate" />
                         <label htmlFor="firstname">First Name</label>
                     </div>
-                    <div className="input-field col s6">
+                    <div className="input-field col s12 m6">
                         <input name="lastName" onChange={this.handleChange} type="text" className="validate" />
                         <label htmlFor="lastname">Last Name</label>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="input-field col s6">
+                    <div className="input-field col s12 m6">
                         <i className="material-icons prefix">email</i>
                         <input name="email" type="email" onChange={this.handleChange} className="validate" />
                         <label htmlFor="email">Email</label>
                     </div>
-                    <div className="input-field col s6">
-                        <select defaultValue='3'name='pronoun' onChange={this.handleChange}>
-                            
-                        </select>
-                        <Input type='select' value={this.state.pronoun} name='pronoun' onChange={this.handleChange}>
-                            <option value="0" disabled>Please select</option>
-                            <option value="She/Her">She/Her</option>
-                            <option value="He/Him">He/Him</option>
-                            <option value="They/Them">They/Them</option>
-                            <option value="Xe/Xyr">Xe/Xyr</option>
-                        </Input>
-                        <label>Preferred Pronouns</label>
-                    </div>
+                    <Input type='select' value={this.state.pronoun} name='pronoun' s={12} m={6} onChange={this.handleChange} label='Pronouns'>
+                        <option value="0" disabled>Select your preferred pronouns</option>
+                        <option value="She/Her">She/Her</option>
+                        <option value="He/Him">He/Him</option>
+                        <option value="They/Them">They/Them</option>
+                        <option value="Xe/Xyr">Xe/Xyr</option>
+                    </Input>
                 </div>
                 <div className="row">
                     <div className="input-field col s12">
