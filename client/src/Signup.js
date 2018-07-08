@@ -27,7 +27,6 @@ class Signup extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.submitForm = this.submitForm.bind(this);
-
     }
     
     handleChange(e){
@@ -90,27 +89,10 @@ class Signup extends Component {
                     </div>
 
                     <div className="input-field col s12 m6">
-                        <select defaultValue='3'name='pronoun' onChange={this.handleChange}>
-                            
-                        </select>
-                        <Input type='select' value={this.state.pronoun} name='pronouns' onChange={this.handleChange}>
-                            <option value="0" disabled>Please select</option>
-                            <option value="She/Her">She/Her</option>
-                            <option value="He/Him">He/Him</option>
-                            <option value="They/Them">They/Them</option>
-                            <option value="Xe/Xyr">Xe/Xyr</option>
-                        </Input>
-                        <label>Preferred Pronouns</label>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="input-field col s12">
-
                         <i className="material-icons prefix">vpn_key</i>
                         <input name="password" onChange={this.handleChange} type="password" className="validate" />
                         <label htmlFor="password">Password</label>
                     </div>
-                   
                 </div>
                 <div className="row">
                     <button className="btn waves-effect waves-light col s6 m4 l4 offset-s3 offset-m4 offset-l4 yellow darken-2" onClick={this.submitForm}>Sign Up!
