@@ -20,7 +20,7 @@ class NavLinks extends Component {
 
 	render() {
     	let {userId, ally, admin, username} = this.props.state
-			let login = userId ? <li><Link to='/logout'>Log Out</Link></li> : <li><Link to='/login'>Log In</Link></li>
+		let login = userId ? <li><Link to='/logout'>Log Out</Link></li> : <li><Link to='/login'>Log In</Link></li>
 	    let profile = userId ? <li><Link to='/profile'>{username}s Profile</Link></li> : ''
 	    let blogPost = ally ?  <li><Link to='/blog/add'>New Blog Post</Link></li> : ''
 	    let adminPage = admin ? <li><Link to='/'>Admin</Link></li> : ''

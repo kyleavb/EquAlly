@@ -61,7 +61,7 @@ router.post('/signup', (req, res, next) => {
 
 //Testing purpose only
 router.post('/fakelogin', (req, res) => {
-  user.find().then( data => {
+  User.find().then( data => {
     res.send(data[req.body.num]);
   });
 });
