@@ -3,7 +3,6 @@ var mongoose = require('mongoose')
 var express = require('express')
 var bodyParser = require('body-parser')
 var router = express.Router();
-var passport = require('../config/passportConfig')
 const Post = require('../models/post')
 var user = require('../models/user')
 

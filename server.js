@@ -3,8 +3,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
-const session = require('express-session');
-const passport = require('./config/passportConfig.js')
+const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const auth = require('./routes/auth');
 const comment = require('./routes/comment');
@@ -14,16 +13,15 @@ const http = require('http').Server(app)
 const io = module.exports.io = require('socket.io').listen(http);
 const SocketManager = require('./SocketManager')
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/equAlly');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/equAlly', { useNewUrlParser: true });
 
 const PORT = process.env.PORT || 5000;
 
 io.on('connection', SocketManager)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use(express.static(path.resolve(__dirname, 'client', 'build')));
-app.use(passport.initialize())
-app.use(passport.session())
 app.use('/auth', auth);
 app.use('/comment', comment)
 app.use('/post', post)
@@ -44,7 +42,6 @@ io.on('connection', socket => {
   })
 })
 
-//app.listen(port, () => console.log(`Listening on port ${port}`));
 http.listen(PORT, () => {
   console.log(`Listening on ${PORT}`)
 })

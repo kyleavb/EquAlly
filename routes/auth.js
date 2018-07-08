@@ -1,38 +1,70 @@
 require('dotenv').config()
-var mongoose = require('mongoose')
 var express = require('express')
 var router = express.Router();
-var passport = require('../config/passportConfig')
-var user = require('../models/user')
+var User = require('../models/user')
+var bcrypt = require('bcrypt')
+var jwt = require('jsonwebtoken')
 
+router.post('/login', (req, res, next) => {
+  let hashedPass = ''
+  let passwordMatch = false
 
-router.get('/google', passport.authenticate('google', {
-  scope: ['https://www.googleapis.com/auth/plus.login']
-}));
+  User.findOne({email: req.body.email}, function(err, user){
+      console.log(user)
+      hashedPass = user.password 
+      passwordMatch = bcrypt.compareSync(req.body.password, hashedPass)
+      if(passwordMatch){
+          var token = jwt.sign(user.toObject(), process.env.JWT_SECRET, {
+              expiresIn: 60 * 60 * 24
+          })
+          res.json({user, token})
+      }else{
+          console.log("Passwords do not match")
+          res.status(401).json({
+              error:true,
+              message: "Email/Password is incorrect"
+          })
+      }
+  })
+});
 
-router.get('/google/callback',
-  passport.authenticate('google', { failureRedirect: '/' }),
-  function(req, res){
-    res.location('http://localhost:5000/');
-  }
-);
-
-router.get('/facebook', passport.authenticate('facebook'));
-
-router.get('/facebook/callback',
-  passport.authenticate('facebook', { failureRedirect: '/' }),
-  function(req, res){
-    res.redirect('/')
-  }
-)
-
-router.post('/fakelogin', (req, res) => {
-  console.log('FAKE SHIT')
-  user.find().then( data => {
-    console.log('Return Fake Shit',data[req.body.num])
-    res.send(data[req.body.num])
+router.post('/signup', (req, res, next) => {
+  console.log('hit')
+  User.findOne({ email: req.body.email}).then((err, user) =>{
+    console.log('first', user);
+      if(user){
+          res.redirect('/auth/signup')
+      }else{
+          User.create({
+              firstName: req.body.firstName,
+              lastName: req.body.lastName,
+              pronouns: req.body.pronouns, 
+              email: req.body.email,
+              password: req.body.password
+          }).then( (err, user) => {
+              console.log('After Create', user)
+              if(err){
+                  console.log('Rec Error')
+                  res.send(err)
+              }else{
+                console.log('IN ELSE SO NO ERROR')
+                  var token = jwt.sign(user, process.env.JWT_SECRET, {
+                      expiresIn: 60 * 60 * 24
+                  })
+                  console.log(token)
+                  res.json({user, token})
+              }
+          })
+      }
   })
 })
+
+//Testing purpose only
+router.post('/fakelogin', (req, res) => {
+  user.find().then( data => {
+    res.send(data[req.body.num]);
+  });
+});
 
 router.get('/user', function(req, res, next){
   if(req.user){
