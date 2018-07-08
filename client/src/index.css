@@ -78,8 +78,18 @@ a {
 	}
 }
 
- .tab-content, .category-box, .section {
+.tab-content, .category-box, .section {
 	overflow: scroll;
+}
+
+.resources::-webkit-scrollbar, .timeline-tweetlist::-webkit-scrollbar, .category-box::-webkit-scrollbar {
+    -webkit-appearance: none!important;
+    width: 7px!important;
+}
+.resources::-webkit-scrollbar-thumb, .timeline-tweetlist::-webkit-scrollbar-thumb, .category-box::-webkit-scrollbar-thumb {
+    border-radius: 4px!important;
+    background-color: rgba(0,0,0,.2)!important;
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5)!important;
 }
 
 .rss {
@@ -205,3 +215,6 @@ textarea {
   overflow-wrap: break-word;
 }
 
+.page-footer p , .page-footer h5, .footer-copyright .container{
+	margin-left: 20px!important;
+}

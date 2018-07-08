@@ -27,7 +27,9 @@ router.get('/facebook/callback',
 )
 
 router.post('/fakelogin', (req, res) => {
+  console.log('FAKE SHIT')
   user.find().then( data => {
+    console.log('Return Fake Shit',data[req.body.num])
     res.send(data[req.body.num])
   })
 
