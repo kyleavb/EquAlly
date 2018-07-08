@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import { Input } from 'react-materialize';
 import {connect} from 'react-redux'
 import {liftUser} from './action/actions'
@@ -20,15 +21,33 @@ class Signup extends Component {
             firstName: '',
             lastName: '',
             email: '',
-            pronoun: '',
-            password: ''
+            pronouns: '0',
+            password: '',
+            zipcode: ''
         }
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+        this.submitForm = this.submitForm.bind(this);
+
     }
     
     handleChange(e){
         this.setState({
             [e.target.name]: e.target.value
+        })
+    };
+
+    submitForm(e){
+        e.preventDefault();
+        axios.post('/auth/signup', {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
+            pronouns: this.state.pronoun,
+            password: this.state.password
+        }).then(data =>{
+            console.log('return', data)
+            localStorage.setItem('equallyToken', data.data.token)
+            //LIFT TOKEN TO REDUX HERE
         })
     }
 
@@ -59,7 +78,7 @@ class Signup extends Component {
                         <select defaultValue='3'name='pronoun' onChange={this.handleChange}>
                             
                         </select>
-                        <Input type='select' value={this.state.pronoun} name='pronoun' onChange={this.handleChange}>
+                        <Input type='select' value={this.state.pronoun} name='pronouns' onChange={this.handleChange}>
                             <option value="0" disabled>Please select</option>
                             <option value="She/Her">She/Her</option>
                             <option value="He/Him">He/Him</option>
@@ -77,7 +96,7 @@ class Signup extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <button className="btn waves-effect waves-light col s6 m4 l4 offset-s3 offset-m4 offset-l4 yellow darken-2" type="submit" name="action">Sign Up!
+                    <button className="btn waves-effect waves-light col s6 m4 l4 offset-s3 offset-m4 offset-l4 yellow darken-2" onClick={this.submitForm}>Sign Up!
                     <i className="material-icons right">account_box</i>
                     </button>
                 </div>
