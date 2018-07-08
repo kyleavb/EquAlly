@@ -78,6 +78,12 @@ a {
 	}
 }
 
+@media (min-width: 992px) {
+	.resources-row {
+		height: 450px;
+	}
+}
+
 .tab-content, .category-box, .section {
 	overflow: scroll;
 }
@@ -172,6 +178,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .resources-list {
 	overflow: scroll!important;
+	height: inherit!important;
 }
 
 .resources-ul {
