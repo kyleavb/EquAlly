@@ -40,23 +40,53 @@ router.post('/signup', (req, res, next) => {
               lastName: req.body.lastName,
               pronouns: req.body.pronouns, 
               email: req.body.email,
-              password: req.body.password
-          }).then( (err, user) => {
+              password: req.body.password,
+              zipcode: req.body.zipcode
+          }).then((user, err) => {
               console.log('After Create', user)
-              if(err){
-                  console.log('Rec Error')
+              console.log('second after create', err)
+              if(!user){
+                  console.log('Rec Error', err)
                   res.send(err)
               }else{
-                console.log('IN ELSE SO NO ERROR')
-                  var token = jwt.sign(user, process.env.JWT_SECRET, {
+                console.log('IN ELSE SO NO ERROR', user)
+                  var token = jwt.sign(user.toObject(), process.env.JWT_SECRET, {
                       expiresIn: 60 * 60 * 24
                   })
-                  console.log(token)
+                  console.log('token', token)
                   res.json({user, token})
               }
           })
       }
   })
+})
+
+router.post('/me/from/token', (req, res) => {
+  var token = req.body.token
+  if(!token){
+      res.status(401).json({message: "Must pass the token"})
+  }else{
+      jwt.verify(token, process.env.JWT_SECRET, function(err, user){
+          if(err){
+            console.log('FIRST ERROR', user)
+              res.status(401).send(err)
+          }else{
+            console.log('second part')
+              User.findById({
+                  '_id': user._id
+              }).then((user, err) =>{
+                console.log('near end')
+                  if(err){
+                    console.log('END error', user)
+                      res.status(401).send(err)
+                  }else{
+                    console.log('Re-Authorized')
+                      res.json({user, token})
+                  }
+              })
+          }
+      })
+  }
 })
 
 //Testing purpose only

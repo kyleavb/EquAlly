@@ -27,7 +27,6 @@ class Signup extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.submitForm = this.submitForm.bind(this);
-
     }
     
     handleChange(e){
@@ -42,11 +41,13 @@ class Signup extends Component {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             email: this.state.email,
-            pronouns: this.state.pronoun,
-            password: this.state.password
+            pronouns: this.state.pronouns,
+            password: this.state.password,
+            zipcode: this.state.zipcode
         }).then(data =>{
             console.log('return', data)
-            localStorage.setItem('equallyToken', data.data.token)
+            localStorage.setItem('equallyToken', data.data.token);
+            console.log('equallyToken', data.data.token)
             //LIFT TOKEN TO REDUX HERE
         })
     }
@@ -74,7 +75,8 @@ class Signup extends Component {
                         <input name="zipcode" onChange={this.handleChange} type="text" className="validate" />
                         <label htmlFor="zipcode">Zipcode</label>
                     </div>
-                    <Input type='select' value={this.state.pronouns} name='pronoun' s={12} m={6} onChange={this.handleChange} label='Pronouns'>
+
+                    <Input type='select' value={this.state.pronouns} name='pronouns' s={12} m={6} onChange={this.handleChange} label='Pronouns'>
                         <option value="0" disabled>Select your preferred pronouns</option>
                         <option value="She/Her">She/Her</option>
                         <option value="He/Him">He/Him</option>
@@ -90,7 +92,6 @@ class Signup extends Component {
                     </div>
 
                     <div className="input-field col s12 m6">
-
                         <i className="material-icons prefix">vpn_key</i>
                         <input name="password" onChange={this.handleChange} type="password" className="validate" />
                         <label htmlFor="password">Password</label>
