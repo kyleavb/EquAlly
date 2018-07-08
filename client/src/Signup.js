@@ -58,23 +58,38 @@ class Signup extends Component {
                 <form className="col s12 m8 l8 offset-m2 offset-l2">
                 <h1>Sign Up!</h1>
                 <div className="row">
-                    <div className="input-field col s6">
+                    <div className="input-field col s12 m6">
                         <i className="material-icons prefix">account_circle</i>
                         <input name="firstName" onChange={this.handleChange} type="text" className="validate" />
                         <label htmlFor="firstname">First Name</label>
                     </div>
-                    <div className="input-field col s6">
+                    <div className="input-field col s12 m6">
                         <input name="lastName" onChange={this.handleChange} type="text" className="validate" />
                         <label htmlFor="lastname">Last Name</label>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="input-field col s6">
+                 <div className="input-field col s12 m6">
+                        <i className="material-icons prefix">location_on</i>
+                        <input name="zipcode" onChange={this.handleChange} type="text" className="validate" />
+                        <label htmlFor="zipcode">Zipcode</label>
+                    </div>
+                    <Input type='select' value={this.state.pronoun} name='pronoun' s={12} m={6} onChange={this.handleChange} label='Pronouns'>
+                        <option value="0" disabled>Select your preferred pronouns</option>
+                        <option value="She/Her">She/Her</option>
+                        <option value="He/Him">He/Him</option>
+                        <option value="They/Them">They/Them</option>
+                        <option value="Xe/Xyr">Xe/Xyr</option>
+                    </Input>
+                </div>
+                <div className="row">
+                    <div className="input-field col s12 m6">
                         <i className="material-icons prefix">email</i>
                         <input name="email" type="email" onChange={this.handleChange} className="validate" />
                         <label htmlFor="email">Email</label>
                     </div>
-                    <div className="input-field col s6">
+
+                    <div className="input-field col s12 m6">
                         <select defaultValue='3'name='pronoun' onChange={this.handleChange}>
                             
                         </select>
@@ -90,10 +105,12 @@ class Signup extends Component {
                 </div>
                 <div className="row">
                     <div className="input-field col s12">
+
                         <i className="material-icons prefix">vpn_key</i>
                         <input name="password" onChange={this.handleChange} type="password" className="validate" />
                         <label htmlFor="password">Password</label>
                     </div>
+                   
                 </div>
                 <div className="row">
                     <button className="btn waves-effect waves-light col s6 m4 l4 offset-s3 offset-m4 offset-l4 yellow darken-2" onClick={this.submitForm}>Sign Up!
