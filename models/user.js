@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt')
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
 var userSchema = new mongoose.Schema({
@@ -10,7 +11,12 @@ var userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  username: {
+  password: {
+    type: String,
+    required: true,
+    minLength: 2
+  },
+  email:{
     type: String,
     required: true,
     unique: true
@@ -18,14 +24,6 @@ var userSchema = new mongoose.Schema({
   pronouns: {
     type: String,
     required: true
-  },
-  facebookId: {
-    type: String,
-    unique: true
-  },
-  googleId: {
-    type: String,
-    unique: true
   },
   zipcode: {
     type: Number,
@@ -57,6 +55,33 @@ var userSchema = new mongoose.Schema({
   }]
 })
 
+userSchema.set('toJson', {
+  transform: function(doc, ret, options){
+      let returnJson = {
+          _id: ret._id,
+          email: ret.email,
+          name: ret.name
+      }
+      return returnJson
+  }
+})
+
+userSchema.methods.authenticated = function(password, cb){
+  bcrypt.compare(password, this.password, function(err, res){
+      if(err){
+          cb(err)
+      }else{
+          cb(null, res ? this : false)
+      }
+  })
+}
+
+userSchema.pre('save', function(next){
+  console.log('pass', this.password)
+  var hash = bcrypt.hashSync(this.password, 12)
+  this.password = hash
+  next()
+})
 
 var User = mongoose.model('User', userSchema)
 

@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+import axios from 'axios';
 import Home from './Home';
 import Profile from './Profile';
 import Login from './Login'
@@ -18,8 +19,6 @@ import Nav from './Nav';
 import Footer from './Footer';
 
 class App extends Component {
-
-
 
   render() {
     return (

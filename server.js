@@ -12,8 +12,15 @@ const profile = require('./routes/profile')
 const http = require('http').Server(app)
 const io = module.exports.io = require('socket.io').listen(http);
 const SocketManager = require('./SocketManager')
-
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/equAlly', { useNewUrlParser: true });
+const monOpt = {
+  useNewUrlParser: true,
+  dbName: 'equAlly'
+}
+//remove _FORTEST when deploying - process.env.MONGODB_URI_FORTEST
+mongoose.connect('mongodb://localhost:27017/', monOpt).then(
+  () =>{console.log('Connected to Mongoose!')},
+  err => {console.log('ERROR:', err)}
+);
 
 const PORT = process.env.PORT || 5000;
 
