@@ -21,7 +21,8 @@ class Signup extends Component {
             lastName: '',
             email: '',
             pronoun: '0',
-            password: ''
+            password: '',
+            zipcode: ''
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -64,10 +65,15 @@ class Signup extends Component {
                     </Input>
                 </div>
                 <div className="row">
-                    <div className="input-field col s12">
+                    <div className="input-field col s12 m6">
                         <i className="material-icons prefix">vpn_key</i>
                         <input name="password" onChange={this.handleChange} type="password" className="validate" />
                         <label htmlFor="password">Password</label>
+                    </div>
+                    <div className="input-field col s12 m6">
+                        <i className="material-icons prefix">location_on</i>
+                        <input name="zipcode" onChange={this.handleChange} type="text" className="validate" />
+                        <label htmlFor="zipcode">Zipcode</label>
                     </div>
                 </div>
                 <div className="row">
