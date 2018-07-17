@@ -16,7 +16,7 @@ const monOpt = {
   useNewUrlParser: true,
   dbName: 'equAlly'
 }
-//remove _FORTEST when deploying - process.env.MONGODB_URI_FORTEST
+//remove - process.env.MONGODB_URI
 mongoose.connect('mongodb://localhost:27017/', monOpt).then(
   () =>{console.log('Connected to Mongoose!')},
   err => {console.log('ERROR:', err)}

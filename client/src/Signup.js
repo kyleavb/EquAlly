@@ -48,12 +48,11 @@ class Signup extends Component {
             console.log('return', data)
             localStorage.setItem('equallyToken', data.data.token);
             console.log('equallyToken', data.data.token)
-            //LIFT TOKEN TO REDUX HERE
+            this.props.liftUser(data.data.user)
         })
     }
 
     render(){
-        console.log(this.state)
         return(
             <div className='row'>
                 <form className="col s12 m8 l8 offset-m2 offset-l2">
